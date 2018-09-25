@@ -39,6 +39,8 @@ def front_pan():
     time.sleep(0.2)
     GPIO.cleanup()
 
+front_pan()
+
 ##Define the distance function (to be imported into drive script)
 def front_distance():
 
