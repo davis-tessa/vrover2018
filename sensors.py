@@ -77,24 +77,118 @@ def optimal_direction():
     time.sleep(1)
     pwm.ChangeDutyCycle(10)
 ##Record distance on the left
-    print "distance on left =", front_distance()
-    left_distance = front_distance()
+    ##Define the distance function (to be imported into drive script)
+    def left_distance():
 
+    ##Define the GPIO pin number connected to trig
+        front_sensor_trig = 7
+    ##Define the GPIO pin number connected to echo
+        front_sensor_echo = 11
+
+    ##Set the gpio mode to "board" as opposed to BCM to use the physical pin numbers
+        gpio.setmode(gpio.BOARD)
+    ##Set up pins for trig (out of RPi, into sensor) and echo (out of sensor, in to RPi)
+        gpio.setup(front_sensor_trig, gpio.OUT)
+        gpio.setup(front_sensor_echo, gpio.IN)
+
+    ##Making sure that the output pin has no pre-configured value
+        gpio.output(front_sensor_trig, False)
+    ##Print out notice that the sensor is initiating
+    ##    print("Waiting for sensor to settle")
+    ##Give the sensor time to come online
+        time.sleep(0.001)
+
+    ##Trigger the sensor (8 ultrasound bursts at 40 kHz)
+        gpio.output(front_sensor_trig, True)
+    ##Confiture the length of the burst to 10uS
+        time.sleep(0.00001)
+    ##Stop the burst after 10uS
+        gpio.output(front_sensor_trig, False)
+
+    ##Listen on the echo pin and as long as there is no signal, take a time stamp (time.time())
+        while gpio.input(front_sensor_echo) == 0:
+            pulse_start = time.time()
+    ##Take a time stamp of the last recorded moment of a high signal
+        while gpio.input(front_sensor_echo) == 1:
+            pulse_end = time.time()
+    ##Pulse_duration is the time that passed between a signal appearing and disappearing
+        pulse_duration = pulse_end - pulse_start
+    ##The speed of sound in air at sea level = 343m/s or 34 300cm/s
+    ##s = d/t : d = s*t. The sound travels to the object and back so d = (s*t)/2
+        left_distance = 17150 * pulse_duration
+    ##Return an answer to 2 decimal places
+        left_distance = round(front_distance, 2)
+
+    ##Clen up the GPIO pins
+        gpio.cleanup()
+
+    ##Instruct the function to return 'distance'
+        return left_distance
+
+    print left_distance(), "cm"
 
 ##Pan servo to the right
     time.sleep(1)
     pwm.ChangeDutyCycle(5)
     ##Record distance on the left
-    print "distance on right =", front_distance()
-    right_distance = front_distance()
+##Record distance on the left
+    ##Define the distance function (to be imported into drive script)
+    def right_distance():
 
+    ##Define the GPIO pin number connected to trig
+        front_sensor_trig = 7
+    ##Define the GPIO pin number connected to echo
+        front_sensor_echo = 11
 
-    #centre
+    ##Set the gpio mode to "board" as opposed to BCM to use the physical pin numbers
+        gpio.setmode(gpio.BOARD)
+    ##Set up pins for trig (out of RPi, into sensor) and echo (out of sensor, in to RPi)
+        gpio.setup(front_sensor_trig, gpio.OUT)
+        gpio.setup(front_sensor_echo, gpio.IN)
+
+    ##Making sure that the output pin has no pre-configured value
+        gpio.output(front_sensor_trig, False)
+    ##Print out notice that the sensor is initiating
+    ##    print("Waiting for sensor to settle")
+    ##Give the sensor time to come online
+        time.sleep(0.001)
+
+    ##Trigger the sensor (8 ultrasound bursts at 40 kHz)
+        gpio.output(front_sensor_trig, True)
+    ##Confiture the length of the burst to 10uS
+        time.sleep(0.00001)
+    ##Stop the burst after 10uS
+        gpio.output(front_sensor_trig, False)
+
+    ##Listen on the echo pin and as long as there is no signal, take a time stamp (time.time())
+        while gpio.input(front_sensor_echo) == 0:
+            pulse_start = time.time()
+    ##Take a time stamp of the last recorded moment of a high signal
+        while gpio.input(front_sensor_echo) == 1:
+            pulse_end = time.time()
+    ##Pulse_duration is the time that passed between a signal appearing and disappearing
+        pulse_duration = pulse_end - pulse_start
+    ##The speed of sound in air at sea level = 343m/s or 34 300cm/s
+    ##s = d/t : d = s*t. The sound travels to the object and back so d = (s*t)/2
+        right_distance = 17150 * pulse_duration
+    ##Return an answer to 2 decimal places
+        right_distance = round(front_distance, 2)
+
+    ##Clen up the GPIO pins
+        gpio.cleanup()
+
+    ##Instruct the function to return 'distance'
+        return right_distance
+
+    print right_distance(), "cm"
+
+##Return servo to starting position
     time.sleep(1)
     pwm.ChangeDutyCycle(7.5)
     time.sleep(0.2)
     gpio.cleanup()
 
+'''
     if left_distance() < 20 and right_distance() < 20:
         optimal_direction = 'reverse'
     else:
@@ -107,6 +201,7 @@ def optimal_direction():
     return optimal_direction
 
 print optimal_direction()
+'''
 
 '''##Define a function to trigger the server to pan
 def front_pan():
