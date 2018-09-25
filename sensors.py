@@ -75,7 +75,7 @@ def optimal_direction():
     time.sleep(1)
     pwm.ChangeDutyCycle(10)
 ##Record distance on the left
-    print "distance on left =" front_distance()
+    print "distance on left =", front_distance()
     left_distance = front_distance()
 
 
@@ -83,7 +83,7 @@ def optimal_direction():
     time.sleep(1)
     pwm.ChangeDutyCycle(5)
     ##Record distance on the left
-    print "distance on right =" front_distance()
+    print "distance on right =", front_distance()
     right_distance = front_distance()
 
 
