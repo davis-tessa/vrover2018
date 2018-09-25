@@ -62,6 +62,8 @@ def front_distance():
 ##Instruct the function to return 'distance'
     return front_distance
 
+print front_distance(), "cm"
+
 ##Define a function to check the optimal direction for travel
 def optimal_direction():
 ##Setup servo to pan
