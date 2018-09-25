@@ -64,11 +64,37 @@ def front_distance():
 
 print front_distance(), "cm"
 
+def front_pan():
+##Define pin mapping for pan control
+    pan_control = 12
+##Set gpio to board mode
+    gpio.setmode(gpio.BOARD)
+##Set pan control gpio pin as output
+    gpio.setup(pan_control, gpio.OUT)
+##Set frequency for servo to 50 Hz
+    pwm=gpio.PWM(pan_control, 50)
+##Set starting position for servo to center
+    pwm.start(7.5)
+##Pivot to the left
+    time.sleep(1)
+    pwm.ChangeDutyCycle(10)
+##Pivot to the right
+    time.sleep(1)
+    pwm.ChangeDutyCycle(5)
+##Return to center
+    time.sleep(1)
+    pwm.ChangeDutyCycle(7.5)
+##Cleanup
+    time.sleep(0.2)
+    gpio.cleanup()
+
+front_pan()
+
 ##Define a function to check the optimal direction for travel
 
 ##Capture distance at left pivot
 
-def pan_left():
+'''def pan_left():
 ##Define pin mapping for pan control
     pan_control = 12
 ##Set gpio to board mode
@@ -85,7 +111,8 @@ def pan_left():
 ##Cleanup
     time.sleep(0.2)
     gpio.cleanup()
-
+'''
+'''
 ##Define the distance function (to be imported into drive script)
 def left_distance():
 
@@ -135,7 +162,7 @@ def left_distance():
     return left_distance
 
 print left_distance(), "cm"
-
+'''
 '''
 def front_pan():
 ##Define pin mapping for pan control
