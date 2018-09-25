@@ -17,11 +17,11 @@ print("Distance Measurement in Progress")
 ##Define a function to trigger the server to pan
 def front_pan():
 
-    GPIO.setmode(GPIO.BOARD)
+    gpio.setmode(gpio.BOARD)
 
-    GPIO.setup(12,GPIO.OUT)
+    gpio.setup(12,gpio.OUT)
 
-    pwm=GPIO.PWM(12, 50)
+    pwm=gpio.PWM(12, 50)
 
     pwm.start(7.5)
 
@@ -37,7 +37,7 @@ def front_pan():
     time.sleep(1)
     pwm.ChangeDutyCycle(7.5)
     time.sleep(0.2)
-    GPIO.cleanup()
+    gpio.cleanup()
 
 front_pan()
 
