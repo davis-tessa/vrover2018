@@ -1,6 +1,6 @@
 # vrover2018
-# driveme.py:
-  #Code to drive motors (includes tests)
+# driveme.py and driveme_tank.py:
+  #Code to drive motors (4wd and tank) (includes tests)
 # pan.py
   #Code to pan servo motor
 # sensors.py
