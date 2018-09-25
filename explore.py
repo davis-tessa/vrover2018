@@ -35,10 +35,21 @@ def check_front():
 ##Define the variable f_dist as the distance from the front sensor to the nearest object
     f_dist = sensors.front_distance()
 
-##Instruct action: if an object is closer than 15 cm away, print "Too close, and the distance", and continue
+##Instruct action: if an object is closer than 15 cm away, check for the optimal direction and take evasive action
     if f_dist < 15:
-        driveme.init()
-        driveme.reverse(2)
+        opt_dir = sensors.optimal_direction()
+        if opt_dir = 'left':
+            driveme.init()
+            driveme.reverse(2)
+            driveme.turn_left_fwd(2)
+        elif opt_dir = 'right':
+            driveme.init()
+            driveme.reverse(2)
+            driveme.turn_right_fwd(2)
+        else opt_dir = 'left':
+            driveme.init()
+            driveme.reverse(2)
+## If distance is >= 15cm, the script picks up after 'checkfront()'
 
 ##Define the function autonomy
 def autonomy():
