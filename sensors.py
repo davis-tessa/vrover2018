@@ -11,6 +11,7 @@ import time
 ##front_sensor_echo = 11
 ##back_sensor_trig = 31
 ##back_sensor_echo = 33
+##pan_control = 12
 
 print("Distance Measurement in Progress")
 
