@@ -107,17 +107,17 @@ def optimal_direction():
 
     ##Listen on the echo pin and as long as there is no signal, take a time stamp (time.time())
         while gpio.input(front_sensor_echo) == 0:
-            pulse_start = time.time()
+            left_pulse_start = time.time()
     ##Take a time stamp of the last recorded moment of a high signal
         while gpio.input(front_sensor_echo) == 1:
-            pulse_end = time.time()
+            left_pulse_end = time.time()
     ##Pulse_duration is the time that passed between a signal appearing and disappearing
-        pulse_duration = pulse_end - pulse_start
+        left_pulse_duration = left_pulse_end - left_pulse_start
     ##The speed of sound in air at sea level = 343m/s or 34 300cm/s
     ##s = d/t : d = s*t. The sound travels to the object and back so d = (s*t)/2
-        left_distance = 17150 * pulse_duration
+        left_distance = 17150 * left_pulse_duration
     ##Return an answer to 2 decimal places
-        left_distance = round(front_distance, 2)
+        left_distance = round(left_distance, 2)
 
     ##Clen up the GPIO pins
         gpio.cleanup()
@@ -162,17 +162,17 @@ def optimal_direction():
 
     ##Listen on the echo pin and as long as there is no signal, take a time stamp (time.time())
         while gpio.input(front_sensor_echo) == 0:
-            pulse_start = time.time()
+            right_pulse_start = time.time()
     ##Take a time stamp of the last recorded moment of a high signal
         while gpio.input(front_sensor_echo) == 1:
-            pulse_end = time.time()
+            right_pulse_end = time.time()
     ##Pulse_duration is the time that passed between a signal appearing and disappearing
-        pulse_duration = pulse_end - pulse_start
+        right_pulse_duration = right_pulse_end - right_pulse_start
     ##The speed of sound in air at sea level = 343m/s or 34 300cm/s
     ##s = d/t : d = s*t. The sound travels to the object and back so d = (s*t)/2
-        right_distance = 17150 * pulse_duration
+        right_distance = 17150 * right_pulse_duration
     ##Return an answer to 2 decimal places
-        right_distance = round(front_distance, 2)
+        right_distance = round(right_distance, 2)
 
     ##Clen up the GPIO pins
         gpio.cleanup()
