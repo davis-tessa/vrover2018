@@ -121,28 +121,3 @@ def pivot_left(tf):
 
     time.sleep(tf)
     gpio.cleanup()
-
-#drive vechicle forward for tf
-init()
-forward(tf)
-#turn vehicle left while moving forward for tf seconds
-init()
-reverse(tf)
-#turn vehicle left while moving forward for tf seconds
-init()
-turn_left_fwd(tf)
-#turn vehicle right while moving forward for tf seconds
-init()
-turn_right_fwd(tf)
-#turn vehicle left while reversing for tf seconds
-init()
-turn_left_rev(tf)
-#turn vehicle right while reversing for tf seconds
-init()
-turn_right_rev(tf)
-#Pivot vehicle clockwise (right) for tf seconds
-init()
-pivot_right(tf)
-#Pivot vehicle counterclockwise (left) while moving forward for tf seconds
-init()
-pivot_left(tf)
