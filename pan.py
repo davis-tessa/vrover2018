@@ -1,3 +1,5 @@
+##Using Python 2.7.3
+
 ##Code to Pan the Servo to 10/2/12 on the clock (12 o'clock is forward).
 ##To be used for: front sensor and camera
 ##Assumption: "Top" is the side of the servo that the payload is mounted. Reverse left and right is mount is vertically flipped

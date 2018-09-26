@@ -1,3 +1,5 @@
+##Using Python 2.7.3
+
 ##Import public library python-RPi.GPIO
 import RPi.GPIO as gpio
 ##Import public library python-time
