@@ -11,17 +11,40 @@ import sensors
 ##Expected result: prints:
 ##<Front Distance Measurement in Progress
 ## xx.xx cm>
-print sensors.front_distance(), "cm"
+#print sensors.front_distance(), "cm"
 
 ##Test 2: check that the rear sensor is correctly wired and functional
 ##Expected result: prints:
 ##<Rear Distance Measurement in Progress
 ## xx.xx cm>
-print sensors.rear_distance(), "cm"
+#print sensors.rear_distance(), "cm"
 
 ##Test 3: check that the servo motor is correctly wired and functional
 ##Expected result: Servo motor moves to center, left ~30 degrees, right ~30 degrees, back to center
-sensors.front_pan()
+#sensors.front_pan()
+
+##Test 4: check that distance measurements take place between servo rotations
+##Expected result: Servo motor moves to center, prints:
+##<Watch me position center, take distance.
+##Distance at front:
+##Front Sensor Distance Measurement in Progress
+#xx.xx cm>
+##Servo motor moves to left, prints:
+##<Watch me position left, take distance.
+##Distance to left:
+##Front Sensor Distance Measurement in Progress
+#xx.xx cm>
+##Servo motor moves to right, prints:
+##<Watch me position right, take distance.
+##Distance at right:
+##Front Sensor Distance Measurement in Progress
+#xx.xx cm>
+##Servo motor moves to center, prints:
+##<Watch me position center, take distance.
+##Distance at front:
+##Front Sensor Distance Measurement in Progress
+#xx.xx cm>
+sensors.pan_check_distance_1()
 
 ##Define a function to check the optimal direction for travel
 
