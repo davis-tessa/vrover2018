@@ -37,7 +37,11 @@ def check_front():
 
 ##Instruct action: if an object is closer than 15 cm away, check for the optimal direction and take evasive action
     if f_dist < 15:
-        opt_dir = sensors.optimal_direction()
+
+##The optimal_direction function in sensors.py will return the best direction to move in 'right', 'left', or 'reverse'
+##While the optimal_direction funciton is under development, this code is commented out
+
+'''        opt_dir = sensors.optimal_direction()
         if opt_dir = 'left':
             driveme.init()
             driveme.reverse(2)
@@ -49,6 +53,11 @@ def check_front():
         else opt_dir = 'left':
             driveme.init()
             driveme.reverse(2)
+            '''
+##Temporary instructions for behavior to be performed while optimal_direction function is under development
+        driveme.init()
+        driveme.reverse(2)
+
 ## If distance is >= 15cm, the script picks up after 'checkfront()'
 
 ##Define the function autonomy
