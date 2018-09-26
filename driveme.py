@@ -159,33 +159,3 @@ def pivot_left(tf):
     gpio.output(lft_bk_rev, True)
     time.sleep(tf)
     gpio.cleanup()
-
-##Driveme.py Test Code:
-
-##Define the time to drive for (tf)
-tf = 3
-
-#drive vechicle forward for tf
-init()
-forward(tf)
-#turn vehicle left while moving forward for tf seconds
-init()
-reverse(tf)
-#turn vehicle left while moving forward for tf seconds
-init()
-turn_left_fwd(tf)
-#turn vehicle right while moving forward for tf seconds
-init()
-turn_right_fwd(tf)
-#turn vehicle left while reversing for tf seconds
-init()
-turn_left_rev(tf)
-#turn vehicle right while reversing for tf seconds
-init()
-turn_right_rev(tf)
-#Pivot vehicle clockwise (right) for tf seconds
-init()
-pivot_right(tf)
-#Pivot vehicle counterclockwise (left) while moving forward for tf seconds
-init()
-pivot_left(tf)
