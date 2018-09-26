@@ -3,6 +3,7 @@
 import RPi.GPIO as gpio
 import time
 import sys
+import driveme
 
 ##Driveme.py Test Code:
 
