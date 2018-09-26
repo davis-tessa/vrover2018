@@ -141,7 +141,9 @@ def front_pan():
 
 ##Capture distance at left pivot
 
-'''def pan_left():
+##Define function to pan the servo motor
+def pan_check_distance():
+    print("Watch me position center, take distance.")
 ##Define pin mapping for pan control
     pan_control = 12
 ##Set gpio to board mode
@@ -152,13 +154,29 @@ def front_pan():
     pwm=gpio.PWM(pan_control, 50)
 ##Set starting position for servo to center
     pwm.start(7.5)
+    ##Cleanup
+    time.sleep(0.2)
+    gpio.cleanup()
+    print front_distance(), "cm"
+
+'''
 ##Pivot to the left
     time.sleep(1)
     pwm.ChangeDutyCycle(10)
+##Pivot to the right
+    time.sleep(1)
+    pwm.ChangeDutyCycle(5)
+##Return to center
+    time.sleep(1)
+    pwm.ChangeDutyCycle(7.5)
 ##Cleanup
     time.sleep(0.2)
     gpio.cleanup()
 '''
+##print("Watch me position center, take distance, then left, take distance, then right, take distance and back to center.")
+
+
+
 '''
 ##Define the distance function (to be imported into drive script)
 def left_distance():
