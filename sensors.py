@@ -34,7 +34,7 @@ def front_distance():
 ##Print out notice that the sensor is initiating
 ##    print("Waiting for sensor to settle")
 ##Give the sensor time to come online
-    time.sleep(0.001)
+    time.sleep(1)
 
 ##Trigger the sensor (8 ultrasound bursts at 40 kHz)
     gpio.output(front_sensor_trig, True)
@@ -227,8 +227,8 @@ def optimal_direction():
     time.sleep(0.2)
     gpio.cleanup()
     print ("Distance at front:")
-    front_distance = front_distance()
-    print front_distance, "cm"
+    front_dist = front_distance()
+    print front_dist, "cm"
 
 ##Take left distance
     print("Watch me position left, take distance.")
@@ -244,9 +244,10 @@ def optimal_direction():
     time.sleep(0.2)
     gpio.cleanup()
     print ("Distance to left:")
-    print front_distance(), "cm"
+    left_dist = front_distance()
+    print left_dist, "cm"
 
-##Take left distance
+##Take right distance
     print("Watch me position right, take distance.")
 ##Set gpio to board mode
     gpio.setmode(gpio.BOARD)
@@ -260,7 +261,8 @@ def optimal_direction():
     time.sleep(0.2)
     gpio.cleanup()
     print("Distance to right:")
-    print front_distance(), "cm"
+    right_dist = front_distance()
+    print right_dist(), "cm"
 
     print("Watch me return to center, take distance.")
 ##Define pin mapping for pan control
@@ -277,8 +279,22 @@ def optimal_direction():
     time.sleep(0.2)
     gpio.cleanup()
     print("Distance at front:")
-    print front_distance(), "cm"
+    front_dist = front_distance()
+    print front_dist, "cm"
 
+##Determine the optimum direction to travel
+    if left_dist < 20 and right_dist < 20:
+        optimal_direction = 'reverse'
+    else:
+        dist_diff = left_dist - right_dist
+        if dist_diff >= 0:
+            optimal_direction = 'left'
+        if dist_diff <= 0:
+            optimal_direction = 'right'
+
+    return optimal_direction
+
+print optimal_direction()
 
 '''
 ##Define function to pan the servo motor
