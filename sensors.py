@@ -65,6 +65,57 @@ def front_distance():
 
 print front_distance(), "cm"
 
+##Define the distance function (to be imported into drive script)
+def rear_distance():
+
+##Define the GPIO pin number connected to trig
+    rear_sensor_trig = 31
+##Define the GPIO pin number connected to echo
+    rear_sensor_echo = 33
+
+##Set the gpio mode to "board" as opposed to BCM to use the physical pin numbers
+    gpio.setmode(gpio.BOARD)
+##Set up pins for trig (out of RPi, into sensor) and echo (out of sensor, in to RPi)
+    gpio.setup(rear_sensor_trig, gpio.OUT)
+    gpio.setup(rear_sensor_echo, gpio.IN)
+
+##Making sure that the output pin has no pre-configured value
+    gpio.output(rear_sensor_trig, False)
+##Print out notice that the sensor is initiating
+##    print("Waiting for sensor to settle")
+##Give the sensor time to come online
+    time.sleep(0.001)
+
+##Trigger the sensor (8 ultrasound bursts at 40 kHz)
+    gpio.output(rear_sensor_trig, True)
+##Confiture the length of the burst to 10uS
+    time.sleep(0.00001)
+##Stop the burst after 10uS
+    gpio.output(rear_sensor_trig, False)
+
+##Listen on the echo pin and as long as there is no signal, take a time stamp (time.time())
+    while gpio.input(rear_sensor_echo) == 0:
+        pulse_start = time.time()
+##Take a time stamp of the last recorded moment of a high signal
+    while gpio.input(rear_sensor_echo) == 1:
+        pulse_end = time.time()
+##Pulse_duration is the time that passed between a signal appearing and disappearing
+    pulse_duration = pulse_end - pulse_start
+##The speed of sound in air at sea level = 343m/s or 34 300cm/s
+##s = d/t : d = s*t. The sound travels to the object and back so d = (s*t)/2
+    rear_distance = 17150 * pulse_duration
+##Return an answer to 2 decimal places
+    rear_distance = round(rear_distance, 2)
+
+##Clen up the GPIO pins
+    gpio.cleanup()
+
+##Instruct the function to return 'distance'
+    return rear_distance
+
+print rear_distance(), "cm"
+
+##Define function to pan the servo motor
 def front_pan():
 ##Define pin mapping for pan control
     pan_control = 12

@@ -27,9 +27,18 @@ import random
 
 #Assumptions: see driveme.py
 
-##Call the function front_distance from the local python script sensors.py
-sensors.front_distance()
+def check_rear():
+    r_dist = sensors.rear_distance()
+##Instruct action: if an object is closer than 10 cm away, check for the optimal direction and take evasive action
+    if r_dist <15
+##To be completed with opt_dir once this has been written. Meanwhile..
+    print "Too Close! Prepare to crash!"
 
+##Complete by adding in a response using optimal_direction
+    ##Consider putting in a random pivot right or left until optimal_direction function is complete
+
+
+##Call the function front_distance from the local python script sensors.py
 ##Define the function check_front to check the distance from the front sensor to the nearest object and respond
 def check_front():
 ##Define the variable f_dist as the distance from the front sensor to the nearest object
@@ -44,19 +53,35 @@ def check_front():
 '''        opt_dir = sensors.optimal_direction()
         if opt_dir = 'left':
             driveme.init()
-            driveme.reverse(2)
+            for y in range(30):
+                check_rear()
+                driveme.init()
+                driveme.reverse(0.03)
             driveme.turn_left_fwd(2)
         elif opt_dir = 'right':
             driveme.init()
-            driveme.reverse(2)
+            for y in range(30):
+                check_rear()
+                driveme.init()
+                driveme.reverse(0.03)
             driveme.turn_right_fwd(2)
         else opt_dir = 'left':
             driveme.init()
-            driveme.reverse(2)
+            for y in range(30):
+                check_rear()
+                driveme.init()
+                driveme.reverse(0.03)
             '''
+
 ##Temporary instructions for behavior to be performed while optimal_direction function is under development
+##NEXT: Update reverse to include a rear camera check check_rear
         driveme.init()
         driveme.reverse(2)
+
+        for y in range(30):
+            check_rear()
+            driveme.init()
+            driveme.reverse(0.03)
 
 ## If distance is >= 15cm, the script picks up after 'checkfront()'
 
