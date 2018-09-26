@@ -7,25 +7,42 @@ import time
 ##Import the local sensors library
 import sensors
 
-##sensors.py test code:
-
-#Goal: Drive vechicle using Remote Control including:
-##front_sensor_trig is the GPIO pin number that triggers the sensor (GPIO pin configured as output)
-##front_sensor_echo is the GPIO pin number that ingests the echo from the sensor
-
-##front_sensor_trig = 7
-##front_sensor_echo = 11
-##back_sensor_trig = 31
-##back_sensor_echo = 33
-##pan_control = 12
-
+##Test 1: check that the front sensor is correctly wired and functional
+##Expected result: prints:
+##<Front Distance Measurement in Progress
+## xx.xx cm>
 print sensors.front_distance(), "cm"
+
+##Test 2: check that the rear sensor is correctly wired and functional
+##Expected result: prints:
+##<Rear Distance Measurement in Progress
+## xx.xx cm>
 print sensors.rear_distance(), "cm"
+
+##Test 3: check that the servo motor is correctly wired and functional
+##Expected result: Servo motor moves to center, left ~30 degrees, right ~30 degrees, back to center
 sensors.front_pan()
 
 ##Define a function to check the optimal direction for travel
 
 ##Capture distance at left pivot
+
+##Troubleshooting:
+
+## Test 1:
+
+## Error 1:
+## <Traceback (most recent call last):
+## File "sensors_test.py", line 22, in <module>
+## print sensors.front_distance(), "cm"
+## File "/home/pi/vforum2018/sensors.py", line 53, in front_distance
+## pulse_duration = pulse_end - pulse_start>
+## Cause: Theory: The sensor fails to trigger OR Theory: The sensor triggers before the RPi has a chance to capture the pre-trigger state
+## Testing: The error appears randomly only on the front sensor (not on the rear sensor) with a frequency of approximately 1 in 3 attempts. Likely to be a faulty sensor or faulty connection
+## Resolution: Replace front sensor for production. OR see comment in sensors.py "Give the sensor time to come online" - increase tf in time.sleep(tf)
+
+
+
 
 '''def pan_left():
 ##Define pin mapping for pan control
