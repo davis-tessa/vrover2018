@@ -53,14 +53,14 @@ def check_front():
 ##While the optimal_direction funciton is under development, this code is commented out
 
 '''        opt_dir = sensors.optimal_direction()
-        if opt_dir = 'left':
+        if opt_dir == 'left':
             driveme.init()
             for y in range(30):
                 check_rear()
                 driveme.init()
                 driveme.reverse(0.03)
             driveme.turn_left_fwd(2)
-        elif opt_dir = 'right':
+        elif opt_dir == 'right':
             driveme.init()
             for y in range(30):
                 check_rear()
@@ -87,7 +87,30 @@ def check_front():
 
 ## If distance is >= 15cm, the script picks up after 'checkfront()'
 
+def discovery_mode(bias, tf):
+    time_forward = 2 x tf
+    if bias == 'left':
+        x = random.randrange(0, 10)
+        if x == 0, 1, 2, 3, 4, 5, 6:
+        ##Repeat the steps below 30 times
+            for y in range(60):
+                check_front()
+        ##Initialise GPIO pins (based on instructions defined in driveme.py)
+                driveme.init()
+        ##Drive forward for 0.03 seconds
+                driveme.forward(tf)
+
+    if bias == 'right':
+        xxx
+
+
+
+
+
+
+
 ##Define the function autonomy
+##NEXT: Program in left hand bias and right hand bias
 def autonomy():
 ##Set the time to run (for actions other than forward)
     tf = 0.03
