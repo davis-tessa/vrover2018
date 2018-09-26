@@ -10,7 +10,7 @@ One Drive: https://onevmw-my.sharepoint.com/personal/asingleton_vmware_com/_layo
   #drieme_test.py can be run to test GPIO pinout, H-bridge configuration and motor function when drive train is set up for 4 wheel drive
 
 # driveme_tank.py and driveme_tank_test.py
-  #driveme_tank.py contains the functions to drive two "arrays" of motors/wheels (right wheels drive together, left wheels drive together). These functions map 1:1 in the driveme.py library and can be replaced in explore.py by finding driveme and replacing with driveme_tank.
+  #driveme_tank.py contains the functions to drive two "arrays" of motors/wheels (right wheels drive together, left wheels drive together). These functions map 1:1 in the driveme.py library and explore.py can be changed to tank mode by finding all instances of driveme and replacing with driveme_tank.
   #driveme_tank_test.py can be run to test GPIO pinout, H-bridge configuration and motor function when drive train is set up to drive all right wheels together and all left wheels together
 
 # pan.py
