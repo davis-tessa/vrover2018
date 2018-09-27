@@ -89,20 +89,24 @@ def check_front():
 '''
 ## If distance is >= 15cm, the script picks up after 'checkfront()'
 
-def mode_discovery():
-    tf = 2
+def mode_discovery(tf, mode):
 #1 represents forward, 2 represents forward and left, 3 represents forward and right
+    front_tf = 2 * tf
     LHB_options = [1, 1, 1, 1, 1, 1, 1, 2, 2, 3]
     RHB_options = [1, 1, 1, 1, 1, 1, 1, 2, 3, 3]
-    x = random.choice(LHB_options)
+    if mode == 'left':
+        bias = LHB_options
+    if mode == 'right'
+        bias = RHB_options
+    x = random.choice(bias)
     if x == 1:
-        driveme.forward(tf)
+        driveme.forward(front_tf)
     if x == 2:
         driveme.turn_right_fwd(tf)
     else:
         driveme.turn_left_fwd(tf)
 for z in range(10):
-    mode_discovery()
+    mode_discovery(2, 'left')
 
 
 
