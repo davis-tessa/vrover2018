@@ -293,7 +293,7 @@ def optimal_direction():
             optimal_direction = 'right'
         else:
             optimal_direction = 'both'
-    print optimal_direction
+##Return Optimal Direction
     return optimal_direction
 
 '''

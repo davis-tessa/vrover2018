@@ -8,6 +8,6 @@ import time
 import sensors
 
 ##Test 4: Test that the optimal_direction function works
-sensors.optimal_direction()
+print sensors.optimal_direction()
 
 ##Troubleshooting:
