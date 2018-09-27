@@ -11,7 +11,7 @@ One Drive: https://onevmw-my.sharepoint.com/personal/asingleton_vmware_com/_layo
 
 1. Define human readable variables so it’s easy for the rest of the team to tell what  you are doing (avoid using x, y, 1, etc.)
  
-2. ##Comment, ##comment, ##comment! Every line that needs an explanation (unless it's ridiculous). For ourselves (it helps to verify the logic as we go) and for others – it sounds like we will be potentially passing this on to other team
+2. ##Comment, ##comment, ##comment! Every line that needs an explanation (unless it's ridiculous). For ourselves (it helps to verify the logic as we go) and for others – it sounds like we will be potentially passing this on to other teams
 
 3. Most bugs are caused by spelling mistakes or a mis-match in function definition between modules. Before assuming the logic is flawed, check your code:
  
