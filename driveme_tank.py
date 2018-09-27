@@ -42,8 +42,8 @@ def init():
     gpio.setup(lft_fwd, gpio.OUT)
     gpio.setup(lft_rev, gpio.OUT)
     gpio.setup(lft_ena, gpio.OUT)
-    rt_ena_pwm = gpio.pwm(rt_ena, 1000)
-    lft_ena_pwm = gpio.pwm(lft_ena, 1000)
+    rt_ena_pwm = gpio.PWM(rt_ena, 1000)
+    lft_ena_pwm = gpio.PWM(lft_ena, 1000)
     rt_ena_pwm.start(25)
     lft_ena_pwm.start(25)
 
