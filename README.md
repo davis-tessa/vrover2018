@@ -1,3 +1,6 @@
+Guide on udsing GitHub from James McAfee:
+https://github.com/james65535/h2k-Sessions/blob/master/Coding/coding-week2.md
+
 IMPORTANT: Please see the team ONE DRIVE folder for additional documentation:
 *PPT Guide to downloading repository
 *PinOut guide (Excel)
