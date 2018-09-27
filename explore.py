@@ -96,8 +96,11 @@ def mode_discovery(tf, mode):
     RHB_options = [1, 1, 1, 1, 1, 1, 1, 2, 3, 3]
     if mode == 'left':
         bias = LHB_options
-    if mode == 'right'
+    elif mode == 'right':
         bias = RHB_options
+    else:
+        print("Mode must be 'left' or 'right'. Please try again.")
+
     x = random.choice(bias)
     if x == 1:
         driveme.forward(front_tf)
