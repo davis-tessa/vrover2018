@@ -262,7 +262,7 @@ def optimal_direction():
     gpio.cleanup()
     print("Distance to right:")
     right_dist = front_distance()
-    print right_dist(), "cm"
+    print right_dist, "cm"
 
     print("Watch me return to center, take distance.")
 ##Define pin mapping for pan control
