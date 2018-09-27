@@ -7,6 +7,22 @@ IMPORTANT: Please see the team ONE DRIVE folder for additional documentation:
 
 One Drive: https://onevmw-my.sharepoint.com/personal/asingleton_vmware_com/_layouts/15/onedrive.aspx?e=5%3A5a350a00859e4099af3b4f67c4467240&FolderCTID=0x012000C46ABBAC13D03A4888982128F8B176EC&id=%2Fpersonal%2Fasingleton_vmware_com%2FDocuments%2FANZ%20IoT%20Virtual%20Team%2FAutonomous%20Vehicle%20Code
 
+# House Rules:
+
+Some general coding hygene practices to make it easier for us to work together:
+
+•	Define human readable variables
+
+•	##Comment, ##comment, ##comment! Every line that needs an explanation (unless it's ridiculous). For ourselves (it helps to verify the logic as we go) and for others – it sounds like we will be potentially passing this on to other teams
+
+•	Most bugs are caused by spelling mistakes. Before assuming the logic is flawed, check your code:
+
+  * Are there brackets in the wrong place or is there a bracket missing?
+  
+  * Python is case sensitive: E.g. the gpio function PW
+
+
+
 # vrover2018
 # driveme.py and driveme_test.py
   #driveme.py contains the functions to drive 4 wheels independently. These functions are referenced by other scripts including explore.py (i.e. use as a library)
