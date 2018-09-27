@@ -31,7 +31,7 @@ rt_rev = 18
 rt_ena = 32
 lft_fwd = 13
 lft_rev = 15
-lft_ena = 29
+lft_ena = 25
 
 ##Set up GPIO pins as output
 def init():
