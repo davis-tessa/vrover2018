@@ -97,8 +97,10 @@ def mode_discovery():
     x = random.choice(LHB_options)
     if x == 1:
         driveme.forward(tf)
+    if x == 2:
+        driveme.turn_right_fwd(tf)
     else:
-        driveme.reverse(tf)
+        driveme.turn_left_fwd(tf)
 for z in range(10):
     mode_discovery()
 
