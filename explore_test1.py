@@ -18,8 +18,11 @@ import explore
 ##Test 1: check the mode_discovery function works
 ##Expected result: prints:
 
-for z in range(10):
-    explore.mode_discovery()
+for z in range(5):
+    explore.mode_discovery(2, 'left')
+
+for z in range(5):
+    explore.mode_discovery(2, 'right')
 
 ##Troubleshooting:
 
