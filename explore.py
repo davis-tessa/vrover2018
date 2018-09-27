@@ -108,8 +108,6 @@ def mode_discovery(tf, mode):
 for z in range(10):
     mode_discovery(2, 'left')
 
-
-
 '''def mode_discovery(bias, tf):
     time_forward = 2 x tf
     if bias == 'left':
