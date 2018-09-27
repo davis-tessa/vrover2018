@@ -87,11 +87,24 @@ def check_front():
 
 ## If distance is >= 15cm, the script picks up after 'checkfront()'
 
-def mode_discovery(bias, tf):
+def mode_discovery():
+    tf = 2
+    x = random.randrange(0,10)
+    if x == 0, 1, 2, 3, 4, 5, 6:
+        driveme.forward(tf)
+    else:
+        driveme.reverse(tf)
+
+
+'''def mode_discovery(bias, tf):
     time_forward = 2 x tf
     if bias == 'left':
         x = random.randrange(0, 10)
         if x == 0, 1, 2, 3, 4, 5, 6:
+            driveme.foward()
+'''
+
+'''
         ##Repeat the steps below 30 times
             for y in range(60):
                 check_front()
@@ -102,7 +115,7 @@ def mode_discovery(bias, tf):
 
     if bias == 'right':
         xxx
-
+'''
 
 
 
