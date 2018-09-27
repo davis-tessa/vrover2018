@@ -16,7 +16,9 @@ import random
 import explore
 
 ##Test 1: check the mode_discovery function works
-##Expected result: prints:
+##Input: explore.mode_discovery(x, y)
+##x is the time that left or right forward drive will run for
+##y is the bias 'left' or 'right'
 
 for z in range(5):
     explore.mode_discovery(2, 'left')

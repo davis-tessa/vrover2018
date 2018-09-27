@@ -89,6 +89,11 @@ def check_front():
 '''
 ## If distance is >= 15cm, the script picks up after 'checkfront()'
 
+##Define a function to run as the primary vehicle autonomous drive mode: mode_discovery
+##Input: explore.mode_discovery(x, y)
+##x is the time that left or right forward drive will run for assuming no obstacles
+##y is the bias 'left' or 'right'
+
 def mode_discovery(tf, mode):
 #1 represents forward, 2 represents forward and left, 3 represents forward and right
     front_tf = 2 * tf
@@ -108,17 +113,31 @@ def mode_discovery(tf, mode):
         driveme.turn_right_fwd(tf)
     else:
         driveme.turn_left_fwd(tf)
+'''
+def mode_discovery_no_obstacles(tf, mode):
+#1 represents forward, 2 represents forward and left, 3 represents forward and right
+    front_tf = 2 * tf
+    LHB_options = [1, 1, 1, 1, 1, 1, 1, 2, 2, 3]
+    RHB_options = [1, 1, 1, 1, 1, 1, 1, 2, 3, 3]
+    if mode == 'left':
+        bias = LHB_options
+    elif mode == 'right':
+        bias = RHB_options
+    else:
+        print("Mode must be 'left' or 'right'. Please try again.")
+
+    x = random.choice(bias)
+    if x == 1:
+        driveme.forward(front_tf)
+    if x == 2:
+        driveme.turn_right_fwd(tf)
+    else:
+        driveme.turn_left_fwd(tf)
+'''
 
 '''for z in range(10):
     mode_discovery(2, 'left')'''
 
-'''def mode_discovery(bias, tf):
-    time_forward = 2 x tf
-    if bias == 'left':
-        x = random.randrange(0, 10)
-        if x == 0, 1, 2, 3, 4, 5, 6:
-            driveme.foward()
-'''
 
 '''
         ##Repeat the steps below 30 times
