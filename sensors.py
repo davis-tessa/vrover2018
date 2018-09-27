@@ -282,6 +282,7 @@ def optimal_direction():
     front_dist = front_distance()
     print front_dist, "cm"
 
+
 ##Determine the optimal direction to travel
     if left_dist < 20 and right_dist < 20:
         optimal_direction = 'reverse'
@@ -289,12 +290,13 @@ def optimal_direction():
         dist_diff = left_dist - right_dist
         if dist_diff >= 0:
             optimal_direction = 'left'
-        if dist_diff <= 0:
+        elif dist_diff <= 0:
             optimal_direction = 'right'
-
+        else:
+            optimal_direction = 'both'
+    print optimal_direction
     return optimal_direction
 
-print optimal_direction()
 
 '''
 ##Define function to pan the servo motor
