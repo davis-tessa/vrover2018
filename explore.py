@@ -99,6 +99,9 @@ def mode_discovery():
         driveme.forward(tf)
     else:
         driveme.reverse(tf)
+for z in range(10):
+    mode_discovery()
+
 
 
 '''def mode_discovery(bias, tf):

@@ -51,6 +51,7 @@ def init():
 
 ##Define a function that will drive the vechicle forward for an amount of time (tf)
 def forward(tf):
+    init()
     gpio.setmode(gpio.BOARD)
     gpio.output(rt_fr_fwd, True)
     gpio.output(rt_fr_rev, False)
@@ -66,6 +67,7 @@ def forward(tf):
 
 ##Define a function that will drive the vechicle in reverse for an amount of time (tf)
 def reverse(tf):
+    init()
     gpio.output(rt_fr_fwd, False)
     gpio.output(rt_fr_rev, True)
     gpio.output(lft_fr_fwd, False)

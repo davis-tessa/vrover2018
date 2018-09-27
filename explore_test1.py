@@ -12,6 +12,8 @@ import sensors
 import driveme
 ##Import public library python-random
 import random
+##Import local library explore
+import explore
 
 ##Test 1: check the mode_discovery function works
 ##Expected result: prints:

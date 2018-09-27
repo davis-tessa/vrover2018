@@ -11,26 +11,18 @@ import driveme
 tf = 3
 
 #drive vechicle forward for tf
-driveme.init()
 driveme.forward(tf)
 #turn vehicle left while moving forward for tf seconds
-driveme.init()
 driveme.reverse(tf)
 #turn vehicle left while moving forward for tf seconds
-driveme.init()
 driveme.turn_left_fwd(tf)
 #turn vehicle right while moving forward for tf seconds
-driveme.init()
 driveme.turn_right_fwd(tf)
 #turn vehicle left while reversing for tf seconds
-driveme.init()
 driveme.turn_left_rev(tf)
 #turn vehicle right while reversing for tf seconds
-driveme.init()
 driveme.turn_right_rev(tf)
 #Pivot vehicle clockwise (right) for tf seconds
-driveme.init()
 driveme.pivot_right(tf)
 #Pivot vehicle counterclockwise (left) while moving forward for tf seconds
-driveme.init()
 driveme.pivot_left(tf)
