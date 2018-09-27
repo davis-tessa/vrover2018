@@ -282,7 +282,7 @@ def optimal_direction():
     front_dist = front_distance()
     print front_dist, "cm"
 
-##Determine the optimum direction to travel
+##Determine the optimal direction to travel
     if left_dist < 20 and right_dist < 20:
         optimal_direction = 'reverse'
     else:
