@@ -16,7 +16,8 @@ import random
 ##Test 1: check the mode_discovery function works
 ##Expected result: prints:
 
-explore.mode_discovery()
+for z in range(10):
+    explore.mode_discovery()
 
 ##Troubleshooting:
 

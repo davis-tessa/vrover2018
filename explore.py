@@ -29,6 +29,8 @@ import random
 
 #Assumptions: see driveme.py
 
+
+'''
 def check_rear():
     r_dist = sensors.rear_distance()
 ##Instruct action: if an object is closer than 10 cm away, check for the optimal direction and take evasive action
@@ -51,7 +53,7 @@ def check_front():
 
 ##The optimal_direction function in sensors.py will return the best direction to move in 'right', 'left', or 'reverse'
 ##While the optimal_direction funciton is under development, this code is commented out
-
+'''
 '''        opt_dir = sensors.optimal_direction()
         if opt_dir == 'left':
             driveme.init()
@@ -75,7 +77,7 @@ def check_front():
                 driveme.reverse(0.03)
             '''
 
-##Temporary instructions for behavior to be performed while optimal_direction function is under development
+'''##Temporary instructions for behavior to be performed while optimal_direction function is under development
 ##NEXT: Update reverse to include a rear camera check check_rear
         driveme.init()
         driveme.reverse(2)
@@ -84,13 +86,16 @@ def check_front():
             check_rear()
             driveme.init()
             driveme.reverse(0.03)
-
+'''
 ## If distance is >= 15cm, the script picks up after 'checkfront()'
 
 def mode_discovery():
     tf = 2
-    x = random.randrange(0,10)
-    if x == 0, 1, 2, 3, 4, 5, 6:
+#1 represents forward, 2 represents forward and left, 3 represents forward and right
+    LHB_options = [1, 1, 1, 1, 1, 1, 1, 2, 2, 3]
+    RHB_options = [1, 1, 1, 1, 1, 1, 1, 2, 3, 3]
+    x = random.choice(LHB_options)
+    if x == 1:
         driveme.forward(tf)
     else:
         driveme.reverse(tf)
@@ -121,7 +126,7 @@ def mode_discovery():
 
 
 
-
+'''
 ##Define the function autonomy
 ##NEXT: Program in left hand bias and right hand bias
 def autonomy():
@@ -182,14 +187,15 @@ def autonomy():
             check_front()
             driveme.init()
             driveme.turn_right_rev(tf)
-
+'''
 '''##Reverse for tf seconds if x = 7
     elif x == 7:
         for y in range(10):
             check_front()
             driveme.init()
-            driveme.reverse(tf)'''
+            driveme.reverse(tf)
 
 ##Run the function autonomy 10 times (generate 10 random iterations of x which will produce 10 movements at random)
 for z in range(10):
     autonomy()
+'''
