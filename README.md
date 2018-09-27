@@ -9,19 +9,18 @@ One Drive: https://onevmw-my.sharepoint.com/personal/asingleton_vmware_com/_layo
 
 # House Rules:
 
-Some general coding hygene practices to make it easier for us to work together:
+1. Define human readable variables so it’s easy for the rest of the team to tell what  you are doing (avoid using x, y, 1, etc.)
+ 
+2. ##Comment, ##comment, ##comment! Every line that needs an explanation (unless it's ridiculous). For ourselves (it helps to verify the logic as we go) and for others – it sounds like we will be potentially passing this on to other team
 
-•	Define human readable variables
-
-•	##Comment, ##comment, ##comment! Every line that needs an explanation (unless it's ridiculous). For ourselves (it helps to verify the logic as we go) and for others – it sounds like we will be potentially passing this on to other teams
-
-•	Most bugs are caused by spelling mistakes. Before assuming the logic is flawed, check your code:
-
+3. Most bugs are caused by spelling mistakes or a mis-match in function definition between modules. Before assuming the logic is flawed, check your code:
+ 
   * Are there brackets in the wrong place or is there a bracket missing?
-  
-  * Python is case sensitive: E.g. the gpio function PW
-
-
+  * Are there spelling mistakes?
+  * Did you forget the colon : when a function definition or if/while statement?
+  * Check for upper/lower case errors. Python is case sensitive: E.g. the gpio function PWM
+  * Are you using the same variable names as the rest of the team for the same function?
+  * Are you using the same version of python as specified at the top of the script?
 
 # vrover2018
 # driveme.py and driveme_test.py
