@@ -39,7 +39,7 @@ def init():
 
 ##Define a function that will drive the vechicle forward for an amount of time (tf)
 def forward(tf):
-    gpio.setmode(gpio.BOARD)
+    init()
     gpio.output(rt_fwd, True)
     gpio.output(rt_rev, False)
     gpio.output(lft_fwd, True)
@@ -50,6 +50,7 @@ def forward(tf):
 
 ##Define a function that will drive the vechicle in reverse for an amount of time (tf)
 def reverse(tf):
+    init()
     gpio.output(rt_fwd, False)
     gpio.output(rt_rev, True)
     gpio.output(lft_fwd, False)
@@ -71,6 +72,7 @@ def turn_left_fwd(tf):
 
 ##Define a function that will drive the vechicle forward and right for an amount of time (tf)
 def turn_right_fwd(tf):
+    init()
     gpio.output(rt_fwd, False)
     gpio.output(rt_rev, False)
     gpio.output(lft_fwd, True)
@@ -81,6 +83,7 @@ def turn_right_fwd(tf):
 
 ##Define a function that will drive the vechicle in reverse and left for an amount of time (tf)
 def turn_left_rev(tf):
+    init()
     gpio.setmode(gpio.BOARD)
     gpio.output(rt_fwd, False)
     gpio.output(rt_rev, True)
@@ -93,6 +96,7 @@ def turn_left_rev(tf):
 
 ##Define a function that will drive the vechicle forward and right for an amount of time (tf)
 def turn_right_rev(tf):
+    init()
     gpio.output(rt_fwd, False)
     gpio.output(rt_rev, False)
     gpio.output(lft_fwd, False)
@@ -103,6 +107,7 @@ def turn_right_rev(tf):
 
 ##Define a function that will pivot the vechicle clockwise (right) for an amount of time (tf)
 def pivot_right(tf):
+    init()
     gpio.setmode(gpio.BOARD)
     gpio.output(rt_fwd, False)
     gpio.output(rt_rev, True)
@@ -114,6 +119,7 @@ def pivot_right(tf):
 
 ##Define a function that will pivot the vechicle counter-clockwise (left) for an amount of time (tf)
 def pivot_left(tf):
+    init()
     gpio.output(rt_fwd, True)
     gpio.output(rt_rev, False)
     gpio.output(lft_fwd, False)
