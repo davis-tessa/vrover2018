@@ -26,12 +26,12 @@ import sys
 ##Define variables for each wheel to map to the GPIO pin output. Replace variables with the corresponding GPIO pin on your rover.
 ## modified by KD - added enable code
 
-rt_fwd = 16
-rt_rev = 18
-rt_ena = 32
-lft_fwd = 13
-lft_rev = 15
-lft_ena = 29
+rt_fwd = 24
+rt_rev = 25
+rt_ena = 23
+lft_fwd = 27
+lft_rev = 22
+lft_ena = 17
 
 ##Set up GPIO pins as output
 def init():
