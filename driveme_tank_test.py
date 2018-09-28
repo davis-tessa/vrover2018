@@ -11,18 +11,26 @@ import driveme_tank
 tf = 3
 
 #drive vechicle forward for tf
-driveme_tank.forward(tf)
+driveme.forward(tf)
+print("driving forward")
 #turn vehicle left while moving forward for tf seconds
-driveme_tank.reverse(tf)
+driveme.reverse(tf)
+print("driving in reverse")
 #turn vehicle left while moving forward for tf seconds
-driveme_tank.turn_left_fwd(tf)
+driveme.turn_left_fwd(tf)
+print("driving forward and left")
 #turn vehicle right while moving forward for tf seconds
-driveme_tank.turn_right_fwd(tf)
+driveme.turn_right_fwd(tf)
+print("driving forward and right")
 #turn vehicle left while reversing for tf seconds
-driveme_tank.turn_left_rev(tf)
+driveme.turn_left_rev(tf)
+print("reversing to the left")
 #turn vehicle right while reversing for tf seconds
-driveme_tank.turn_right_rev(tf)
+driveme.turn_right_rev(tf)
+print("reversing to the right")
 #Pivot vehicle clockwise (right) for tf seconds
-driveme_tank.pivot_right(tf)
+driveme.pivot_right(tf)
+print("pivoting right (clockwise)")
 #Pivot vehicle counterclockwise (left) while moving forward for tf seconds
-driveme_tank.pivot_left(tf)
+driveme.pivot_left(tf)
+print("pivoting left (counter clockwise)")
