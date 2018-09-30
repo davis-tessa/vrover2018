@@ -48,10 +48,16 @@ def check_rear():
 '''
 ##Call the function front_distance from the local python script sensors.py
 ##Define the function check_front to check the distance from the front sensor to the nearest object and respond
+##Best practice: Don't list if statements more than 2 deep, and try to nest 1 deep
+## Add in a die function:
+##def stop_program:
+##    exit(0)
+## OR
+## switch to mode_RCD
+
 def check_front():
 ##Define the variable f_dist as the distance from the front sensor to the nearest object
     f_dist = sensors.front_distance()
-
 ##Instruct action: if an object is closer than 15 cm away, check for the optimal direction and take evasive action
     if f_dist < 15:
 
