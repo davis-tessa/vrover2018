@@ -25,6 +25,10 @@ import explore
 ##Advanced: Build a map to test the edge and corner cases
 
 
+##How to set up tests that are possible without hardware:
+##Pre-set the dictionary values for various scenarios... sensors are in development mode_discovery
+##Advanced: Build a map to test the edge and corner cases
+
 for z in range(5):
     explore.mode_discovery(2, 'left')
 

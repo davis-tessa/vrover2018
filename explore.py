@@ -44,8 +44,13 @@ def check_rear():
 
 ##Complete by adding in a response using optimal_direction
     ##Consider putting in a random pivot right or left until optimal_direction function is complete
+<<<<<<< HEAD
 
 '''
+=======
+'''
+
+>>>>>>> ebd939ba4195c5264cfd2190cd50d4e186f83ebb
 ##Call the function front_distance from the local python script sensors.py
 ##Define the function check_front to check the distance from the front sensor to the nearest object and respond
 ##Best practice: Don't list if statements more than 2 deep, and try to nest 1 deep
@@ -60,24 +65,27 @@ def check_front():
     f_dist = sensors.front_distance()
 ##Instruct action: if an object is closer than 15 cm away, check for the optimal direction and take evasive action
     if f_dist < 15:
-
 ##The optimal_direction function in sensors.py will return the best direction to move in 'right', 'left', or 'reverse'
 ##While the optimal_direction funciton is under development, this code is commented out
+<<<<<<< HEAD
 '''        opt_dir = sensors.optimal_direction()
+=======
+        opt_dir = sensors.optimal_direction()
+>>>>>>> ebd939ba4195c5264cfd2190cd50d4e186f83ebb
         if opt_dir == 'left':
-            driveme.init()
             for y in range(30):
-                check_rear()
-                driveme.init()
+                ##check_rear()
                 driveme.reverse(0.03)
             driveme.turn_left_fwd(2)
+            ##what about checking the front again while driving foward?
         elif opt_dir == 'right':
-            driveme.init()
             for y in range(30):
-                check_rear()
-                driveme.init()
+                ##check_rear()
                 driveme.reverse(0.03)
             driveme.turn_right_fwd(2)
+            ##what about checking the front again while driving foward?
+        elif opt_dir == 'reverse':
+
         else opt_dir = 'left':
             driveme.init()
             for y in range(30):
