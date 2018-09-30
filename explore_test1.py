@@ -18,7 +18,12 @@ import explore
 ##Test 1: check the mode_discovery function works
 ##Input: explore.mode_discovery(x, y)
 ##x is the time that left or right forward drive will run for
-##y is the bias 'left' or 'right'
+##y is the bias 'left' or 'right''
+
+##How to set up tests that are possible without hardware:
+##Pre-set the dictionary values for various scenarios... sensors are in development mode_discovery
+##Advanced: Build a map to test the edge and corner cases
+
 
 for z in range(5):
     explore.mode_discovery(2, 'left')
