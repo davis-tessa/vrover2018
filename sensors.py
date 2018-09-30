@@ -189,6 +189,8 @@ def optimal_direction():
     print front_dist, "cm"
 
 ##insert distance dictionary here...
+    ##distance_table = {f_dist: front_dist, l_dist: left_dist, r_dist: right_dist}
+    ##return distance_table
 
 ##Determine the optimal direction to travel
 ##Move to explore.py (?)

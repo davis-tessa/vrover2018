@@ -29,7 +29,7 @@ import explore
 ##Pre-set the dictionary values for various scenarios... sensors are in development mode_discovery
 ##Advanced: Build a map to test the edge and corner cases
 
-explore.optimal_direction()
+explore.check_front()
 
 ##Troubleshooting:
 

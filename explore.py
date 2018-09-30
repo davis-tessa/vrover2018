@@ -42,6 +42,7 @@ def main():
 ##Then put this in the end of the script. If python runs this file and you haven't specified anything it will run this..
 ##if __name__ == "__main__":
 ##    main()
+##The main funciton will probably be some version of mode_discovery with a forever while loop
 
 ##Define a function to exit the program and print the reason "why" - to be specified in each function
 def abort_drive(why):
@@ -55,6 +56,21 @@ def optimal_direction():
     print("Help! I'm a function wihtout a defininition - define me!")
 ##The optimal_direction function in sensors.py will return the best direction to move in 'right', 'left', or 'reverse'
 ##While the optimal_direction funciton is under development, this code is commented out
+##Developing function - referencing the distance_table dictionary in sensors.optimal_direction
+    ##sensors.optimal_direction(
+    ##if left_dist < 20 and right_dist < 20:
+    ##optimal_direction = 'reverse'
+    ##else:
+    ##    dist_diff = left_dist - right_dist
+    ##    if dist_diff >= 0:
+    ##        optimal_direction = 'left'
+    ##    elif dist_diff <= 0:
+    ##        optimal_direction = 'right'
+    ##    else:
+    ##        optimal_direction = 'both'
+##Return Optimal Direction
+    ##return optimal_direction
+
 
 ##Define a function to check rear distance sensor by importing from the local python script sensors.py
 def check_rear():
@@ -131,9 +147,14 @@ def mode_discovery(drive_time, drive_burst, mode):
             driveme.turn_left_fwd(drive_burst)
 ##If 3 is chosen at random from either LHB_options or RHB_options... (depending on bias 'left' or 'right')
     elif x == 3:
-        driveme.turn_right_fwd(drive_burst)
+##Repeat the steps below drive_iterate times
+        for y in range(drive_iterate):
+##Run the function check_front() to check the distance from the front sensor to the closest object
+            check_front()
+##Drive left and forward for drive_burst seconds
+            driveme.turn_right_fwd(drive_burst)
     else:
-        abort_drive("Critical error in mode_discovery, selection of drive direction. Aborting...")
+        abort_drive("Critical error in mode_discovery. Aborting...")
 
 ##for z in range(10):
 ##    mode_discovery(2, 'left')
