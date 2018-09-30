@@ -116,7 +116,8 @@ def rear_distance():
 ##Instruct the function to return 'distance'
     return rear_distance
 ##Define function to determine the optimal direction for travel
-def optimal_direction():
+def pan_check_distance():
+    distance_table = {}
     print("Watch me position center, take distance.")
 ##Define pin mapping for pan control
     pan_control = 12
@@ -134,7 +135,8 @@ def optimal_direction():
     gpio.cleanup()
     print ("Distance at front:")
     front_dist = front_distance()
-    print front_dist, "cm"
+    print(front_dist, "cm")
+    distance_table['front'] = front_dist
 
 ##Take left distance
     print("Watch me position left, take distance.")
@@ -151,7 +153,8 @@ def optimal_direction():
     gpio.cleanup()
     print ("Distance to left:")
     left_dist = front_distance()
-    print left_dist, "cm"
+    print(left_dist, "cm")
+    distance_table['left'] = left_dist
 
 ##Take right distance
     print("Watch me position right, take distance.")
@@ -166,9 +169,10 @@ def optimal_direction():
     ##Cleanup
     time.sleep(0.2)
     gpio.cleanup()
-    print("Distance to right:")
+    print("Watch me position right, take distance.")
     right_dist = front_distance()
-    print right_dist, "cm"
+    print(right_dist, "cm")
+    distance_table['right'] = right_dist
 
     print("Watch me return to center, take distance.")
 ##Define pin mapping for pan control
@@ -184,28 +188,12 @@ def optimal_direction():
     ##Cleanup
     time.sleep(0.2)
     gpio.cleanup()
-    print("Distance at front:")
+    print ("Distance at front:")
     front_dist = front_distance()
-    print front_dist, "cm"
+    print(front_dist, "cm")
+    distance_table['front'] = front_dist
 
-##insert distance dictionary here...
-    ##distance_table = {f_dist: front_dist, l_dist: left_dist, r_dist: right_dist}
-    ##return distance_table
-
-##Determine the optimal direction to travel
-##Move to explore.py (?)
-    if left_dist < 20 and right_dist < 20:
-        optimal_direction = 'reverse'
-    else:
-        dist_diff = left_dist - right_dist
-        if dist_diff >= 0:
-            optimal_direction = 'left'
-        elif dist_diff <= 0:
-            optimal_direction = 'right'
-        else:
-            optimal_direction = 'both'
-##Return Optimal Direction
-    return optimal_direction
+    return distance_table
 
 ##Define function to pan the servo motor
 def front_pan():

@@ -12,6 +12,8 @@ import sensors
 import driveme
 ##Import public library python-random
 import random
+##Import local library optimal_direction: see optimal_direction.py
+import optimal_direction
 
 ##RUn on startup: Look up "System D" Unit file... Google and see Digital Ocean. - when it starts, run this check with Andrew if stuck.
 ##Have mode be a switch of some kind. Hardawre: button on Pi
