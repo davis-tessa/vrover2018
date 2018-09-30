@@ -26,7 +26,7 @@ import sys
 #Green lead goes to left back wheel- forward spin (lft_bk_fwd) - yellow LED
 #Orange lead goes to left back wheel- reverse spin (lft_fr_rev) - red LED
 
-
+##Think about adding a stop function
 ##Define variables for each wheel to map to the GPIO pin output. Replace variables with the corresponding GPIO pin on your rover.
 rt_fr_fwd = 16
 rt_fr_rev = 18

@@ -15,6 +15,11 @@ import time
 ##back_sensor_echo = 33
 ##pan_control = 12
 
+##Look at using a dictionary to return front, left and right
+####Consider sending the output of front_distance to memory and initialize in the right space.. (might be too cumbersome to write to a file)
+##Pass by "threadsafe"
+##THis is about re-writing this to be multi-threaded
+
 ##Define the distance function (to be imported into drive script)
 def front_distance():
     print("Front Sensor Distance Measurement in Progress")
@@ -183,7 +188,10 @@ def optimal_direction():
     front_dist = front_distance()
     print front_dist, "cm"
 
+##insert distance dictionary here...
+
 ##Determine the optimal direction to travel
+##Move to explore.py (?)
     if left_dist < 20 and right_dist < 20:
         optimal_direction = 'reverse'
     else:

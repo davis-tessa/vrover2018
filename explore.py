@@ -13,6 +13,10 @@ import driveme
 ##Import public library python-random
 import random
 
+##RUn on startup: Look up "System D" Unit file... Google and see Digital Ocean. - when it starts, run this check with Andrew if stuck.
+##Have mode be a switch of some kind. Hardawre: button on Pi
+##Software - start in normal mode, switch in and out of Party mode
+
 #Goal:
 ##1. Drive vechicle autonomously in "explore" mode.
 ##2. Constantly check the distance on the front sensor, print the result and take an additional remediation action
@@ -41,7 +45,7 @@ def check_rear():
 ##Complete by adding in a response using optimal_direction
     ##Consider putting in a random pivot right or left until optimal_direction function is complete
 
-
+'''
 ##Call the function front_distance from the local python script sensors.py
 ##Define the function check_front to check the distance from the front sensor to the nearest object and respond
 def check_front():
@@ -53,7 +57,6 @@ def check_front():
 
 ##The optimal_direction function in sensors.py will return the best direction to move in 'right', 'left', or 'reverse'
 ##While the optimal_direction funciton is under development, this code is commented out
-'''
 '''        opt_dir = sensors.optimal_direction()
         if opt_dir == 'left':
             driveme.init()
@@ -90,6 +93,12 @@ def check_front():
 ## If distance is >= 15cm, the script picks up after 'checkfront()'
 
 ##Define a function to run as the primary vehicle autonomous drive mode: mode_discovery
+##Python Main if __name__ == "__main__" E.g. Set a function called "Start" at the start of the file - see guru99.com
+##def main():
+##    do stuff
+##Then put this in the end of the script. If python runs this file and you haven't specified anything it will run this..
+##if __name__ == "__main__":
+##    main()
 ##Input: explore.mode_discovery(x, y)
 ##x is the time that left or right forward drive will run for assuming no obstacles
 ##y is the bias 'left' or 'right'
