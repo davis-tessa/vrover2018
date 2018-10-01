@@ -51,7 +51,7 @@ def init():
         gpio.setup(lft_bk_fwd, gpio.OUT)
         gpio.setup(lft_bk_rev, gpio.OUT)
     except:
-        print("Your GPIO pins are not set up")
+        print("Your GPIO pins are not set up\n")
 
 ##Define a function that will drive the vechicle forward for an amount of time (tf)
 def forward(tf):
@@ -69,7 +69,7 @@ def forward(tf):
         time.sleep(tf)
         gpio.cleanup()
     except:
-        print("Forward virtual: couldn't find wheels to drive")
+        print("Forward virtual: couldn't find wheels to drive\n")
 
 ##Define a function that will drive the vechicle in reverse for an amount of time (tf)
 def reverse(tf):
@@ -87,7 +87,7 @@ def reverse(tf):
         time.sleep(tf)
         gpio.cleanup()
     except:
-        print("Reverse virtual: couldn't find wheels to drive")
+        print("Reverse virtual: couldn't find wheels to drive\n")
 
 ##Define a function that will drive the vechicle forward and left for an amount of time (tf)
 def turn_left_fwd(tf):
@@ -105,7 +105,7 @@ def turn_left_fwd(tf):
         time.sleep(tf)
         gpio.cleanup()
     except:
-        print("Forward left virtual: couldn't find wheels to drive")
+        print("Forward left virtual: couldn't find wheels to drive\n")
 
 ##Define a function that will drive the vechicle forward and right for an amount of time (tf)
 def turn_right_fwd(tf):
@@ -123,7 +123,7 @@ def turn_right_fwd(tf):
         time.sleep(tf)
         gpio.cleanup()
     except:
-        print("Forward left virtual: couldn't find wheels to drive")
+        print("Forward left virtual: couldn't find wheels to drive\n")
 
 ##Define a function that will drive the vechicle in reverse and left for an amount of time (tf)
 def turn_left_rev(tf):
@@ -141,7 +141,7 @@ def turn_left_rev(tf):
         time.sleep(tf)
         gpio.cleanup()
     except:
-        print("Reverse left virtual: couldn't find wheels to drive")
+        print("Reverse left virtual: couldn't find wheels to drive\n")
 
 ##Define a function that will drive the vechicle forward and right for an amount of time (tf)
 def turn_right_rev(tf):
@@ -159,7 +159,7 @@ def turn_right_rev(tf):
         time.sleep(tf)
         gpio.cleanup()
     except:
-        print("Reverse right virtual: couldn't find wheels to drive")
+        print("Reverse right virtual: couldn't find wheels to drive\n")
 ##Define a function that will pivot the vechicle clockwise (right) for an amount of time (tf)
 def pivot_right(tf):
     try:
@@ -176,7 +176,7 @@ def pivot_right(tf):
         time.sleep(tf)
         gpio.cleanup()
     except:
-        print("Pivot right virtual: couldn't find wheels to drive")
+        print("Pivot right virtual: couldn't find wheels to drive\n")
 ##Define a function that will pivot the vechicle counter-clockwise (left) for an amount of time (tf)
 def pivot_left(tf):
     try:
@@ -193,4 +193,4 @@ def pivot_left(tf):
         time.sleep(tf)
         gpio.cleanup()
     except:
-        print("Pivot right virtual: couldn't find wheels to drive")
+        print("Pivot right virtual: couldn't find wheels to drive\n")
