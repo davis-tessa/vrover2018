@@ -1,7 +1,7 @@
 ##Using Python 2.7.3
 
 ##Import the GPIO library
-import RPi.GPIO as gpio
+#import RPi.GPIO as gpio
 ##Import the time library
 import time
 ##Import the local sensors library
@@ -11,7 +11,8 @@ import sensors
 ##Expected result: prints:
 ##<Front Distance Measurement in Progress
 ## xx.xx cm>
-print sensors.front_distance(), "cm"
+front_distance = sensors.front_distance()
+print(front_distance, "cm")
 
 ##Troubleshooting:
 
