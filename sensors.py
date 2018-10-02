@@ -69,9 +69,10 @@ def front_distance():
     ##Clen up the GPIO pins
         gpio.cleanup()
     except:
-        print("Sensors are not set up.\nGenerating a random front distance:")
+        print("Sensors are not set up.\nGenerating a random distance:")
         options = [2000, 60, 80, 21, 15, 64, 18, 33, 9]
         front_distance = random.choice(options)
+        print(front_distance, "cm")
 
 ##Instruct the function to return 'distance'
     return front_distance
@@ -125,6 +126,8 @@ def rear_distance():
         print("Sensors are not configured.\nGenerating a random rear distance:")
         options = [2000, 60, 80, 21, 15, 64, 18, 33, 9]
         rear_distance = random.choice(options)
+        print(rear_distance, "cm")
+
 ##Instruct the function to return 'distance'
     return rear_distance
 ##Define function to determine the optimal direction for travel

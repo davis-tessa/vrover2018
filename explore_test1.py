@@ -1,7 +1,7 @@
 ##Using Python 2.7.3
 
 ##Import public library python-RPi.GPIO
-import RPi.GPIO as gpio
+#import RPi.GPIO as gpio
 ##Import public library python-time
 import time
 ##Import public library python-sys
@@ -29,7 +29,7 @@ import explore
 ##Pre-set the dictionary values for various scenarios... sensors are in development mode_discovery
 ##Advanced: Build a map to test the edge and corner cases
 
-explore.optimal_direction()
+explore.check_front()
 
 ##Troubleshooting:
 

@@ -1,7 +1,7 @@
 ##Using Python 2.7.3
 
 ##Import public library python-RPi.GPIO
-import RPi.GPIO as gpio
+#import RPi.GPIO as gpio
 ##Import public library python-time
 import time
 ##Import public library python-sys
@@ -33,7 +33,7 @@ for z in range(5):
     explore.mode_discovery(1, 0.3, 'left')
 
 for z in range(5):
-    explore.mode_discovery(2, 0.3, 'right')
+    explore.mode_discovery(1, 0.3, 'right')
 
 ##Troubleshooting:
 
