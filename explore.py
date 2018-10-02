@@ -1,7 +1,7 @@
 ##Using Python 2.7.3
 
 ##Import public library python-RPi.GPIO
-#import RPi.GPIO as gpio
+import RPi.GPIO as gpio
 ##Import public library python-time
 import time
 ##Import public library python-sys
@@ -79,7 +79,7 @@ def check_front():
 ##Instruct action: if an object is closer than 15 cm away, check for the optimal direction and take evasive action
         if f_dist < 15:
 ##To be completed with opt_dir once this has been written. Meanwhile..
-            
+
             print("Too Close! Prepare to crash!")
 
         else:
