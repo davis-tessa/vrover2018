@@ -1,7 +1,7 @@
 ##Using Python 2.7.3
 
 ##Import the GPIO library
-#import RPi.GPIO as gpio
+import RPi.GPIO as gpio
 ##Import the time library
 import time
 import sys
@@ -151,7 +151,6 @@ def pan_check_distance():
         gpio.cleanup()
         print ("Distance at front:")
         front_dist = front_distance()
-        print(front_dist, "cm")
         distance_table['front'] = front_dist
 
     ##Take left distance
@@ -169,7 +168,6 @@ def pan_check_distance():
         gpio.cleanup()
         print ("Distance to left:")
         left_dist = front_distance()
-        print(left_dist, "cm")
         distance_table['left'] = left_dist
 
     ##Take right distance
@@ -187,10 +185,9 @@ def pan_check_distance():
         gpio.cleanup()
         print("Watch me position right, take distance.")
         right_dist = front_distance()
-        print(right_dist, "cm")
         distance_table['right'] = right_dist
 
-        print("Watch me return to center, take distance.")
+        print("Watch me return to center and stop.")
     ##Define pin mapping for pan control
     ##Take front distance
     ##Set gpio to board mode
@@ -204,28 +201,21 @@ def pan_check_distance():
         ##Cleanup
         time.sleep(0.2)
         gpio.cleanup()
-        print ("Distance at front:")
-        front_dist = front_distance()
-        print(front_dist, "cm")
-        distance_table['front'] = front_dist
 
     except:
 
         print("Front - RANDOM:")
         front_dist = front_distance()
-        print(front_dist, "cm")
         distance_table['front'] = front_dist
 
     ##Take left distance
         print("Left - RANDOM:")
         left_dist = front_distance()
-        print(left_dist, "cm")
         distance_table['left'] = left_dist
 
     ##Take right distance
         print("Right - RANDOM:")
         right_dist = front_distance()
-        print(right_dist, "cm")
         distance_table['right'] = right_dist
 
     return distance_table

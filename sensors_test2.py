@@ -1,7 +1,7 @@
 ##Using Python 2.7.3
 
 ##Import the GPIO library
-#import RPi.GPIO as gpio
+import RPi.GPIO as gpio
 ##Import the time library
 import time
 ##Import the local sensors library
@@ -12,7 +12,6 @@ import sensors
 ##<Rear Distance Measurement in Progress
 ## xx.xx cm>
 rear_distance = sensors.rear_distance()
-print(rear_distance, "cm")
 
 ##Troubleshooting:
 
