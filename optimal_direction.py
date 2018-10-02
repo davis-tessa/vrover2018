@@ -21,7 +21,14 @@ def optimal_direction():
         elif dist_diff < 0:
             optimal_direction = 'right'
         else:
-            optimal_direction = 'either right or left'
+            print("It's all the same to me.. my gut says")
+            x = random.randrange(0, 2)
+            if x == 0:
+                optimal_direction = 'left'
+            elif x == 1:
+                optimal_direction = 'right'
+            else:
+                print("Something went wrong in random number generation.")
     #Return Optimal Direction
     print(optimal_direction, "is optimal")
 

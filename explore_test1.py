@@ -1,7 +1,7 @@
 ##Using Python 2.7.3
 
 ##Import public library python-RPi.GPIO
-import RPi.GPIO as gpio
+#import RPi.GPIO as gpio
 ##Import public library python-time
 import time
 ##Import public library python-sys
@@ -9,7 +9,7 @@ import sys
 ##Import local library python-sensors: see sensors.py
 import sensors
 ##Import local library python-driveme: see driveme.py
-import driveme
+import driveme_tank
 ##Import public library python-random
 import random
 ##Import local library explore
