@@ -1,6 +1,6 @@
 ##Using Python 2.7.3
 
-#import RPi.GPIO as gpio
+import RPi.GPIO as gpio
 import time
 import sys
 
@@ -46,6 +46,7 @@ def init():
         gpio.setup(lft_ena, gpio.OUT)
     except:
         print("Your GPIO pins are not set up\n")
+
 ##    rt_ena_pwm = gpio.PWM(rt_ena, 1000)
 ##    lft_ena_pwm = gpio.PWM(lft_ena, 1000)
 ##    rt_ena_pwm.start(25)

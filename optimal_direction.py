@@ -3,7 +3,6 @@ import sys
 import random
 import sensors
 
-
 def optimal_direction():
     distance_table = sensors.pan_check_distance()
     print("front distance", distance_table['front'])
