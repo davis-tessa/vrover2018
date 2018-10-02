@@ -79,6 +79,7 @@ def check_front():
 ##Instruct action: if an object is closer than 15 cm away, check for the optimal direction and take evasive action
         if f_dist < 15:
 ##To be completed with opt_dir once this has been written. Meanwhile..
+            
             print("Too Close! Prepare to crash!")
 
         else:

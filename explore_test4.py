@@ -33,7 +33,7 @@ for z in range(5):
     explore.mode_discovery(1, 0.3, 'left')
 
 for z in range(5):
-    explore.mode_discovery(2, 0.3, 'right')
+    explore.mode_discovery(1, 0.3, 'right')
 
 ##Troubleshooting:
 
