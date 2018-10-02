@@ -208,19 +208,19 @@ def pan_check_distance():
 
     except:
 
-        print("Sensors are not configured.\nGenerating a random front distance:")
+        print("Front - RANDOM:")
         front_dist = front_distance()
         print(front_dist, "cm")
         distance_table['front'] = front_dist
 
     ##Take left distance
-        print("Sensors are not configured.\nGenerating a random left distance:")
+        print("Left - RANDOM:")
         left_dist = front_distance()
         print(left_dist, "cm")
         distance_table['left'] = left_dist
 
     ##Take right distance
-        print("Sensors are not configured.\nGenerating a random rear distance:")
+        print("Right - RANDOM:")
         right_dist = front_distance()
         print(right_dist, "cm")
         distance_table['right'] = right_dist
