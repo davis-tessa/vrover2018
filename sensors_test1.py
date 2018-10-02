@@ -12,7 +12,6 @@ import sensors
 ##<Front Distance Measurement in Progress
 ## xx.xx cm>
 front_distance = sensors.front_distance()
-print(front_distance, "cm")
 
 ##Troubleshooting:
 

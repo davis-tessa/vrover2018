@@ -12,7 +12,6 @@ import sensors
 ##<Rear Distance Measurement in Progress
 ## xx.xx cm>
 rear_distance = sensors.rear_distance()
-print(rear_distance, "cm")
 
 ##Troubleshooting:
 
