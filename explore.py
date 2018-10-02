@@ -1,7 +1,7 @@
 ##Using Python 2.7.3
 
 ##Import public library python-RPi.GPIO
-import RPi.GPIO as gpio
+#import RPi.GPIO as gpio
 ##Import public library python-time
 import time
 ##Import public library python-sys
@@ -52,27 +52,6 @@ def abort_drive(why):
     exit(0)
 ## OR
 ## switch to mode_RCD? Automatically? Or send a distress message?
-
-##Define a function to return optimal direction for travel after checking the dictionary defined in sensors.py
-def optimal_direction():
-    print("Help! I'm a function wihtout a defininition - define me!")
-##The optimal_direction function in sensors.py will return the best direction to move in 'right', 'left', or 'reverse'
-##While the optimal_direction funciton is under development, this code is commented out
-##Developing function - referencing the distance_table dictionary in sensors.optimal_direction
-    ##sensors.optimal_direction(
-    ##if left_dist < 20 and right_dist < 20:
-    ##optimal_direction = 'reverse'
-    ##else:
-    ##    dist_diff = left_dist - right_dist
-    ##    if dist_diff >= 0:
-    ##        optimal_direction = 'left'
-    ##    elif dist_diff <= 0:
-    ##        optimal_direction = 'right'
-    ##    else:
-    ##        optimal_direction = 'both'
-##Return Optimal Direction
-    ##return optimal_direction
-
 
 ##Define a function to check rear distance sensor by importing from the local python script sensors.py
 def check_rear():
