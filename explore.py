@@ -53,6 +53,8 @@ def abort_drive(why):
 ## OR
 ## switch to mode_RCD? Automatically? Or send a distress message?
 
+#Removed optimal_direction???
+
 ##Define a function to check rear distance sensor by importing from the local python script sensors.py
 def check_rear():
     try:
