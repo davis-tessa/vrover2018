@@ -24,9 +24,16 @@ def optimal_direction():
     ## If the distance on the right is greater than the distance on the left, the optimal direction is 'right'
         elif dist_diff < 0:
             optimal_direction = 'right'
-    ## The remaining condition is equal distance
+    ## The remaining condition is equal distance, choose a direction at random
         else:
-            optimal_direction = 'either right or left'
+            print("It's all the same to me.. my gut says")
+            x = random.randrange(0, 2)
+            if x == 0:
+                optimal_direction = 'left'
+            elif x == 1:
+                optimal_direction = 'right'
+            else:
+                print("Something went wrong in random number generation.")
     #Return Optimal Direction
     print(optimal_direction, "is optimal")
 
