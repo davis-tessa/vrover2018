@@ -7,7 +7,7 @@ import time
 ##Import the local sensors library
 import sensors
 
-##Test 4: check that distance measurements take place between servo rotations
+##Test: check that distance measurements take place between servo rotations
 ##Expected result: Servo motor moves to center, prints:
 ##<Watch me position center, take distance.
 ##Distance at front:

@@ -247,7 +247,7 @@ def front_pan():
     gpio.cleanup()
 
 ##Define a function to check the optimal direction for travel
-'''
+
 ##Define function to pan the servo motor and to check the distance at each turn
 def pan_check_distance_1():
     print("Watch me position center, take distance.")
@@ -316,4 +316,3 @@ def pan_check_distance_1():
     gpio.cleanup()
     print("Distance at front:")
     print front_distance(), "cm"
-'''

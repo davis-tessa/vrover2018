@@ -8,4 +8,34 @@ Test 1: Confirm Motor setup and drive funciton:
 * Calls functions from: driveme_tank.py
 
 Test 2: Check that the front sensor is correctly wired and functional:
-* 
+* Set up front ultrasonic sensor with pins as per RPi Pinout_Test_Board.xlsx
+* Read comments in sensors_test1.py to understand expected test result
+* Run sensors_test1.py
+* Calls functions from sensors.py
+
+Test 3: Check that the rear sensor is correctly wired and functional:
+* Set up rear ultrasonic sensor with pins as per RPi Pinout_Test_Board.xlsx
+* Read comments in sensors_test2.py to understand expected test result
+* Run sensors_test2.py
+* Calls functions from sensors.py
+
+Test 4: Check that the servo motor is correctly wired and functional/ calibrate servo motor
+* Set up servo with pins as per RPi Pinout_Test_Board.xlsx
+* Read comments in sensors_test3.py to understand expected test result
+* Run sensors_test3.py
+* Calls functions from sensors.py
+
+Test 5: check that distance measurements take place between servo rotations
+* Pre-requisite: Pass Test 2 (sensors_test1.py) and Test 4 (sensors_test3.py)
+* Read comments in sensors_test4.py to understand expected test result
+* Run sensors_test4.py
+* Calls functions from sensors.py
+
+Test 6: Test that the pan_check_distance function works by returning the contents of the dictionary created in the function
+* Pre-requisite: Pass Tests 2 (sensors_test1.py), Test 4 (sensors_test3.py) and Test 5(sensors_test4.py)
+* Read comments in sensors_test5.py to understand expected test result
+* Run sensors_test5.py
+* Calls functions from sensors.py
+
+Test 7: Return the optimal_direction based on running optimal_direction.py
+* Pre-requisite: Pass Test 6 (sensors_test5.py) and all pre-requisite tests for Test 6
