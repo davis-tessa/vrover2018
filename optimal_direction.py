@@ -4,6 +4,7 @@ import random
 import sensors
 
 def optimal_direction():
+    ## Return the contents of the distance_table created by running the pan_check_distance function
     distance_table = sensors.pan_check_distance()
     print("front distance", distance_table['front'])
     front_dist = distance_table['front']
@@ -12,16 +13,27 @@ def optimal_direction():
     print("right distance", distance_table['right'])
     right_dist = distance_table['right']
 
+    ## If there are obstacles on both sides of the vehicle, the optimal direction is 'reverse'
     if left_dist < 20 and right_dist < 20:
         optimal_direction = 'reverse'
     else:
         dist_diff = left_dist - right_dist
+    ## If the distance on the left is greater than the distance on the right, the optimal direction is 'left'
         if dist_diff > 0:
             optimal_direction = 'left'
+    ## If the distance on the right is greater than the distance on the left, the optimal direction is 'right'
         elif dist_diff < 0:
             optimal_direction = 'right'
+    ## The remaining condition is equal distance, choose a direction at random
         else:
-            optimal_direction = 'either right or left'
+            print("It's all the same to me.. my gut says")
+            x = random.randrange(0, 2)
+            if x == 0:
+                optimal_direction = 'left'
+            elif x == 1:
+                optimal_direction = 'right'
+            else:
+                print("Something went wrong in random number generation.")
     #Return Optimal Direction
     print(optimal_direction, "is optimal")
 
