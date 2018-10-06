@@ -7,7 +7,8 @@ import time
 ##Import the local sensors library
 import sensors
 
-##Test 4: Test that the optimal_direction function works
+##Test: Test that the pan_check_distance function works by returning the contents of the dictionary created in the function
+
 distance_table = sensors.pan_check_distance()
 print("front distance", distance_table['front'])
 front_dist = distance_table['front']

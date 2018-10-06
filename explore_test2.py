@@ -9,7 +9,7 @@ import sys
 ##Import local library python-sensors: see sensors.py
 import sensors
 ##Import local library python-driveme: see driveme.py
-import driveme
+import driveme_tank
 ##Import public library python-random
 import random
 ##Import local library explore

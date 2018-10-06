@@ -7,7 +7,7 @@ import time
 ##Import the local sensors library
 import sensors
 
-##Test 2: check that the rear sensor is correctly wired and functional
+##Test: check that the rear sensor is correctly wired and functional
 ##Expected result: prints:
 ##<Rear Distance Measurement in Progress
 ## xx.xx cm>
