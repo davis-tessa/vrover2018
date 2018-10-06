@@ -30,7 +30,7 @@ def front_distance():
     ##Define the GPIO pin number connected to trig
         front_sensor_trig = 7
     ##Define the GPIO pin number connected to echo
-        front_sensor_echo = 11
+        front_sensor_echo = 29
 
     ##Set the gpio mode to "board" as opposed to BCM to use the physical pin numbers
         gpio.setmode(gpio.BOARD)

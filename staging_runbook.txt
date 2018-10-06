@@ -1,0 +1,9 @@
+Testing Runbook for Staging Environment.
+
+Test 1: Confirm Motor setup and drive funciton:
+* Set up motors in "tank mode" with H-Bridge. See XC4492-StepperMotor-L298N-dataSheetMain.pdf
+* Set up pins - see RPi Pinout_Test_Board.xlsx
+* Read comments in driveme_tank_test.py to understand expected test result
+* Run driveme_tank_test.py
+
+Test 2: Check that the front sensor is correctly wired and functional
