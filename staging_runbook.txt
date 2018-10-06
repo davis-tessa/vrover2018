@@ -5,5 +5,7 @@ Test 1: Confirm Motor setup and drive funciton:
 * Set up pins - see RPi Pinout_Test_Board.xlsx
 * Read comments in driveme_tank_test.py to understand expected test result
 * Run driveme_tank_test.py
+* Calls functions from: driveme_tank.py
 
-Test 2: Check that the front sensor is correctly wired and functional
+Test 2: Check that the front sensor is correctly wired and functional:
+* 
