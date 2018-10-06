@@ -1,7 +1,7 @@
 ##Using Python 2.7.3
 
 ##Import the GPIO library
-import RPi.GPIO as gpio
+#import RPi.GPIO as gpio
 ##Import the time library
 import time
 import sys
@@ -271,7 +271,8 @@ def pan_check_distance_1():
     time.sleep(0.2)
     gpio.cleanup()
     print ("Distance at front:")
-    print front_distance(), "cm"
+    front_dist = front_distance()
+    print (front_dist, "cm")
 
 ##Take left distance
     print("Watch me position left, take distance.")
@@ -287,7 +288,8 @@ def pan_check_distance_1():
     time.sleep(0.2)
     gpio.cleanup()
     print ("Distance to left:")
-    print front_distance(), "cm"
+    front_dist = front_distance()
+    print (front_dist, "cm")
 
 ##Take left distance
     print("Watch me position right, take distance.")
@@ -303,7 +305,8 @@ def pan_check_distance_1():
     time.sleep(0.2)
     gpio.cleanup()
     print("Distance to right:")
-    print front_distance(), "cm"
+    front_dist = front_distance()
+    print (front_dist, "cm")
 
     print("Watch me return to center, take distance.")
 ##Define pin mapping for pan control
@@ -320,4 +323,5 @@ def pan_check_distance_1():
     time.sleep(0.2)
     gpio.cleanup()
     print("Distance at front:")
-    print front_distance(), "cm"
+    front_dist = front_distance()
+    print (front_dist, "cm")

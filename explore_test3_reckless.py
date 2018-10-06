@@ -15,7 +15,8 @@ import random
 ##Import local library explore
 import explore
 
-##Test 1: check the mode_discovery function works
+##Test: check the mode_discovery function works WITHOUT CHECKING FOR Distance
+##USE TO VALIDATE DECISION MAKING LOGIC
 ##Input: explore.mode_discovery(x, y)
 ##x is the time that left or right forward drive will run for
 ##y is the bias 'left' or 'right''
@@ -29,7 +30,11 @@ import explore
 ##Pre-set the dictionary values for various scenarios... sensors are in development mode_discovery
 ##Advanced: Build a map to test the edge and corner cases
 
-explore.check_front()
+for z in range(1):
+    explore.mode_discovery(1, 1, 'left')
+
+#for z in range(5):
+#    explore.mode_discovery(1, 0.3, 'right')
 
 ##Troubleshooting:
 
