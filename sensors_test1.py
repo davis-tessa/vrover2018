@@ -7,7 +7,7 @@ import time
 ##Import the local sensors library
 import sensors
 
-##Test 1: check that the front sensor is correctly wired and functional
+##Test: check that the front sensor is correctly wired and functional
 ##Expected result: prints:
 ##<Front Distance Measurement in Progress
 ## xx.xx cm>

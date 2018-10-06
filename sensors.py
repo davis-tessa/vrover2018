@@ -29,8 +29,8 @@ def front_distance():
 
         ##Define the GPIO pin number connected to trig
         front_sensor_trig = 7
-        ##Define the GPIO pin number connected to echo
-        front_sensor_echo = 11
+    ##Define the GPIO pin number connected to echo
+        front_sensor_echo = 29
 
         ##Set the gpio mode to "board" as opposed to BCM to use the physical pin numbers
         gpio.setmode(gpio.BOARD)
@@ -250,3 +250,74 @@ def front_pan():
 ##Cleanup
     time.sleep(0.2)
     gpio.cleanup()
+
+##Define a function to check the optimal direction for travel
+
+##Define function to pan the servo motor and to check the distance at each turn
+def pan_check_distance_1():
+    print("Watch me position center, take distance.")
+##Define pin mapping for pan control
+    pan_control = 12
+##Take front distance
+##Set gpio to board mode
+    gpio.setmode(gpio.BOARD)
+##Set pan control gpio pin as output
+    gpio.setup(pan_control, gpio.OUT)
+##Set frequency for servo to 50 Hz
+    pwm=gpio.PWM(pan_control, 50)
+##Set starting position for servo to center
+    pwm.start(7.5)
+    ##Cleanup
+    time.sleep(0.2)
+    gpio.cleanup()
+    print ("Distance at front:")
+    print front_distance(), "cm"
+
+##Take left distance
+    print("Watch me position left, take distance.")
+##Set gpio to board mode
+    gpio.setmode(gpio.BOARD)
+##Set pan control gpio pin as output
+    gpio.setup(pan_control, gpio.OUT)
+##Set frequency for servo to 50 Hz
+    pwm=gpio.PWM(pan_control, 50)
+##Set starting position for servo to center
+    pwm.start(10)
+    ##Cleanup
+    time.sleep(0.2)
+    gpio.cleanup()
+    print ("Distance to left:")
+    print front_distance(), "cm"
+
+##Take left distance
+    print("Watch me position right, take distance.")
+##Set gpio to board mode
+    gpio.setmode(gpio.BOARD)
+##Set pan control gpio pin as output
+    gpio.setup(pan_control, gpio.OUT)
+##Set frequency for servo to 50 Hz
+    pwm=gpio.PWM(pan_control, 50)
+##Set starting position for servo to center
+    pwm.start(5)
+    ##Cleanup
+    time.sleep(0.2)
+    gpio.cleanup()
+    print("Distance to right:")
+    print front_distance(), "cm"
+
+    print("Watch me return to center, take distance.")
+##Define pin mapping for pan control
+##Take front distance
+##Set gpio to board mode
+    gpio.setmode(gpio.BOARD)
+##Set pan control gpio pin as output
+    gpio.setup(pan_control, gpio.OUT)
+##Set frequency for servo to 50 Hz
+    pwm=gpio.PWM(pan_control, 50)
+##Set starting position for servo to center
+    pwm.start(7.5)
+    ##Cleanup
+    time.sleep(0.2)
+    gpio.cleanup()
+    print("Distance at front:")
+    print front_distance(), "cm"

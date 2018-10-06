@@ -8,7 +8,7 @@ import driveme_tank
 ##driveme_tank.py Test Code:
 
 ##Define the time to drive for (tf)
-tf = 3
+tf = 1
 ts = 3
 
 #drive vechicle forward for tf
