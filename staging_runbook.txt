@@ -49,7 +49,7 @@ Test 8: check the mode_discovery function works WITHOUT CHECKING FOR Distance.
 * Calls functions from explore.py
 
 Tests 9.01 - 9.10: Test evade protocols independently of drive, test mode_discovery with front checks only
-* Pre-requisite: Pass Test 1 (driveme_tank_test), Test 6 (plus pre-requisites), Test 7 (plus pre-requisites)
+* Pre-requisite: Test 6 (plus pre-requisites), Test 7 (plus pre-requisites) and Test 8 (plus pre-requisites)
 * USE TO VALIDATE FORWARD EVADE PROTOCOLS
 * Setup:
     *In optimal_direction.py, set "test_mode"
@@ -64,7 +64,6 @@ Tests 9.01 - 9.10: Test evade protocols independently of drive, test mode_discov
     *9.06 evade_fwd_test5.py
     *9.07 evade_fwd_test6.py
     *9.08 evade_fwd_test7.py
-
 * Calls functions from evade.py
 * Finally, with setup in place, run:
     *9.09 explore_test1.py

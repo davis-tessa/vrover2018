@@ -34,7 +34,6 @@ def check_fr_4():
     else:
         print("evade.check_fr_4   > All clear in front!")
 
-
 def evade_fwd_3(drive_time, drive_burst):
     drive_iterate = int(round(drive_time / drive_burst))
     print("evade.evade_fwd_3  > Still Too close!\nevade.evade_fwd_3  > Performing 3rd order evasive manouver\n")
