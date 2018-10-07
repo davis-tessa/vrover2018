@@ -68,3 +68,22 @@ Tests 9.01 - 9.10: Test evade protocols independently of drive, test mode_discov
 * Finally, with setup in place, run:
     *9.09 explore_test1.py
     *9.10 explore_test2.py
+
+Tests 10.01 - 10.10: Test evade protocols independently of drive, test mode_discovery with reverse checks only
+    * Pre-requisite: Test 3, Test 6 (plus pre-requisites), Test 7 (plus pre-requisites) and Test 8 (plus pre-requisites)
+    * USE TO VALIDATE REVERSE EVADE PROTOCOLS
+    * Setup:
+        *In optimal_direction.py, set "test_mode"
+        *In sensors.rear_distance - random distance generation for  the option to randomly generate a distance > 15cm ALL of the time (turns off rev evade)
+        *In sensors.front_distance - random distance generation, use: ##Alternative set of options used to test the scenario where the vehicle is trapped
+    * Run in nested order (inside to out) and debug along the way if necessary:
+        *10.01 evade_stuck_test.py
+        *10.02 evade_rev_test1.py
+        *10.03 evade_rev_test2.py
+        *10.04 evade_rev_test3.py
+        *10.05 evade_rev_test4.py
+        *10.06 evade_rev_test5.py
+    * Calls functions from evade.py
+    * Finally, with setup in place, run:
+        *10.09 explore_test1.py
+        *9.10 explore_test2.py
