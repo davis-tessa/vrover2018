@@ -39,3 +39,11 @@ Test 6: Test that the pan_check_distance function works by returning the content
 
 Test 7: Return the optimal_direction based on running optimal_direction.py
 * Pre-requisite: Pass Test 6 (sensors_test5.py) and all pre-requisite tests for Test 6
+* Run optimal_direction_test1.py
+* Calls functions from optimal_direction.py
+
+Test 8: check the mode_discovery function works WITHOUT CHECKING FOR Distance.
+* Pre-requisite: Pass Test 1 (driveme_tank_test)- does not require sensor setup
+* USE TO VALIDATE DISCOVERY MODE DECISION MAKING LOGIC and preferred drive times
+* Run explore_test1.py
+* Calls functions from explore.py

@@ -24,7 +24,7 @@ import random
 
 ##Define the distance function (to be imported into drive script)
 def front_distance():
-    print("Front Sensor Distance Measurement in Progress")
+    print("sensors            > Front Sensor Distance Measurement in Progress")
     try:
 
         ##Define the GPIO pin number connected to trig
@@ -70,22 +70,24 @@ def front_distance():
         gpio.cleanup()
 
     except:
-        print("Sensors are not set up.\nGenerating a random distance:")
+        print("sensors            > >>>> Sensors are not set up.\nsensors            > >>>>>>> Generating a random distance:\n")
 
         ##Options used to test a scenario where the sensors are >15cm away from an object the majority of the time
-        options = [2000, 7, 80, 8, 12, 64, 14, 33, 2]
+#        options = [2000, 7, 80, 8, 12, 64, 14, 33, 2]
         ##Alternative set of options used to test the scenario where right and left are equal in pan_check_distance
 #        options = [2000, 2000, 80, 80, 80, 80, 14, 20, 20]
+        ##Alternative set of options used to test the scenario where the vehicle is trapped
+        options = [5, 6, 7, 8, 9, 10, 14, 3, 2]
         front_distance = random.choice(options)
 
 ##Instruct the function to return 'distance'
-    print(front_distance, "cm")
+    print(front_distance, "cm\n")
     return front_distance
 
 ##Define the distance function (to be imported into drive script)
 def rear_distance():
     try:
-        print("Rear Distance Measurement in Progress")
+        print("sensors            > Rear Distance Measurement in Progress")
     ##Define the GPIO pin number connected to trig
         rear_sensor_trig = 31
     ##Define the GPIO pin number connected to echo
@@ -128,7 +130,7 @@ def rear_distance():
     ##Clen up the GPIO pins
         gpio.cleanup()
     except:
-        print("Sensors are not configured.\nGenerating a random rear distance:")
+        print("sensors            > Sensors are not configured.\nsensors            > Generating a random rear distance:")
         options = [2000, 60, 80, 21, 15, 64, 18, 33, 9]
         rear_distance = random.choice(options)
         print(rear_distance, "cm")
@@ -139,7 +141,7 @@ def rear_distance():
 def pan_check_distance():
     distance_table = {}
     try:
-        print("Watch me position center, take distance.")
+        print("sensors            > Watch me position center, take distance.\n")
     ##Define pin mapping for pan control
         pan_control = 12
     ##Take front distance
@@ -154,12 +156,12 @@ def pan_check_distance():
         ##Cleanup
         time.sleep(0.2)
         gpio.cleanup()
-        print ("Distance at front:")
+        print ("sensors            > Distance at front:")
         front_dist = front_distance()
         distance_table['front'] = front_dist
 
     ##Take left distance
-        print("Watch me position left, take distance.")
+        print("sensors            > Watch me position left, take distance.")
     ##Set gpio to board mode
         gpio.setmode(gpio.BOARD)
     ##Set pan control gpio pin as output
@@ -171,12 +173,12 @@ def pan_check_distance():
         ##Cleanup
         time.sleep(0.2)
         gpio.cleanup()
-        print ("Distance to left:")
+        print ("sensors            > Distance to left:")
         left_dist = front_distance()
         distance_table['left'] = left_dist
 
     ##Take right distance
-        print("Watch me position right, take distance.")
+        print("sensors            > Watch me position right, take distance.")
     ##Set gpio to board mode
         gpio.setmode(gpio.BOARD)
     ##Set pan control gpio pin as output
@@ -188,11 +190,11 @@ def pan_check_distance():
         ##Cleanup
         time.sleep(0.2)
         gpio.cleanup()
-        print("Watch me position right, take distance.")
+        print("sensors            > Watch me position right, take distance.")
         right_dist = front_distance()
         distance_table['right'] = right_dist
 
-        print("Watch me return to center and stop.")
+        print("sensors            > Watch me return to center and stop.")
     ##Define pin mapping for pan control
     ##Take front distance
     ##Set gpio to board mode
@@ -209,17 +211,17 @@ def pan_check_distance():
 
     except:
 
-        print("Front - RANDOM:")
+        print("sensors            > Front - RANDOM:")
         front_dist = front_distance()
         distance_table['front'] = front_dist
 
     ##Take left distance
-        print("Left - RANDOM:")
+        print("sensors            > Left - RANDOM:")
         left_dist = front_distance()
         distance_table['left'] = left_dist
 
     ##Take right distance
-        print("Right - RANDOM:")
+        print("sensors            > Right - RANDOM:")
         right_dist = front_distance()
         distance_table['right'] = right_dist
 
@@ -227,7 +229,7 @@ def pan_check_distance():
 
 ##Define function to pan the servo motor
 def front_pan():
-    print("Watch me position center, then left, then right, and back to center.")
+    print("sensors            > Watch me position center, then left, then right, and back to center.")
 ##Define pin mapping for pan control
     pan_control = 12
 ##Set gpio to board mode
@@ -255,7 +257,7 @@ def front_pan():
 
 ##Define function to pan the servo motor and to check the distance at each turn
 def pan_check_distance_1():
-    print("Watch me position center, take distance.")
+    print("sensors            > Watch me position center, take distance.")
 ##Define pin mapping for pan control
     pan_control = 12
 ##Take front distance
@@ -270,12 +272,12 @@ def pan_check_distance_1():
     ##Cleanup
     time.sleep(0.2)
     gpio.cleanup()
-    print ("Distance at front:")
+    print ("sensors            > Distance at front:")
     front_dist = front_distance()
     print (front_dist, "cm")
 
 ##Take left distance
-    print("Watch me position left, take distance.")
+    print("sensors            > Watch me position left, take distance.")
 ##Set gpio to board mode
     gpio.setmode(gpio.BOARD)
 ##Set pan control gpio pin as output
@@ -287,12 +289,12 @@ def pan_check_distance_1():
     ##Cleanup
     time.sleep(0.2)
     gpio.cleanup()
-    print ("Distance to left:")
+    print ("sensors            > Distance to left:")
     front_dist = front_distance()
     print (front_dist, "cm")
 
 ##Take left distance
-    print("Watch me position right, take distance.")
+    print("sensors            > Watch me position right, take distance.")
 ##Set gpio to board mode
     gpio.setmode(gpio.BOARD)
 ##Set pan control gpio pin as output
@@ -304,11 +306,11 @@ def pan_check_distance_1():
     ##Cleanup
     time.sleep(0.2)
     gpio.cleanup()
-    print("Distance to right:")
+    print("sensors            > Distance to right:")
     front_dist = front_distance()
     print (front_dist, "cm")
 
-    print("Watch me return to center, take distance.")
+    print("sensors            > Watch me return to center, take distance.")
 ##Define pin mapping for pan control
 ##Take front distance
 ##Set gpio to board mode
@@ -322,6 +324,6 @@ def pan_check_distance_1():
     ##Cleanup
     time.sleep(0.2)
     gpio.cleanup()
-    print("Distance at front:")
+    print("sensors            > Distance at front:")
     front_dist = front_distance()
     print (front_dist, "cm")
