@@ -47,3 +47,25 @@ Test 8: check the mode_discovery function works WITHOUT CHECKING FOR Distance.
 * USE TO VALIDATE DISCOVERY MODE DECISION MAKING LOGIC and preferred drive times
 * Run explore_test1.py
 * Calls functions from explore.py
+
+Tests 9.01 - 9.10: Test evade protocols independently of drive, test mode_discovery with front checks only
+* Pre-requisite: Pass Test 1 (driveme_tank_test), Test 6 (plus pre-requisites), Test 7 (plus pre-requisites)
+* USE TO VALIDATE FORWARD EVADE PROTOCOLS
+* Setup:
+    *In optimal_direction.py, set "test_mode"
+    *In TOGGLE REVERSE ITERATIONS OFF (needs to be built in to check reverse)
+    *In sensors.py - random distance generation, use: ##Alternative set of options used to test the scenario where the vehicle is trapped
+* Run in nested order (inside to out) and debug along the way if necessary:
+    *9.01 evade_stuck_test.py
+    *9.02 evade_fwd_test1.py
+    *9.03 evade_fwd_test2.py
+    *9.04 evade_fwd_test3.py
+    *9.05 evade_fwd_test4.py
+    *9.06 evade_fwd_test5.py
+    *9.07 evade_fwd_test6.py
+    *9.08 evade_fwd_test7.py
+
+* Calls functions from evade.py
+* Finally, with setup in place, run:
+    *9.09 explore_test1.py
+    *9.10 explore_test2.py

@@ -26,6 +26,8 @@ import explore
 ##Pre-set the dictionary values for various scenarios... sensors are in development mode_discovery
 ##Advanced: Build a map to test the edge and corner cases
 
+print("\n\nStarting Test: explore_test2\n\n")
+
 for z in range(1):
     explore.mode_discovery(1, 1, 'left', 'on')
 

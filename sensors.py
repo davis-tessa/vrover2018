@@ -81,7 +81,7 @@ def front_distance():
         front_distance = random.choice(options)
 
 ##Instruct the function to return 'distance'
-    print(front_distance, "cm\n")
+    print("sensors            >", front_distance, "cm\n")
     return front_distance
 
 ##Define the distance function (to be imported into drive script)

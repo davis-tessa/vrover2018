@@ -17,6 +17,6 @@ import optimal_direction
 ##Import local library evade
 import evade
 
-## Test: Test mid level check_front logic - change x to n level check_front_x used in script
-print("\n\nStarting Test: evade_fwd_test5\n\n")
-evade.check_fr_2()
+## Test: Test base level check_front logic - change x to lowest level check_front_x used in script
+print("\n\nStarting Test: evade_fwd_test7\n\n")
+evade.check_fr_1()
