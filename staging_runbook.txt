@@ -73,7 +73,7 @@ Tests 10.01 - 10.10: Test evade protocols independently of drive, test mode_disc
     * Pre-requisite: Test 3, Test 6 (plus pre-requisites), Test 7 (plus pre-requisites) and Test 8 (plus pre-requisites)
     * USE TO VALIDATE REVERSE EVADE PROTOCOLS
     * Setup:
-        *In optimal_direction.py, set "test_mode"
+        *In optimal_direction.py, turn off "test_mode" (run in normal mode)
         *In sensors.rear_distance - random distance generation for  the option to randomly generate a distance < 15cm ALL of the time (turns off rev evade)
         *In sensors.front_distance - random distance generation, use: > 15cm away most of the time
     * Run in nested order (inside to out) and debug along the way if necessary:
@@ -86,4 +86,4 @@ Tests 10.01 - 10.10: Test evade protocols independently of drive, test mode_disc
     * Calls functions from evade.py
     * Finally, with setup in place, run:
         *10.09 explore_test1.py
-        *9.10 explore_test2.py
+        *10.10 explore_test2.py
