@@ -53,8 +53,8 @@ Tests 9.01 - 9.10: Test evade protocols independently of drive, test mode_discov
 * USE TO VALIDATE FORWARD EVADE PROTOCOLS
 * Setup:
     *In optimal_direction.py, set "test_mode"
-    *In TOGGLE REVERSE ITERATIONS OFF (needs to be built in to check reverse)
-    *In sensors.py - random distance generation, use: ##Alternative set of options used to test the scenario where the vehicle is trapped
+    *In sensors.rear_distance - random distance generation for  the option to randomly generate a distance > 15cm ALL of the time (turns off rev evade)
+    *In sensors.front_distance - random distance generation, use: ##Alternative set of options used to test the scenario where the vehicle is trapped
 * Run in nested order (inside to out) and debug along the way if necessary:
     *9.01 evade_stuck_test.py
     *9.02 evade_fwd_test1.py

@@ -28,6 +28,7 @@ import sensors
 ##Distance at front:
 ##Front Sensor Distance Measurement in Progress
 #xx.xx cm>
+print("\n\nStarting Test: sensors_test4\n\n")
 sensors.pan_check_distance_1()
 
 ##Troubleshooting:

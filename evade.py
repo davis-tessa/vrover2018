@@ -25,6 +25,15 @@ def stuck_help(why):
     print("evade.stuck_help   > Help! I'm Stuck!! rescue me!!\n")
     abort_drive(why)
 
+def check_bk_1():
+    ##Define the variable f_dist as the distance from the front sensor to the nearest object
+    f_dist = sensors.front_distance()
+    ##Instruct action: if an object is closer than 15 cm away, check for the optimal direction and take evasive action
+    if f_dist < 15:
+        evade_rev_1(1, 1)
+    else:
+        print("evade.check_fr_1   > All clear in front!")
+
 def check_fr_4():
     ##Define the variable f_dist as the distance from the front sensor to the nearest object
     f_dist = sensors.front_distance()
