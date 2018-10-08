@@ -24,7 +24,7 @@ def stuck_help(why):
     print("evade.stuck_help   > Help! I'm Stuck!! rescue me!!\n")
     abort_drive(why)
 
-def check_bk_3():
+def check_bk_3(drive_time, drive_burst):
     print("evade.check_bk_3   > Now check the front sensor again - is it safe?\n")
     ##Define the variable r_dist as the distance from the rear sensor to the nearest object
     f_dist = sensors.front_distance()
@@ -45,7 +45,7 @@ def evade_rev_2(drive_time, drive_burst):
         ##Repeat the steps below drive_iterate times
         for y in range(drive_iterate):
             ##Run the function collision_avoidance() to check the distance from the front sensor to the closest object
-            check_bk_3()
+            check_bk_3(drive_time, drive_burst)
             ##Drive left and forward for drive_burst seconds
             driveme_tank.turn_left_fwd(drive_burst)
     ##If the optimal direction is right, drive forward and right
@@ -54,19 +54,19 @@ def evade_rev_2(drive_time, drive_burst):
         ##Repeat the steps below drive_iterate times
         for y in range(drive_iterate):
             ##Run the function collision_avoidance() to check the distance from the front sensor to the closest object
-            check_bk_3()
+            check_bk_3(drive_time, drive_burst)
             ##Drive right and forward for drive_burst seconds
             driveme_tank.turn_right_fwd(drive_burst)
     else:
         stuck_help("evade.evade_rev_2  > Ooops!\nevade.evade_rev_2  > I don\'t know how to solve this problem")
 
-def check_bk_2():
+def check_bk_2(drive_time, drive_burst):
     print("evade.check_bk_2   > I must find a way forward - checking the front:\n")
     ##Define the variable r_dist as the distance from the rear sensor to the nearest object
     f_dist = sensors.front_distance()
     ##Instruct action: if an object is closer than 15 cm away, check for the optimal direction and take evasive action
     if f_dist < 15:
-        evade_rev_2(1, 1)
+        evade_rev_2(drive_time, drive_burst)
     else:
         print("evade.check_bk_2   > All clear in front!")
 
@@ -82,7 +82,7 @@ def evade_rev_1(drive_time, drive_burst):
         ##Repeat the steps below drive_iterate times
         for y in range(drive_iterate):
             ##Collision collision_avoidance
-            check_bk_2()
+            check_bk_2(drive_time, drive_burst)
             ##Drive left and forward for drive_burst seconds
             driveme_tank.turn_left_fwd(drive_burst)
 
@@ -91,24 +91,24 @@ def evade_rev_1(drive_time, drive_burst):
         ##Repeat the steps below drive_iterate times
         for y in range(drive_iterate):
             ##Collision collision_avoidance
-            check_bk_2()
+            check_bk_2(drive_time, drive_burst)
             ##Drive left and forward for drive_burst seconds
             driveme_tank.turn_right_fwd(drive_burst)
 
     else:
         stuck_help("evade.evade_rev_1  > Boxed in on 3-sides\nevade.evade_rev_1  > I don\'t know how to solve this problem")
 
-def check_bk_1():
+def check_bk_1(drive_time, drive_burst):
     print("evade.check_bk_1   > First check of the rear sensor:\n")
     ##Define the variable r_dist as the distance from the rear sensor to the nearest object
     r_dist = sensors.rear_distance()
     ##Instruct action: if an object is closer than 15 cm away, check for the optimal direction and take evasive action
     if r_dist < 15:
-        evade_rev_1(1, 1)
+        evade_rev_1(drive_time, drive_burst)
     else:
         print("evade.check_bk_1   > All clear behind!")
 
-def check_fr_4():
+def check_fr_4(drive_time, drive_burst):
     print("evade.check_fr_4   > Fourth and final check of the front sensor:\n")
     ##Define the variable f_dist as the distance from the front sensor to the nearest object
     f_dist = sensors.front_distance()
@@ -127,7 +127,7 @@ def evade_fwd_3(drive_time, drive_burst):
     ##Repeat the steps below drive_iterate times
     for y in range(drive_iterate):
         ##Run the function collision_avoidance() to check the distance from the front sensor to the closest object
-        check_bk_1()
+        check_bk_1(drive_time, drive_burst)
         ##Drive left and forward for drive_burst seconds
         driveme_tank.reverse(drive_burst)
     ##If the optimal direction is left, drive forward and left
@@ -136,7 +136,7 @@ def evade_fwd_3(drive_time, drive_burst):
         ##Repeat the steps below drive_iterate times
         for y in range(drive_iterate):
             ##Run the function collision_avoidance() to check the distance from the front sensor to the closest object
-            check_fr_4()
+            check_fr_4(drive_time, drive_burst)
             ##Drive left and forward for drive_burst seconds
             driveme_tank.turn_left_fwd(drive_burst)
     ##If the optimal direction is right, drive forward and right
@@ -145,7 +145,7 @@ def evade_fwd_3(drive_time, drive_burst):
         ##Repeat the steps below drive_iterate times
         for y in range(drive_iterate):
             ##Run the function collision_avoidance() to check the distance from the front sensor to the closest object
-            check_fr_4()
+            check_fr_4(drive_time, drive_burst)
             ##Drive right and forward for drive_burst seconds
             driveme_tank.turn_right_fwd(drive_burst)
     ##If the optimal direction is reverse, continue to reverse
@@ -153,7 +153,7 @@ def evade_fwd_3(drive_time, drive_burst):
         ##Repeat the steps below drive_iterate times
         for y in range(drive_iterate):
             ##Run the function collision_avoidance() to check the distance from the front sensor to the closest object
-            check_bk_1()
+            check_bk_1(drive_time, drive_burst)
             ##Drive left and forward for drive_burst seconds
             driveme_tank.reverse(drive_burst)
     ##If the optimal direction is test_mode (manually configured), drive forward
@@ -161,17 +161,17 @@ def evade_fwd_3(drive_time, drive_burst):
         print("evade.evade_fwd_3  > Test mode: driving forward ")
         for y in range(drive_iterate):
             ##Run the function collision_avoidance() to check the distance from the front sensor to the closest object
-            check_fr_4()
+            check_fr_4(drive_time, drive_burst)
             ##Drive right and forward for drive_burst seconds
             print("Evade 3: Action after checking")
     ##Results should be only 'left', 'right', or 'reverse'. If not, see optimal_direction.py
     else:
         print("evade.evade_fwd_3  > Unexpected result from optimal_direction.py")
 
-def check_fr_3():
+def check_fr_3(drive_time, drive_burst):
     print("evade.check_fr_3   > Third check of the front sensor:\n")
     ##Define the variable f_dist as the distance from the front sensor to the nearest object
-    f_dist = sensors.front_distance()
+    f_dist = sensors.front_distance(drive_time, drive_burst)
         ##Instruct action: if an object is closer than 15 cm away, check for the optimal direction and take evasive action
     if f_dist < 15:
         evade_fwd_3(1, 1)
@@ -187,7 +187,7 @@ def evade_fwd_2(drive_time, drive_burst):
     ##Repeat the steps below drive_iterate times
     for y in range(drive_iterate):
         ##Run the function collision_avoidance() to check the distance from the front sensor to the closest object
-        check_bk_1()
+        check_bk_1(drive_time, drive_burst)
         ##Drive left and forward for drive_burst seconds
         driveme_tank.reverse(drive_burst)
     ##If the optimal direction is left, drive forward and left
@@ -196,7 +196,7 @@ def evade_fwd_2(drive_time, drive_burst):
         ##Repeat the steps below drive_iterate times
         for y in range(drive_iterate):
             ##Run the function collision_avoidance() to check the distance from the front sensor to the closest object
-            check_fr_3()
+            check_fr_3(drive_time, drive_burst)
             ##Drive left and forward for drive_burst seconds
             driveme_tank.turn_left_fwd(drive_burst)
     ##If the optimal direction is right, drive forward and right
@@ -205,7 +205,7 @@ def evade_fwd_2(drive_time, drive_burst):
         ##Repeat the steps below drive_iterate times
         for y in range(drive_iterate):
             ##Run the function collision_avoidance() to check the distance from the front sensor to the closest object
-            check_fr_3()
+            check_fr_3(drive_time, drive_burst)
             ##Drive right and forward for drive_burst seconds
             driveme_tank.turn_right_fwd(drive_burst)
     ##If the optimal direction is reverse, continue to reverse
@@ -213,7 +213,7 @@ def evade_fwd_2(drive_time, drive_burst):
         ##Repeat the steps below drive_iterate times
         for y in range(drive_iterate):
             ##Run the function collision_avoidance() to check the distance from the front sensor to the closest object
-            check_bk_1()
+            check_bk_1(drive_time, drive_burst)
             ##Drive left and forward for drive_burst seconds
             driveme_tank.reverse(drive_burst)
     ##If the optimal direction is test_mode (manually configured), drive forward
@@ -221,19 +221,19 @@ def evade_fwd_2(drive_time, drive_burst):
         print("evade.evade_fwd_2  > Test mode: driving forward ")
         for y in range(drive_iterate):
             ##Run the function collision_avoidance() to check the distance from the front sensor to the closest object
-            check_fr_3()
+            check_fr_3(drive_time, drive_burst)
             ##Drive right and forward for drive_burst seconds
             print("Evade 2: Action after checking")
     ##Results should be only 'left', 'right', or 'reverse'. If not, see optimal_direction.py
     else:
         print("evade.evade_fwd_2  > Unexpected result from optimal_direction.py")
 
-def check_fr_2():
+def check_fr_2(drive_time, drive_burst):
     print("evade.check_fr_2   >Second check of the front sensor:\n")
     f_dist = sensors.front_distance()
     ##Instruct action: if an object is closer than 15 cm away, check for the optimal direction and take evasive action
     if f_dist < 15:
-        evade_fwd_2(1, 1)
+        evade_fwd_2(drive_time, drive_burst)
     else:
         print("evade.check_fr_2   > All clear in front!")
 
@@ -249,7 +249,7 @@ def evade_fwd_1(drive_time, drive_burst):
     ##Repeat the steps below drive_iterate times
     for y in range(drive_iterate):
         ##Run the function collision_avoidance() to check the distance from the front sensor to the closest object
-        check_bk_1()
+        check_bk_1(drive_time, drive_burst)
         ##Drive left and forward for drive_burst seconds
         driveme_tank.reverse(drive_burst)
     ##If the optimal direction is left, drive forward and left
@@ -258,7 +258,7 @@ def evade_fwd_1(drive_time, drive_burst):
         ##Repeat the steps below drive_iterate times
         for y in range(drive_iterate):
             ##Run the function collision_avoidance() to check the distance from the front sensor to the closest object
-            check_fr_2()
+            check_fr_2(drive_time, drive_burst)
             ##Drive left and forward for drive_burst seconds
             driveme_tank.turn_left_fwd(drive_burst)
     ##If the optimal direction is right, drive forward and right
@@ -267,7 +267,7 @@ def evade_fwd_1(drive_time, drive_burst):
         ##Repeat the steps below drive_iterate times
         for y in range(drive_iterate):
             ##Run the function collision_avoidance() to check the distance from the front sensor to the closest object
-            check_fr_2()
+            check_fr_2(drive_time, drive_burst)
             ##Drive right and forward for drive_burst seconds
             driveme_tank.turn_right_fwd(drive_burst)
     ##If the optimal direction is reverse, continue to reverse
@@ -275,7 +275,7 @@ def evade_fwd_1(drive_time, drive_burst):
         ##Repeat the steps below drive_iterate times
         for y in range(drive_iterate):
             ##Run the function collision_avoidance() to check the distance from the front sensor to the closest object
-            check_bk_1()
+            check_bk_1(drive_time, drive_burst)
             ##Drive left and forward for drive_burst seconds
             driveme_tank.reverse(drive_burst)
     ##If the optimal direction is test_mode (manually configured), drive forward
@@ -283,19 +283,19 @@ def evade_fwd_1(drive_time, drive_burst):
         print("evade.evade_fwd_1  > Test mode: driving forward ")
         for y in range(drive_iterate):
             ##Run the function collision_avoidance() to check the distance from the front sensor to the closest object
-            check_fr_2()
+            check_fr_2(drive_time, drive_burst)
             ##Drive right and forward for drive_burst seconds
             print("Evade 1: Action after checking")
     ##Results should be only 'left', 'right', or 'reverse'. If not, see optimal_direction.py
     else:
         print("evade.evade_fwd_1  > Unexpected result from optimal_direction.py")
 
-def check_fr_1():
+def check_fr_1(drive_time, drive_burst):
     print("evade.check_fr_1   > First check of the front sensor:\n")
     ##Define the variable f_dist as the distance from the front sensor to the nearest object
     f_dist = sensors.front_distance()
     ##Instruct action: if an object is closer than 15 cm away, check for the optimal direction and take evasive action
     if f_dist < 15:
-        evade_fwd_1(1, 1)
+        evade_fwd_1(drive_time, drive_burst)
     else:
         print("evade.check_fr_1   > All clear in front!")
