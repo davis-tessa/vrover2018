@@ -39,3 +39,57 @@ Test 6: Test that the pan_check_distance function works by returning the content
 
 Test 7: Return the optimal_direction based on running optimal_direction.py
 * Pre-requisite: Pass Test 6 (sensors_test5.py) and all pre-requisite tests for Test 6
+* Run optimal_direction_test1.py
+* Calls functions from optimal_direction.py
+
+Test 8: check the mode_discovery function works WITHOUT CHECKING FOR Distance.
+* Pre-requisite: Pass Test 1 (driveme_tank_test)- does not require sensor setup
+* USE TO VALIDATE DISCOVERY MODE DECISION MAKING LOGIC and preferred drive times
+* Run explore_test1.py
+* Calls functions from explore.py
+
+Tests 9.01 - 9.10: Test evade protocols independently of drive, test mode_discovery with front checks only
+* Pre-requisite: Test 6 (plus pre-requisites), Test 7 (plus pre-requisites) and Test 8 (plus pre-requisites)
+* USE TO VALIDATE FORWARD EVADE PROTOCOLS
+* Setup:
+    *In optimal_direction.py, set "test_mode"
+    *In sensors.rear_distance - random distance generation for  the option to randomly generate a distance > 15cm ALL of the time (turns off rev evade)
+    *In sensors.front_distance - random distance generation, use: ##Alternative set of options used to test the scenario where the vehicle is trapped
+* Run in nested order (inside to out) and debug along the way if necessary:
+    *9.01 evade_stuck_test.py
+    *9.02 evade_fwd_test1.py
+    *9.03 evade_fwd_test2.py
+    *9.04 evade_fwd_test3.py
+    *9.05 evade_fwd_test4.py
+    *9.06 evade_fwd_test5.py
+    *9.07 evade_fwd_test6.py
+    *9.08 evade_fwd_test7.py
+* Calls functions from evade.py
+* Finally, with setup in place, run:
+    *9.09 explore_test1.py
+    *9.10 explore_test2.py
+
+Tests 10.01 - 10.10: Test evade protocols independently of drive, test mode_discovery with reverse checks only
+    * Pre-requisite: Test 3, Test 6 (plus pre-requisites), Test 7 (plus pre-requisites) and Test 8 (plus pre-requisites)
+    * USE TO VALIDATE REVERSE EVADE PROTOCOLS
+    * Setup:
+        *In optimal_direction.py, turn off "test_mode" (run in normal mode)
+        *In sensors.rear_distance - random distance generation for  the option to randomly generate a distance < 15cm ALL of the time (turns off rev evade)
+        *In sensors.front_distance - random distance generation, use: > 15cm away most of the time
+    * Run in nested order (inside to out) and debug along the way if necessary:
+        *10.01 evade_stuck_test.py
+        *10.02 evade_rev_test1.py
+        *10.03 evade_rev_test2.py
+        *10.04 evade_rev_test3.py
+        *10.05 evade_rev_test4.py
+        *10.06 evade_rev_test5.py
+    * Calls functions from evade.py
+    * Finally, with setup in place, run:
+        *10.07 explore_test1.py
+        *10.08 explore_test2.py
+
+Test 11: Test explore_test1 and explore_test2 with realistic variables defined for drive_mode to evaluate real-world behavior
+* Use to test behavior in real world
+* Pre-requisite: Pass all Tests 1-10.08
+* Reset sensors.rear_distance to generate distances > 15cm most of the time for both forward and reverse distance sensors
+* Expected behavior: rover drive matches screen print

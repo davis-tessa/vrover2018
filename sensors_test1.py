@@ -11,6 +11,7 @@ import sensors
 ##Expected result: prints:
 ##<Front Distance Measurement in Progress
 ## xx.xx cm>
+print("\n\nStarting Test: sensors_test1\n\n")
 front_distance = sensors.front_distance()
 
 ##Troubleshooting:
