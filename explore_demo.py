@@ -113,7 +113,6 @@ def check_rear():
 ##z is the bias 'left' or 'right'
 ##u is the check status 'on' or 'off'
 def mode_discovery(drive_time, drive_burst, mode, check):
-    print("\n\nexplore            > Exploring with a", mode, "hand bias\n\n")
 ##When drive forward is chosen, continue for twice as long as the time spent driving to the left or right.
     drive_iterate = int(round(drive_time / drive_burst))
     drive_iterate_f = 2 * drive_iterate

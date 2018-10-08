@@ -15,30 +15,21 @@ import random
 ##Import local library explore
 import explore
 
-##Test 1: check the mode_discovery function works
-##Input: explore.mode_discovery(x, y)
-##x is the time that left or right forward drive will run for
-##y is the bias 'left' or 'right''
+##Test: Add sensor check collision_avoidance() to the test
+##Input: explore.mode_discovery(x, y, z, u)
+##x is the time that left or right forward drive will run for assuming no obstacles
+##y is the time that the vehicle should run for before checking input from the sensor
+##z is the bias 'left' or 'right'
+##u is the check status 'on' or 'off'
 
 ##How to set up tests that are possible without hardware:
 ##Pre-set the dictionary values for various scenarios... sensors are in development mode_discovery
 ##Advanced: Build a map to test the edge and corner cases
 
+print("\n\nStarting Test: explore_test2\n\n")
 
-##How to set up tests that are possible without hardware:
-##Pre-set the dictionary values for various scenarios... sensors are in development mode_discovery
-##Advanced: Build a map to test the edge and corner cases
+for z in range(1):
+    explore.mode_discovery(1, 1, 'left', 'on')
 
-explore.check_rear()
-
-##Troubleshooting:
-
-## Error 1:
-## <Traceback (most recent call last):
-## File "sensors_test.py", line 22, in <module>
-## print sensors.front_distance(), "cm"
-## File "/home/pi/vforum2018/sensors.py", line 53, in front_distance
-## pulse_duration = pulse_end - pulse_start>
-## Cause: Theory: The sensor fails to trigger OR Theory: The sensor triggers before the RPi has a chance to capture the pre-trigger state
-## Testing: The error appears randomly only on the front sensor (not on the rear sensor) with a frequency of approximately 1 in 3 attempts. Likely to be a faulty sensor or faulty connection
-## Resolution: Replace front sensor for production. OR see comment in sensors.py "Give the sensor time to come online" - increase tf in time.sleep(tf)
+for z in range(1):
+    explore.mode_discovery(1, 1, 'right', 'on')
