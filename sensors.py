@@ -73,7 +73,7 @@ def front_distance():
         print("sensors            > >>>> Sensors are not set up.\nsensors            > >>>>>>> Generating a random distance:\n")
 
         ##Options used to test a scenario where the sensors are >15cm away from an object the majority of the time
-        options = [2000, 7, 80, 8, 12, 64, 14, 33, 2]
+        options = [2000, 60, 80, 21, 14, 64, 18, 33, 9]
         ##Alternative set of options used to test a scenario where the sensors are >15cm away from an object ALL of the time
 #        options = [2000, 60, 80, 21, 16, 64, 18, 33, 1000]
         ##Alternative set of options used to test the scenario where right and left are equal in pan_check_distance
@@ -134,13 +134,13 @@ def rear_distance():
     except:
         print("sensors            > Sensors are not configured.\nsensors            > Generating a random rear distance:\n")
         ##Options used to test a scenario where the sensors are >15cm away from an object the majority of the time
-#        options = [2000, 60, 80, 21, 15, 64, 18, 33, 9]
+        options = [2000, 60, 80, 21, 14, 64, 18, 33, 9]
         ##Alternative set of options used to test a scenario where the sensors are >15cm away from an object ALL of the time
 #        options = [2000, 60, 80, 21, 16, 64, 18, 33, 1000]
         ##Alternative set of options used to test the scenario where right and left are equal in pan_check_distance
 #        options = [2000, 2000, 80, 80, 80, 80, 14, 20, 20]
         ##Alternative set of options used to test the scenario where the vehicle is trapped
-        options = [5, 6, 7, 8, 9, 10, 14, 3, 2]
+#        options = [5, 6, 7, 8, 9, 10, 14, 3, 2]
         rear_distance = random.choice(options)
 
 ##Instruct the function to return 'distance'
