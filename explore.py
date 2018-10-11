@@ -1,7 +1,7 @@
 ##Using Python 2.7.3
 
 ##Import public library python-RPi.GPIO
-#import RPi.GPIO as gpio
+import RPi.GPIO as gpio
 ##Import public library python-time
 import time
 ##Import public library python-sys
@@ -57,53 +57,6 @@ def abort_drive(why):
     exit(0)
 ## OR
 ## switch to mode_RCD? Automatically? Or send a distress message?
-
-##Define a function to check rear distance sensor by importing from the local python script sensors.py
-def check_rear():
-    try:
-##Define the variable r_dist as the distance from the rear sensor to the nearest object
-        r_dist = sensors.rear_distance()
-##Instruct action: if an object is closer than xx cm away, check for the optimal direction and take evasive action
-        if r_dist <15:
-##To be completed with opt_dir once this has been written. Meanwhile..
-            print("explore            > Too Close! Prepare to crash!")
-        else:
-            print("explore            > All clear at the back!")
-    except:
-        print("explore            > If you had a sensor on the rear I'd check the distance now.")
-
-##Complete by adding in a response using optimal_direction
-##Consider putting in a random pivot right or left until optimal_direction function is complete
-##Best practice: Don't list if statements more than 2 deep, and try to nest 1 deep
-
-##Define a function to check rear distance sensor by importing from the local python script sensors.py
-# def check_front_1():
-#     try:
-#         ##Define the variable f_dist as the distance from the front sensor to the nearest object
-#         f_dist = sensors.front_distance()
-#         ##Instruct action: if an object is closer than 15 cm away, check for the optimal direction and take evasive action
-#         if f_dist < 15:
-#             evade.evade_fwd_1(0.5)
-#             ##Instruct action: if an object is closer than 15 cm away, check for the optimal direction and take evasive action
-#             if f_dist < 15:
-#                 evade.evade_fwd_2(0.5)
-#             else:
-#                 print("All clear in front")
-# #                evade_fwd_2(0.5)
-# #
-# #                if
-#
-# ##To be completed with opt_dir once this has been written. Meanwhile..
-# #        print("Too Close! Prepare to crash!")
-#
-#         else:
-#             print("All clear in front!")
-#
-#     except:
-#         print("Unable to check the front - debug evade functions.")
-##Complete by adding in a response using optimal_direction
-##Best practice: Don't list if statements more than 2 deep, and try to nest 1 deep
-##May need to define check_front_2, check_front_3, check_front_4, etc.
 
 ##Define a function to run as the primary vehicle autonomous drive mode: mode_discovery
 

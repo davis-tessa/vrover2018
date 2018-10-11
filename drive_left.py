@@ -1,5 +1,3 @@
-##Using Python 2.7.3
-
 ##Import public library python-RPi.GPIO
 import RPi.GPIO as gpio
 ##Import public library python-time
@@ -14,9 +12,12 @@ import driveme_tank
 import random
 ##Import local library optimal_direction: see optimal_direction.py
 import optimal_direction
-##Import local library evade
+##Import local library evade: see evade.py
 import evade
+##Import local library explore: see explore.py
+import explore
 
-## Test: Test base level check_bk logic - change x to lowest level check_bk_x used in script
-print("\n\nStarting Test: evade_rev_test5\n\n")
-evade.check_bk_1()
+def drive_left():
+  explore.mode_discovery(1, 1, 'left', 'on')
+
+drive_left()
