@@ -12,15 +12,16 @@ import random
 ##Import local library optimal_direction: see optimal_direction.py
 import optimal_direction
 
+opt_dir = optimal_direction.optimal_direction()
+
 def seg_test():
-    opt_dir = optimal_direction.optimal_direction()
     if opt_dir == 'left':
-        print("Hi")
+        print("left")
     ##If the optimal direction is right, drive forward and right
     elif opt_dir == 'right':
-        print("Bye")
+        print("right")
     else:
-        stuck_help("evade.evade_rev_2  > Ooops!\nevade.evade_rev_2  > I don\'t know how to solve this problem")
+        print("Stuck")
     f_dist = sensors.front_distance()
     if f_dist > 15:
         print("Clear")
