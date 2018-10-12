@@ -84,7 +84,7 @@ Tests 10.01 - 10.10: Test evade protocols independently of drive, test mode_disc
           *In sensors.rear_distance - random distance generation for  the option to randomly generate a distance < 15cm ALL of the time
           *In sensors.front_distance - random distance generation, use: > 15cm away most of the time
         *If running with sensors on RPi
-          *In optimal_direction.py, set "test_mode" to bypass reverse option
+          *In optimal_direction.py, turn off "test mode"
           *Ensure front sensor has a clear path >> 15 cm and block manually, sporadically
           *Block rear sensor at < 15cm
     * Run in nested order (inside to out) and debug along the way if necessary:
