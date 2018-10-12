@@ -78,8 +78,10 @@ def mode_discovery(drive_time, drive_burst, mode, check):
     ##Set the bias right or left based on input chosen when calling mode_discovery(tf, mode)
     if mode == 'left':
         bias = LHB_options
+        driveme_tank.mode_lft_LED()
     elif mode == 'right':
         bias = RHB_options
+        driveme_tank.mode_right_LED()
     else:
         print("explore            > 'mode' defined in function mode_discovery(drive_time, drive_burst, mode, check) must be 'left' or 'right'. Please try again.")
         ##Check if obstacle cheking should be on or off
