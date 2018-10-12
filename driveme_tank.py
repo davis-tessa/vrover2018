@@ -1,4 +1,4 @@
-##Using Python 2.7.3
+##Using Python 3.6.5
 
 import RPi.GPIO as gpio
 import time

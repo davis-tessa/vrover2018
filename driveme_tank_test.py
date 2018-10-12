@@ -1,4 +1,4 @@
-##Using Python 2.7.3
+##Using Python 3.6.5
 import time
 import sys
 import driveme_tank
