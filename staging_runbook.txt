@@ -96,7 +96,6 @@ Tests 10.01 - 10.10: Test evade protocols independently of drive, test mode_disc
         *10.06 evade_rev_test5.py
     * Calls functions from evade.py
     * Finally, with setup in place, run:
-        *10.07 explore_test1.py
         *10.08 explore_test2.py
 
 Test 11: Test explore_test3 with realistic variables defined for drive_mode to evaluate real-world behavior

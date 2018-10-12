@@ -7,4 +7,4 @@ import evade
 
 ## Test: Test top level evade logic - change x to highest level evade_rev_x used in script
 print("\n\nStarting Test: evade_rev_test2\n\n")
-evade.evade_rev_2(1, 1)
+evade.evade_rev_2(2, 2)
