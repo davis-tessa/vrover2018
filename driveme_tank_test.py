@@ -1,6 +1,4 @@
 ##Using Python 2.7.3
-
-#import RPi.GPIO as gpio
 import time
 import sys
 import driveme_tank
@@ -9,6 +7,7 @@ import driveme_tank
 
 ##Define the time to drive for (tf)
 tf = 1
+##Define the time to sleep for (ts)
 ts = 3
 
 #drive vechicle forward for tf

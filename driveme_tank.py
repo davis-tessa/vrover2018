@@ -63,7 +63,6 @@ def forward(tf):
         gpio.output(lft_ena, True)
         gpio.output(lft_fwd, True)
         gpio.output(lft_rev, False)
-        time.sleep(tf)
         gpio.cleanup()
     except:
         print("driveme_tank       > Forward virtual: couldn't find wheels to drive\n")
@@ -80,13 +79,11 @@ def reverse(tf):
         gpio.output(lft_ena, True)
         gpio.output(lft_fwd, False)
         gpio.output(lft_rev, True)
-        time.sleep(tf)
         gpio.cleanup()
 
     except:
         print("driveme_tank       > Reverse virtual: couldn't find wheels to drive\n")
         time.sleep(tf)
-
 ##Define a function that will drive the vechicle forward and left for an amount of time (tf)
 def turn_left_fwd(tf):
     try:
@@ -98,11 +95,11 @@ def turn_left_fwd(tf):
         gpio.output(lft_ena, False)
         gpio.output(lft_fwd, False)
         gpio.output(lft_rev, False)
-        time.sleep(tf)
         gpio.cleanup()
     except:
         print("driveme_tank       > Forward left virtual: couldn't find wheels to drive\n")
         time.sleep(tf)
+
 ##Define a function that will drive the vechicle forward and right for an amount of time (tf)
 def turn_right_fwd(tf):
     try:
@@ -114,7 +111,6 @@ def turn_right_fwd(tf):
         gpio.output(lft_ena, True)
         gpio.output(lft_fwd, True)
         gpio.output(lft_rev, False)
-        time.sleep(tf)
         gpio.cleanup()
     except:
         print("driveme_tank       > Forward right virtual: couldn't find wheels to drive\n")
@@ -131,7 +127,6 @@ def turn_left_rev(tf):
         gpio.output(lft_ena, False)
         gpio.output(lft_fwd, False)
         gpio.output(lft_rev, False)
-        time.sleep(tf)
         gpio.cleanup()
     except:
         print("driveme_tank       > Reverse left virtual: couldn't find wheels to drive\n")
@@ -148,7 +143,6 @@ def turn_right_rev(tf):
         gpio.output(lft_ena, True)
         gpio.output(lft_fwd, False)
         gpio.output(lft_rev, True)
-        time.sleep(tf)
         gpio.cleanup()
     except:
         print("driveme_tank       > Reverse right virtual: couldn't find wheels to drive\n")
@@ -165,7 +159,6 @@ def pivot_right(tf):
         gpio.output(lft_ena, True)
         gpio.output(lft_fwd, True)
         gpio.output(lft_rev, False)
-        time.sleep(tf)
         gpio.cleanup()
     except:
         print("driveme_tank       > Pivot right virtual: couldn't find wheels to drive\n")
@@ -182,7 +175,6 @@ def pivot_left(tf):
         gpio.output(lft_ena, True)
         gpio.output(lft_fwd, False)
         gpio.output(lft_rev, True)
-        time.sleep(tf)
         gpio.cleanup()
     except:
         print("driveme_tank       > Reverse left virtual: couldn't find wheels to drive\n")
