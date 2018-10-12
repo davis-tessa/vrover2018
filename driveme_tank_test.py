@@ -13,40 +13,40 @@ ts = 3
 
 #drive vechicle forward for tf
 driveme_tank.forward(tf)
-print("sleeping")
+print("driveme_tank_test  > sleeping")
 time.sleep(ts)
 
 #turn vehicle left while moving forward for tf seconds
 driveme_tank.reverse(tf)
-print("sleeping")
+print("driveme_tank_test  > sleeping")
 time.sleep(ts)
 
 #turn vehicle left while moving forward for tf seconds
 driveme_tank.turn_left_fwd(tf)
-print("sleeping")
+print("driveme_tank_test  > sleeping")
 time.sleep(ts)
 
 #turn vehicle right while moving forward for tf seconds
 driveme_tank.turn_right_fwd(tf)
-print("sleeping")
+print("driveme_tank_test  > sleeping")
 time.sleep(ts)
 
 #turn vehicle left while reversing for tf seconds
 driveme_tank.turn_left_rev(tf)
-print("sleeping")
+print("driveme_tank_test  > sleeping")
 time.sleep(ts)
 
 #turn vehicle right while reversing for tf seconds
 driveme_tank.turn_right_rev(tf)
-print("sleeping")
+print("driveme_tank_test  > sleeping")
 time.sleep(ts)
 
 #Pivot vehicle clockwise (right) for tf seconds
 driveme_tank.pivot_right(tf)
-print("sleeping")
+print("driveme_tank_test  > sleeping")
 time.sleep(ts)
 
 #Pivot vehicle counterclockwise (left) while moving forward for tf seconds
 driveme_tank.pivot_left(tf)
-print("sleeping")
+print("driveme_tank_test  > sleeping")
 time.sleep(ts)
