@@ -12,5 +12,7 @@ import driveme_tank
 driveme_tank.mode_lft_LED()
 print("The left mode indicator light should be turned on")
 
+time.sleep(3)
+
 driveme_tank.mode_rt_LED()
-print("The left mode indicator light should be turned on")
+print("The right mode indicator light should be turned on")
