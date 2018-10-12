@@ -168,7 +168,7 @@ def evade_fwd_3(drive_time, drive_burst):
 def check_fr_3(drive_time, drive_burst):
     print("evade.check_fr_3   > Third check of the front sensor:\n")
     ##Define the variable f_dist as the distance from the front sensor to the nearest object
-    f_dist = sensors.front_distance(drive_time, drive_burst)
+    f_dist = sensors.front_distance()
         ##Instruct action: if an object is closer than 15 cm away, check for the optimal direction and take evasive action
     if f_dist < 15:
         evade_fwd_3(1, 1)
