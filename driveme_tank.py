@@ -192,12 +192,14 @@ def pivot_left(tf):
         time.sleep(tf)
 
 def mode_lft_LED():
+    gpio.setmode(gpio.BOARD)
     gpio.setup(mode_right, gpio.OUT)
     gpio.setup(mode_left, gpio.OUT)
     gpio.output(mode_right, False)
     gpio.output(mode_left, True)
 
 def mode_rt_LED():
+    gpio.setmode(gpio.BOARD)
     gpio.setup(mode_right, gpio.OUT)
     gpio.setup(mode_left, gpio.OUT)
     gpio.output(mode_right, True)
