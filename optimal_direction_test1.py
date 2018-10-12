@@ -1,7 +1,5 @@
-import time
 import sys
-import random
-import sensors
+
 import optimal_direction
 
 ##Test: Return the optimal_direction based on running optimal_direction.py
