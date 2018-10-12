@@ -86,7 +86,7 @@ def mode_discovery(drive_time, drive_burst, mode, check):
 
     def collision_avoidance(drive_time, drive_burst, mode):
         if check == 'on':
-            evade.check_fr_1(drive_time, drive_burst)
+            evade.check_fr_1(drive_time, drive_burst, mode)
         elif check == 'off':
             print("explore            > Driving blind!!\n")
         else:
