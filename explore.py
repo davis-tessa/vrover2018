@@ -99,7 +99,6 @@ def mode_discovery(drive_time, drive_burst, mode, check):
         print("explore            > I will explore forward with caution")
         ##Repeat the steps below drive_iterate_f times
         for y in range(drive_iterate_f):
-            mode_indicator
             ##Run the function collision_avoidance() to check the distance from the front sensor to the closest object
             collision_avoidance(drive_time, drive_burst)
             ##Drive forward for drive_burst seconds
@@ -111,7 +110,6 @@ def mode_discovery(drive_time, drive_burst, mode, check):
         print("explore            > I will explore forward and left with caution")
         ##Repeat the steps below drive_iterate times
         for y in range(drive_iterate):
-            mode_indicator
             ##Run the function collision_avoidance() to check the distance from the front sensor to the closest object
             collision_avoidance(drive_time, drive_burst, mode)
             ##Drive left and forward for drive_burst seconds
@@ -121,7 +119,6 @@ def mode_discovery(drive_time, drive_burst, mode, check):
         print("explore            > I will explore forward and right with caution")
         ##Repeat the steps below drive_iterate times
         for y in range(drive_iterate):
-            mode_indicator
             ##Run the function collision_avoidance() to check the distance from the front sensor to the closest object
             collision_avoidance(drive_time, drive_burst)
             ##Drive right and forward for drive_burst seconds
