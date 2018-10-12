@@ -102,7 +102,6 @@ def mode_discovery(drive_time, drive_burst, mode, check):
             ##Run the function collision_avoidance() to check the distance from the front sensor to the closest object
             collision_avoidance(drive_time, drive_burst)
             ##Drive forward for drive_burst seconds
-            mode_LED(mode)
             driveme_tank.forward(drive_burst, mode)
 
     ##If 2 is chosen at random from either LHB_options or RHB_options... (depending on bias 'left' or 'right')
