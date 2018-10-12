@@ -111,9 +111,9 @@ def mode_discovery(drive_time, drive_burst, mode, check):
         ##Repeat the steps below drive_iterate times
         for y in range(drive_iterate):
             ##Run the function collision_avoidance() to check the distance from the front sensor to the closest object
-            collision_avoidance(drive_time, drive_burst, mode)
+            collision_avoidance(drive_time, drive_burst)
             ##Drive left and forward for drive_burst seconds
-            driveme_tank.turn_left_fwd(drive_burst)
+            driveme_tank.turn_left_fwd(drive_burst, mode)
     ##If 3 is chosen at random from either LHB_options or RHB_options... (depending on bias 'left' or 'right')
     elif x == 3:
         print("explore            > I will explore forward and right with caution")
