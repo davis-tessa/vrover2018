@@ -1,5 +1,4 @@
 ##Using Python 2.7.3
-import RPi.GPIO as gpio
 import time
 import sys
 import driveme_tank
