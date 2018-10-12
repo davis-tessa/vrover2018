@@ -1,4 +1,4 @@
-##Using Python 2.7.3
+##Using Python 3.6.5
 
 import RPi.GPIO as gpio
 import time
@@ -65,6 +65,7 @@ def forward(tf):
         gpio.output(lft_rev, False)
         time.sleep(tf)
         gpio.cleanup()
+
     except:
         print("driveme_tank       > Forward virtual: couldn't find wheels to drive\n")
         time.sleep(tf)
@@ -86,7 +87,6 @@ def reverse(tf):
     except:
         print("driveme_tank       > Reverse virtual: couldn't find wheels to drive\n")
         time.sleep(tf)
-
 ##Define a function that will drive the vechicle forward and left for an amount of time (tf)
 def turn_left_fwd(tf):
     try:
@@ -103,6 +103,7 @@ def turn_left_fwd(tf):
     except:
         print("driveme_tank       > Forward left virtual: couldn't find wheels to drive\n")
         time.sleep(tf)
+
 ##Define a function that will drive the vechicle forward and right for an amount of time (tf)
 def turn_right_fwd(tf):
     try:

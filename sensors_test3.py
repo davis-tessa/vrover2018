@@ -1,9 +1,5 @@
-##Using Python 2.7.3
+##Using Python 3.6.5
 
-##Import the GPIO library
-import RPi.GPIO as gpio
-##Import the time library
-import time
 ##Import the local sensors library
 import sensors
 
