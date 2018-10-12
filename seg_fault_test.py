@@ -12,9 +12,8 @@ import random
 ##Import local library optimal_direction: see optimal_direction.py
 import optimal_direction
 
-opt_dir = optimal_direction.optimal_direction()
-
 def seg_test():
+    opt_dir = optimal_direction.optimal_direction()
     if opt_dir == 'left':
         print("left")
     ##If the optimal direction is right, drive forward and right
@@ -22,9 +21,4 @@ def seg_test():
         print("right")
     else:
         print("Stuck")
-    f_dist = sensors.front_distance()
-    if f_dist > 15:
-        print("Clear")
-    else:
-        print("Blocked")
 seg_test()
