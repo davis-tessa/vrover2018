@@ -63,8 +63,9 @@ def forward(tf):
         gpio.output(lft_ena, True)
         gpio.output(lft_fwd, True)
         gpio.output(lft_rev, False)
-        gpio.cleanup()
         time.sleep(tf)
+        gpio.cleanup()
+
     except:
         print("driveme_tank       > Forward virtual: couldn't find wheels to drive\n")
         time.sleep(tf)
@@ -80,8 +81,8 @@ def reverse(tf):
         gpio.output(lft_ena, True)
         gpio.output(lft_fwd, False)
         gpio.output(lft_rev, True)
-        gpio.cleanup()
         time.sleep(tf)
+        gpio.cleanup()
 
     except:
         print("driveme_tank       > Reverse virtual: couldn't find wheels to drive\n")
