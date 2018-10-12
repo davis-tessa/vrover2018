@@ -78,10 +78,10 @@ def mode_discovery(drive_time, drive_burst, mode, check):
     ##Set the bias right or left based on input chosen when calling mode_discovery(tf, mode)
     if mode == 'left':
         bias = LHB_options
-        driveme_tank.mode_lft_LED()
+        mode_indicator = driveme_tank.mode_lft_LED()
     elif mode == 'right':
         bias = RHB_options
-        driveme_tank.mode_rt_LED()
+        mode_indicator = driveme_tank.mode_rt_LED()
     else:
         print("explore            > 'mode' defined in function mode_discovery(drive_time, drive_burst, mode, check) must be 'left' or 'right'. Please try again.")
         ##Check if obstacle cheking should be on or off
@@ -101,6 +101,7 @@ def mode_discovery(drive_time, drive_burst, mode, check):
         print("explore            > I will explore forward with caution")
         ##Repeat the steps below drive_iterate_f times
         for y in range(drive_iterate_f):
+            mode_indicator
             ##Run the function collision_avoidance() to check the distance from the front sensor to the closest object
             collision_avoidance(drive_time, drive_burst)
             ##Drive forward for drive_burst seconds
@@ -110,6 +111,7 @@ def mode_discovery(drive_time, drive_burst, mode, check):
         print("explore            > I will explore forward and left with caution")
         ##Repeat the steps below drive_iterate times
         for y in range(drive_iterate):
+            mode_indicator
             ##Run the function collision_avoidance() to check the distance from the front sensor to the closest object
             collision_avoidance(drive_time, drive_burst)
             ##Drive left and forward for drive_burst seconds
@@ -119,6 +121,7 @@ def mode_discovery(drive_time, drive_burst, mode, check):
         print("explore            > I will explore forward and right with caution")
         ##Repeat the steps below drive_iterate times
         for y in range(drive_iterate):
+            mode_indicator
             ##Run the function collision_avoidance() to check the distance from the front sensor to the closest object
             collision_avoidance(drive_time, drive_burst)
             ##Drive right and forward for drive_burst seconds
