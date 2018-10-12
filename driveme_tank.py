@@ -32,6 +32,8 @@ rt_ena = 16
 lft_fwd = 15
 lft_rev = 13
 lft_ena = 11
+mode_right = 36
+mode_left = 38
 
 ##Set up GPIO pins as output
 def init():
@@ -188,3 +190,17 @@ def pivot_left(tf):
     except:
         print("driveme_tank       > Reverse left virtual: couldn't find wheels to drive\n")
         time.sleep(tf)
+
+def mode_lft_LED():
+    gpio.setmode(gpio.BOARD)
+    gpio.setup(mode_right, gpio.OUT)
+    gpio.setup(mode_left, gpio.OUT)
+    gpio.output(mode_right, False)
+    gpio.output(mode_left, True)
+
+def mode_rt_LED():
+    gpio.setmode(gpio.BOARD)
+    gpio.setup(mode_right, gpio.OUT)
+    gpio.setup(mode_left, gpio.OUT)
+    gpio.output(mode_right, True)
+    gpio.output(mode_left, False)
