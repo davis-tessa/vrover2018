@@ -3,6 +3,7 @@
 import sys
 import random
 import sensors
+import time
 
 def optimal_direction():
 ##Toggle test mode:
@@ -40,6 +41,8 @@ def optimal_direction():
             else:
                 print("optimal_direction  > Something went wrong in random number generation.")
     #Return Optimal Direction
+    time.sleep(1)
     print("optimal_direction  > ", optimal_direction, "is optimal\n")
+
 
     return optimal_direction
