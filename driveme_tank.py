@@ -40,6 +40,8 @@ def init():
     try:
         print("driveme_tank       > Initialising GPIO Pins")
         gpio.setmode(gpio.BOARD)
+        gpio.setup(mode_right, gpio.OUT)
+        gpio.setup(mode_left, gpio.OUT)
         gpio.setup(rt_fwd, gpio.OUT)
         gpio.setup(rt_rev, gpio.OUT)
         gpio.setup(rt_ena, gpio.OUT)
@@ -55,7 +57,7 @@ def init():
 ##    lft_ena_pwm.start(25)
 
 ##Define a function that will drive the vechicle forward for an amount of time (tf)
-def forward(tf):
+def forward(tf, mode):
     try:
         print("driveme_tank       > Driving forward")
         init()
@@ -65,6 +67,12 @@ def forward(tf):
         gpio.output(lft_ena, True)
         gpio.output(lft_fwd, True)
         gpio.output(lft_rev, False)
+        if mode == 'left':
+            gpio.output(mode_right, False)
+            gpio.output(mode_left, True)
+        else:
+            gpio.output(mode_right, True)
+            gpio.output(mode_left, False)
         time.sleep(tf)
         gpio.cleanup()
 
@@ -73,7 +81,7 @@ def forward(tf):
         time.sleep(tf)
 
 ##Define a function that will drive the vechicle in reverse for an amount of time (tf)
-def reverse(tf):
+def reverse(tf, mode):
     try:
         print("driveme_tank       > Driving in reverse")
         init()
@@ -83,6 +91,12 @@ def reverse(tf):
         gpio.output(lft_ena, True)
         gpio.output(lft_fwd, False)
         gpio.output(lft_rev, True)
+        if mode == 'left':
+            gpio.output(mode_right, False)
+            gpio.output(mode_left, True)
+        else:
+            gpio.output(mode_right, True)
+            gpio.output(mode_left, False)
         time.sleep(tf)
         gpio.cleanup()
 
@@ -90,7 +104,7 @@ def reverse(tf):
         print("driveme_tank       > Reverse virtual: couldn't find wheels to drive\n")
         time.sleep(tf)
 ##Define a function that will drive the vechicle forward and left for an amount of time (tf)
-def turn_left_fwd(tf):
+def turn_left_fwd(tf, mode):
     try:
         print("driveme_tank       > Driving left and forward")
         init()
@@ -100,6 +114,12 @@ def turn_left_fwd(tf):
         gpio.output(lft_ena, False)
         gpio.output(lft_fwd, False)
         gpio.output(lft_rev, False)
+        if mode == 'left':
+            gpio.output(mode_right, False)
+            gpio.output(mode_left, True)
+        else:
+            gpio.output(mode_right, True)
+            gpio.output(mode_left, False)
         time.sleep(tf)
         gpio.cleanup()
     except:
@@ -107,7 +127,7 @@ def turn_left_fwd(tf):
         time.sleep(tf)
 
 ##Define a function that will drive the vechicle forward and right for an amount of time (tf)
-def turn_right_fwd(tf):
+def turn_right_fwd(tf, mode):
     try:
         print("driveme_tank       > Driving right and forward")
         init()
@@ -117,6 +137,12 @@ def turn_right_fwd(tf):
         gpio.output(lft_ena, True)
         gpio.output(lft_fwd, True)
         gpio.output(lft_rev, False)
+        if mode == 'left':
+            gpio.output(mode_right, False)
+            gpio.output(mode_left, True)
+        else:
+            gpio.output(mode_right, True)
+            gpio.output(mode_left, False)
         time.sleep(tf)
         gpio.cleanup()
     except:
@@ -124,7 +150,7 @@ def turn_right_fwd(tf):
         time.sleep(tf)
 
 ##Define a function that will drive the vechicle in reverse and left for an amount of time (tf)
-def turn_left_rev(tf):
+def turn_left_rev(tf, mode):
     try:
         print("driveme_tank       > Driving left in reverse")
         init()
@@ -134,6 +160,12 @@ def turn_left_rev(tf):
         gpio.output(lft_ena, False)
         gpio.output(lft_fwd, False)
         gpio.output(lft_rev, False)
+        if mode == 'left':
+            gpio.output(mode_right, False)
+            gpio.output(mode_left, True)
+        else:
+            gpio.output(mode_right, True)
+            gpio.output(mode_left, False)
         time.sleep(tf)
         gpio.cleanup()
     except:
@@ -141,7 +173,7 @@ def turn_left_rev(tf):
         time.sleep(tf)
 
 ##Define a function that will drive the vechicle forward and right for an amount of time (tf)
-def turn_right_rev(tf):
+def turn_right_rev(tf, mode):
     try:
         print("driveme_tank       > Driving right in reverse")
         init()
@@ -151,6 +183,12 @@ def turn_right_rev(tf):
         gpio.output(lft_ena, True)
         gpio.output(lft_fwd, False)
         gpio.output(lft_rev, True)
+        if mode == 'left':
+            gpio.output(mode_right, False)
+            gpio.output(mode_left, True)
+        else:
+            gpio.output(mode_right, True)
+            gpio.output(mode_left, False)
         time.sleep(tf)
         gpio.cleanup()
     except:
@@ -158,7 +196,7 @@ def turn_right_rev(tf):
         time.sleep(tf)
 
 ##Define a function that will pivot the vechicle clockwise (right) for an amount of time (tf)
-def pivot_right(tf):
+def pivot_right(tf, mode):
     try:
         print("driveme_tank       > Pivoting right")
         init()
@@ -168,6 +206,12 @@ def pivot_right(tf):
         gpio.output(lft_ena, True)
         gpio.output(lft_fwd, True)
         gpio.output(lft_rev, False)
+        if mode == 'left':
+            gpio.output(mode_right, False)
+            gpio.output(mode_left, True)
+        else:
+            gpio.output(mode_right, True)
+            gpio.output(mode_left, False)
         time.sleep(tf)
         gpio.cleanup()
     except:
@@ -175,7 +219,7 @@ def pivot_right(tf):
         time.sleep(tf)
 
 ##Define a function that will pivot the vechicle counter-clockwise (left) for an amount of time (tf)
-def pivot_left(tf):
+def pivot_left(tf, mode):
     try:
         print("driveme_tank       > Pivoting left")
         init()
@@ -185,22 +229,14 @@ def pivot_left(tf):
         gpio.output(lft_ena, True)
         gpio.output(lft_fwd, False)
         gpio.output(lft_rev, True)
+        if mode == 'left':
+            gpio.output(mode_right, False)
+            gpio.output(mode_left, True)
+        else:
+            gpio.output(mode_right, True)
+            gpio.output(mode_left, False)
         time.sleep(tf)
         gpio.cleanup()
     except:
         print("driveme_tank       > Reverse left virtual: couldn't find wheels to drive\n")
         time.sleep(tf)
-
-def mode_lft_LED():
-    gpio.setmode(gpio.BOARD)
-    gpio.setup(mode_right, gpio.OUT)
-    gpio.setup(mode_left, gpio.OUT)
-    gpio.output(mode_right, False)
-    gpio.output(mode_left, True)
-
-def mode_rt_LED():
-    gpio.setmode(gpio.BOARD)
-    gpio.setup(mode_right, gpio.OUT)
-    gpio.setup(mode_left, gpio.OUT)
-    gpio.output(mode_right, True)
-    gpio.output(mode_left, False)
