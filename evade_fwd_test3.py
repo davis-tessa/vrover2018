@@ -6,4 +6,4 @@ import sys
 import evade
 
 ## Test: Test mid level evade logic - change x to match level n evade_fwd_x used in script
-evade.evade_fwd_3(1, 1)
+evade.evade_fwd_3(2, 2)
