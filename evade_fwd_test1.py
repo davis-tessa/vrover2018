@@ -7,4 +7,4 @@ import evade
 
 ## Test: Test top level check_front logic - change x to highest level check_front_x used in script
 print("\n\nStarting Test: evade_fwd_test1\n\n")
-evade.check_fr_4(2, 2)
+evade.check_fr_4(2, 2, 'left')
