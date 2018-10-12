@@ -1,4 +1,3 @@
 #/bin/bash
-kill $(pgrep -f 'drive.py')
-cp ./drive_left.py ./drive.py
+kill $(pgrep -f 'drive_left.py')
 exit 1

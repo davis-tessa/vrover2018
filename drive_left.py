@@ -17,7 +17,7 @@ import evade
 ##Import local library explore: see explore.py
 import explore
 
-def drive_left():
-  explore.mode_discovery(1, 1, 'left', 'on')
+print("\n\nStarting Test: drive_left\n\n")
 
-drive_left()
+for z in range(20):
+    explore.mode_discovery(2, 0.03, 'left', 'on')
