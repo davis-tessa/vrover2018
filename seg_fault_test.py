@@ -15,10 +15,10 @@ import optimal_direction
 def seg_test():
     opt_dir = optimal_direction.optimal_direction()
     if opt_dir == 'left':
-        print("left")
+        print("seg_fault_test     > optimal direction = left")
     ##If the optimal direction is right, drive forward and right
     elif opt_dir == 'right':
-        print("right")
+        print("seg_fault_test     > right")
     else:
-        print("Stuck")
+        print("seg_fault_test     > Stuck")
 seg_test()

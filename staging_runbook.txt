@@ -39,7 +39,7 @@ Test 6: Test that the pan_check_distance function works by returning the content
 
 Test 7: Return the optimal_direction based on running optimal_direction.py
 * Pre-requisite: Pass Test 6 (sensors_test5.py) and all pre-requisite tests for Test 6
-* Run optimal_direction_test1.py
+* Run optimal_dir_test1.py
 * Calls functions from optimal_direction.py
 
 Test 8: check the mode_discovery function works WITHOUT CHECKING FOR Distance.
