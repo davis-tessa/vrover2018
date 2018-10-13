@@ -280,7 +280,7 @@ def pan_check_distance_1():
 ##Set starting position for servo to center
     pwm.start(7.5)
     ##Cleanup
-    time.sleep(0.2)
+    time.sleep(1)
     gpio.cleanup()
     print ("sensors            > Distance at front:")
     front_dist = front_distance()
@@ -297,7 +297,7 @@ def pan_check_distance_1():
 ##Set starting position for servo to center
     pwm.start(10)
     ##Cleanup
-    time.sleep(0.2)
+    time.sleep(1)
     gpio.cleanup()
     print ("sensors            > Distance to left:")
     front_dist = front_distance()
@@ -314,7 +314,7 @@ def pan_check_distance_1():
 ##Set starting position for servo to center
     pwm.start(5)
     ##Cleanup
-    time.sleep(0.2)
+    time.sleep(1)
     gpio.cleanup()
     print("sensors            > Distance to right:")
     front_dist = front_distance()
@@ -332,7 +332,7 @@ def pan_check_distance_1():
 ##Set starting position for servo to center
     pwm.start(7.5)
     ##Cleanup
-    time.sleep(0.2)
+    time.sleep(1)
     gpio.cleanup()
     print("sensors            > Distance at front:")
     front_dist = front_distance()
