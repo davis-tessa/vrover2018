@@ -263,6 +263,63 @@ def front_pan():
     time.sleep(0.2)
     gpio.cleanup()
 
+##Define function to pan the servo motor left and stay
+def pan_left():
+    print("sensors.pan_left   > Watch me position center, then left, and stay there.")
+    ##Define pin mapping for pan control
+    pan_control = 12
+    ##Set gpio to board mode
+    gpio.setmode(gpio.BOARD)
+    ##Set pan control gpio pin as output
+    gpio.setup(pan_control, gpio.OUT)
+    ##Set frequency for servo to 50 Hz
+    pwm=gpio.PWM(pan_control, 50)
+    ##Set starting position for servo to center
+    pwm.start(7.5)
+    ##Pivot to the left
+    time.sleep(1)
+    pwm.ChangeDutyCycle(10)
+    ##Cleanup
+    time.sleep(0.2)
+    gpio.cleanup()
+
+##Define function to pan the servo motor right and stay
+def pan_right():
+    print("sensors.pan_right  > Watch me position center, then right, and stay there.")
+    ##Define pin mapping for pan control
+    pan_control = 12
+    ##Set gpio to board mode
+    gpio.setmode(gpio.BOARD)
+    ##Set pan control gpio pin as output
+    gpio.setup(pan_control, gpio.OUT)
+    ##Set frequency for servo to 50 Hz
+    pwm=gpio.PWM(pan_control, 50)
+    ##Set starting position for servo to center
+    pwm.start(7.5)
+    ##Pivot to the right
+    time.sleep(1)
+    pwm.ChangeDutyCycle(5)
+    ##Cleanup
+    time.sleep(0.2)
+    gpio.cleanup()
+
+##Define function to pan the servo motor to the center and stay
+def pan_center():
+    print("sensors.pa            > Watch me position center, then left, then right, and back to center.")
+    ##Define pin mapping for pan control
+    pan_control = 12
+    ##Set gpio to board mode
+    gpio.setmode(gpio.BOARD)
+    ##Set pan control gpio pin as output
+    gpio.setup(pan_control, gpio.OUT)
+    ##Set frequency for servo to 50 Hz
+    pwm=gpio.PWM(pan_control, 50)
+    ##Set starting position for servo to center
+    pwm.start(7.5)
+    ##Cleanup
+    time.sleep(0.2)
+    gpio.cleanup()
+
 ##Define a function to check the optimal direction for travel
 
 ##Define function to pan the servo motor and to check the distance at each turn
