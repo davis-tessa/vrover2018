@@ -7,6 +7,7 @@ import sensors
 
 print("\n\nStarting Test: sensors_test5\n\n")
 distance_table = sensors.pan_check_distance()
+print("distance table is", distance_table)
 print("front distance", distance_table['front'])
 front_dist = distance_table['front']
 print("left distance", distance_table['left'])
