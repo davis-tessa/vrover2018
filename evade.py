@@ -21,7 +21,7 @@ def stuck_help(why):
     print("evade.stuck_help   > Help! I'm Stuck!! rescue me!!\n")
     abort_drive(why)
 
-def check_bk_3(drive_time, drive_burst):
+def check_bk_3(drive_time, drive_burst, mode):
     print("evade.check_bk_3   > Now check the front sensor again - is it safe?\n")
     ##Define the variable r_dist as the distance from the rear sensor to the nearest object
     f_dist = sensors.front_distance()
@@ -31,7 +31,7 @@ def check_bk_3(drive_time, drive_burst):
     else:
         print("evade.check_bk_3   > All clear in front!")
 
-def evade_rev_2(drive_time, drive_burst):
+def evade_rev_2(drive_time, drive_burst, mode):
     drive_iterate = int(round(drive_time / drive_burst))
     print("evade.evade_rev_2  > Too close!\nevade.evade_rev_2  > Performing 2st order evasive manouver\n")
     ##Bring the return of the function optimal_direction in from optimal_direction.py
@@ -42,18 +42,18 @@ def evade_rev_2(drive_time, drive_burst):
         ##Repeat the steps below drive_iterate times
         for y in range(drive_iterate):
             ##Run the function collision_avoidance() to check the distance from the front sensor to the closest object
-            check_bk_3(drive_time, drive_burst)
+            check_bk_3(drive_time, drive_burst, mode)
             ##Drive left and forward for drive_burst seconds
-            driveme_tank.turn_left_fwd(drive_burst)
+            driveme_tank.turn_left_fwd(drive_burst, mode)
     ##If the optimal direction is right, drive forward and right
     elif opt_dir == 'right':
         print("evade.evade_rev2  > I will proceed forward and right with caution")
         ##Repeat the steps below drive_iterate times
         for y in range(drive_iterate):
             ##Run the function collision_avoidance() to check the distance from the front sensor to the closest object
-            check_bk_3(drive_time, drive_burst)
+            check_bk_3(drive_time, drive_burst, mode)
             ##Drive right and forward for drive_burst seconds
-            driveme_tank.turn_right_fwd(drive_burst)
+            driveme_tank.turn_right_fwd(drive_burst, mode)
     else:
         stuck_help("evade.evade_rev_2  > Ooops!\nevade.evade_rev_2  > I don\'t know how to solve this problem")
 
@@ -88,9 +88,9 @@ def evade_rev_1(drive_time, drive_burst, mode):
         ##Repeat the steps below drive_iterate times
         for y in range(drive_iterate):
             ##Collision collision_avoidance
-            check_bk_2(drive_time, drive_burst)
+            check_bk_2(drive_time, drive_burst, mode)
             ##Drive left and forward for drive_burst seconds
-            driveme_tank.turn_right_fwd(drive_burst)
+            driveme_tank.turn_right_fwd(drive_burst, mode)
 
     else:
         stuck_help("evade.evade_rev_1  > Boxed in on 3-sides\nevade.evade_rev_1  > I don\'t know how to solve this problem")
