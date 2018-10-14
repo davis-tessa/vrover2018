@@ -1,7 +1,5 @@
-##Using Python 2.7.3
+##Using Python 3.6.5
 
-##Import public library python-RPi.GPIO
-import RPi.GPIO as gpio
 ##Import public library python-time
 import time
 ##Import public library python-sys
@@ -58,53 +56,6 @@ def abort_drive(why):
 ## OR
 ## switch to mode_RCD? Automatically? Or send a distress message?
 
-##Define a function to check rear distance sensor by importing from the local python script sensors.py
-def check_rear():
-    try:
-##Define the variable r_dist as the distance from the rear sensor to the nearest object
-        r_dist = sensors.rear_distance()
-##Instruct action: if an object is closer than xx cm away, check for the optimal direction and take evasive action
-        if r_dist <15:
-##To be completed with opt_dir once this has been written. Meanwhile..
-            print("explore            > Too Close! Prepare to crash!")
-        else:
-            print("explore            > All clear at the back!")
-    except:
-        print("explore            > If you had a sensor on the rear I'd check the distance now.")
-
-##Complete by adding in a response using optimal_direction
-##Consider putting in a random pivot right or left until optimal_direction function is complete
-##Best practice: Don't list if statements more than 2 deep, and try to nest 1 deep
-
-##Define a function to check rear distance sensor by importing from the local python script sensors.py
-# def check_front_1():
-#     try:
-#         ##Define the variable f_dist as the distance from the front sensor to the nearest object
-#         f_dist = sensors.front_distance()
-#         ##Instruct action: if an object is closer than 15 cm away, check for the optimal direction and take evasive action
-#         if f_dist < 15:
-#             evade.evade_fwd_1(0.5)
-#             ##Instruct action: if an object is closer than 15 cm away, check for the optimal direction and take evasive action
-#             if f_dist < 15:
-#                 evade.evade_fwd_2(0.5)
-#             else:
-#                 print("All clear in front")
-# #                evade_fwd_2(0.5)
-# #
-# #                if
-#
-# ##To be completed with opt_dir once this has been written. Meanwhile..
-# #        print("Too Close! Prepare to crash!")
-#
-#         else:
-#             print("All clear in front!")
-#
-#     except:
-#         print("Unable to check the front - debug evade functions.")
-##Complete by adding in a response using optimal_direction
-##Best practice: Don't list if statements more than 2 deep, and try to nest 1 deep
-##May need to define check_front_2, check_front_3, check_front_4, etc.
-
 ##Define a function to run as the primary vehicle autonomous drive mode: mode_discovery
 
 ##Input: explore.mode_discovery(x, y, z, u)
@@ -133,9 +84,9 @@ def mode_discovery(drive_time, drive_burst, mode, check):
         print("explore            > 'mode' defined in function mode_discovery(drive_time, drive_burst, mode, check) must be 'left' or 'right'. Please try again.")
         ##Check if obstacle cheking should be on or off
 
-    def collision_avoidance():
+    def collision_avoidance(drive_time, drive_burst, mode):
         if check == 'on':
-            evade.check_fr_1()
+            evade.check_fr_1(drive_time, drive_burst, mode)
         elif check == 'off':
             print("explore            > Driving blind!!\n")
         else:
@@ -149,27 +100,28 @@ def mode_discovery(drive_time, drive_burst, mode, check):
         ##Repeat the steps below drive_iterate_f times
         for y in range(drive_iterate_f):
             ##Run the function collision_avoidance() to check the distance from the front sensor to the closest object
-            collision_avoidance()
+            collision_avoidance(drive_time, drive_burst, mode)
             ##Drive forward for drive_burst seconds
-            driveme_tank.forward(drive_burst)
+            driveme_tank.forward(drive_burst, mode)
+
     ##If 2 is chosen at random from either LHB_options or RHB_options... (depending on bias 'left' or 'right')
     elif x == 2:
         print("explore            > I will explore forward and left with caution")
         ##Repeat the steps below drive_iterate times
         for y in range(drive_iterate):
             ##Run the function collision_avoidance() to check the distance from the front sensor to the closest object
-            collision_avoidance()
+            collision_avoidance(drive_time, drive_burst, mode)
             ##Drive left and forward for drive_burst seconds
-            driveme_tank.turn_left_fwd(drive_burst)
+            driveme_tank.turn_left_fwd(drive_burst, mode)
     ##If 3 is chosen at random from either LHB_options or RHB_options... (depending on bias 'left' or 'right')
     elif x == 3:
         print("explore            > I will explore forward and right with caution")
         ##Repeat the steps below drive_iterate times
         for y in range(drive_iterate):
             ##Run the function collision_avoidance() to check the distance from the front sensor to the closest object
-            collision_avoidance()
+            collision_avoidance(drive_time, drive_burst, mode)
             ##Drive right and forward for drive_burst seconds
-            driveme_tank.turn_right_fwd(drive_burst)
+            driveme_tank.turn_right_fwd(drive_burst, mode)
     else:
         abort_drive("explore            > Critical error in mode_discovery. Aborting...")
 

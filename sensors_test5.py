@@ -1,9 +1,5 @@
-##Using Python 2.7.3
+##Using Python 3.6.5
 
-##Import the GPIO library
-import RPi.GPIO as gpio
-##Import the time library
-import time
 ##Import the local sensors library
 import sensors
 
@@ -11,6 +7,7 @@ import sensors
 
 print("\n\nStarting Test: sensors_test5\n\n")
 distance_table = sensors.pan_check_distance()
+print("distance table is", distance_table)
 print("front distance", distance_table['front'])
 front_dist = distance_table['front']
 print("left distance", distance_table['left'])
