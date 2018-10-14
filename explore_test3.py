@@ -1,20 +1,9 @@
-##Using Python 2.7.3
+##Using Python 3.6.5
 
-##Import public library python-RPi.GPIO
-import RPi.GPIO as gpio
-##Import public library python-time
-import time
-##Import public library python-sys
-import sys
-##Import local library python-sensors: see sensors.py
-import sensors
-##Import local library python-driveme: see driveme.py
-import driveme_tank
-##Import public library python-random
-import random
 ##Import local library explore
 import explore
-
+##Import time
+import time
 ##Test: Add sensor check collision_avoidance() to the test
 ##Input: explore.mode_discovery(x, y, z, u)
 ##x is the time that left or right forward drive will run for assuming no obstacles
