@@ -95,6 +95,14 @@ def mode_discovery(drive_time, drive_burst, mode, check):
         else:
             print("explore            > 'check' defined in function mode_discovery(drive_time, drive_burst, mode, check) must be 'on' or 'off'. Please try again.")
 
+    def collision_avoidance_rev(drive_time, drive_burst, mode):
+        if check == 'on':
+            evade.check_bk_1(drive_time, drive_burst, mode)
+        elif check == 'off':
+            print("explore            > Driving blind!!\n")
+        else:
+            print("explore            > 'check' defined in function mode_discovery(drive_time, drive_burst, mode, check) must be 'on' or 'off'. Please try again.")
+
     ##Choose a random direction to travel in:
     x = random.choice(bias)
     ##If 1 is chosen at random from either LHB_options or RHB_options... (depending on bias 'left' or 'right')
@@ -127,22 +135,22 @@ def mode_discovery(drive_time, drive_burst, mode, check):
             driveme_tank.turn_right_fwd(drive_burst, mode)
 
     elif x == 4:
-        print("explore            > Spin around left!!!")
+        print("explore            > Mars walk to the left!!!")
         ##Repeat the steps below drive_iterate times
         for y in range(drive_iterate):
             ##Run the function collision_avoidance() to check the distance from the front sensor to the closest object
-            collision_avoidance(drive_time, drive_burst, mode)
+            collision_avoidance_rev(drive_time, drive_burst, mode)
             ##Drive right and forward for drive_burst seconds
-            driveme_tank.pivot_left(drive_burst, mode)
+            driveme_tank.turn_left_rev(drive_burst, mode)
 
     elif x == 5:
-        print("explore            > Spin around right!!!")
+        print("explore            > Mars walk to the right!!!")
         ##Repeat the steps below drive_iterate times
         for y in range(drive_iterate):
             ##Run the function collision_avoidance() to check the distance from the front sensor to the closest object
-            collision_avoidance(drive_time, drive_burst, mode)
+            collision_avoidance_rev(drive_time, drive_burst, mode)
             ##Drive right and forward for drive_burst seconds
-            driveme_tank.pivot_right(drive_burst, mode)
+            driveme_tank.turn_right_rev(drive_burst, mode)
 
     else:
         abort_drive("explore            > Critical error in mode_discovery. Aborting...")
