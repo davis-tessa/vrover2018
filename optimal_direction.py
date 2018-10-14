@@ -46,5 +46,3 @@ def optimal_direction():
 
 
     return optimal_direction
-
-optimal_direction()

@@ -1,6 +1,6 @@
 ##Using Python 3.6.5
 
-#import RPi.GPIO as gpio
+import RPi.GPIO as gpio
 import time
 import sys
 
@@ -70,9 +70,12 @@ def forward(tf, mode):
         if mode == 'left':
             gpio.output(mode_right, False)
             gpio.output(mode_left, True)
-        else:
+        elif mode == 'right':
             gpio.output(mode_right, True)
             gpio.output(mode_left, False)
+        else:
+            gpio.output(mode_right, True)
+            gpio.output(mode_left, True)
         time.sleep(tf)
         gpio.cleanup()
 
@@ -94,9 +97,12 @@ def reverse(tf, mode):
         if mode == 'left':
             gpio.output(mode_right, False)
             gpio.output(mode_left, True)
-        else:
+        elif mode == 'right':
             gpio.output(mode_right, True)
             gpio.output(mode_left, False)
+        else:
+            gpio.output(mode_right, True)
+            gpio.output(mode_left, True)
         time.sleep(tf)
         gpio.cleanup()
 
@@ -117,9 +123,12 @@ def turn_left_fwd(tf, mode):
         if mode == 'left':
             gpio.output(mode_right, False)
             gpio.output(mode_left, True)
-        else:
+        elif mode == 'right':
             gpio.output(mode_right, True)
             gpio.output(mode_left, False)
+        else:
+            gpio.output(mode_right, True)
+            gpio.output(mode_left, True)
         time.sleep(tf)
         gpio.cleanup()
     except:
@@ -140,9 +149,12 @@ def turn_right_fwd(tf, mode):
         if mode == 'left':
             gpio.output(mode_right, False)
             gpio.output(mode_left, True)
-        else:
+        elif mode == 'right':
             gpio.output(mode_right, True)
             gpio.output(mode_left, False)
+        else:
+            gpio.output(mode_right, True)
+            gpio.output(mode_left, True)
         time.sleep(tf)
         gpio.cleanup()
     except:
@@ -163,9 +175,12 @@ def turn_left_rev(tf, mode):
         if mode == 'left':
             gpio.output(mode_right, False)
             gpio.output(mode_left, True)
-        else:
+        elif mode == 'right':
             gpio.output(mode_right, True)
             gpio.output(mode_left, False)
+        else:
+            gpio.output(mode_right, True)
+            gpio.output(mode_left, True)
         time.sleep(tf)
         gpio.cleanup()
     except:
@@ -186,9 +201,12 @@ def turn_right_rev(tf, mode):
         if mode == 'left':
             gpio.output(mode_right, False)
             gpio.output(mode_left, True)
-        else:
+        elif mode == 'right':
             gpio.output(mode_right, True)
             gpio.output(mode_left, False)
+        else:
+            gpio.output(mode_right, True)
+            gpio.output(mode_left, True)
         time.sleep(tf)
         gpio.cleanup()
     except:
@@ -209,9 +227,12 @@ def pivot_right(tf, mode):
         if mode == 'left':
             gpio.output(mode_right, False)
             gpio.output(mode_left, True)
-        else:
+        elif mode == 'right':
             gpio.output(mode_right, True)
             gpio.output(mode_left, False)
+        else:
+            gpio.output(mode_right, True)
+            gpio.output(mode_left, True)
         time.sleep(tf)
         gpio.cleanup()
     except:
@@ -232,9 +253,12 @@ def pivot_left(tf, mode):
         if mode == 'left':
             gpio.output(mode_right, False)
             gpio.output(mode_left, True)
-        else:
+        elif mode == 'right':
             gpio.output(mode_right, True)
             gpio.output(mode_left, False)
+        else:
+            gpio.output(mode_right, True)
+            gpio.output(mode_left, True)
         time.sleep(tf)
         gpio.cleanup()
     except:
