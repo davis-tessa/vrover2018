@@ -1,6 +1,6 @@
 ##Using Python 3.6.5
 
-#import RPi.GPIO as gpio
+import RPi.GPIO as gpio
 import time
 import sys
 

@@ -1,7 +1,7 @@
 ##Using Python 3.6.5
 
 ##Import the GPIO library
-#import RPi.GPIO as gpio
+import RPi.GPIO as gpio
 ##Import the time library
 import time
 import sys
@@ -280,8 +280,9 @@ def pan_check_distance_1():
 ##Set starting position for servo to center
     pwm.start(7.5)
     ##Cleanup
-    time.sleep(0.2)
+    time.sleep(0.02)
     gpio.cleanup()
+    time.sleep(1)
     print ("sensors            > Distance at front:")
     front_dist = front_distance()
     print (front_dist, "cm")
@@ -297,8 +298,9 @@ def pan_check_distance_1():
 ##Set starting position for servo to center
     pwm.start(10)
     ##Cleanup
-    time.sleep(0.2)
+    time.sleep(0.02)
     gpio.cleanup()
+    time.sleep(1)
     print ("sensors            > Distance to left:")
     front_dist = front_distance()
     print (front_dist, "cm")
@@ -314,8 +316,9 @@ def pan_check_distance_1():
 ##Set starting position for servo to center
     pwm.start(5)
     ##Cleanup
-    time.sleep(0.2)
+    time.sleep(0.02)
     gpio.cleanup()
+    time.sleep(1)
     print("sensors            > Distance to right:")
     front_dist = front_distance()
     print (front_dist, "cm")
@@ -332,8 +335,9 @@ def pan_check_distance_1():
 ##Set starting position for servo to center
     pwm.start(7.5)
     ##Cleanup
-    time.sleep(0.2)
+    time.sleep(0.02)
     gpio.cleanup()
+    time.sleep(1)
     print("sensors            > Distance at front:")
     front_dist = front_distance()
     print (front_dist, "cm")
