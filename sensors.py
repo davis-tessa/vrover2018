@@ -147,122 +147,6 @@ def rear_distance():
     print("sensors            >", rear_distance, "cm\n")
     return rear_distance
 
-##Define function to determine the optimal direction for travel
-def pan_check_distance():
-    distance_table = {}
-    try:
-        print("sens.pan_ck_dist   > Watch me position center, take distance.\n")
-    ##Define pin mapping for pan control
-        pan_control = 12
-    ##Take front distance
-    ##Set gpio to board mode
-        gpio.setmode(gpio.BOARD)
-    ##Set pan control gpio pin as output
-        gpio.setup(pan_control, gpio.OUT)
-    ##Set frequency for servo to 50 Hz
-        pwm=gpio.PWM(pan_control, 50)
-    ##Set starting position for servo to center
-        pwm.start(7.5)
-        ##Cleanup
-        time.sleep(0.2)
-        gpio.cleanup()
-        print ("sens.pan_ck_dist   > Distance at front:")
-        front_dist = front_distance()
-        distance_table['front'] = front_dist
-
-    ##Take left distance
-        print("sens.pan_ck_dist   > Watch me position left, take distance.")
-    ##Set gpio to board mode
-        gpio.setmode(gpio.BOARD)
-    ##Set pan control gpio pin as output
-        gpio.setup(pan_control, gpio.OUT)
-    ##Set frequency for servo to 50 Hz
-        pwm=gpio.PWM(pan_control, 50)
-    ##Set starting position for servo to center
-        pwm.start(10)
-        ##Cleanup
-        time.sleep(0.2)
-        gpio.cleanup()
-        print ("sens.pan_ck_dist   > Distance to left:")
-        left_dist = front_distance()
-        distance_table['left'] = left_dist
-
-    ##Take right distance
-        print("sens.pan_ck_dist   > Watch me position right, take distance.")
-    ##Set gpio to board mode
-        gpio.setmode(gpio.BOARD)
-    ##Set pan control gpio pin as output
-        gpio.setup(pan_control, gpio.OUT)
-    ##Set frequency for servo to 50 Hz
-        pwm=gpio.PWM(pan_control, 50)
-    ##Set starting position for servo to center
-        pwm.start(5)
-        ##Cleanup
-        time.sleep(0.2)
-        gpio.cleanup()
-        print("sens.pan_ck_dist   > Watch me position right, take distance.")
-        right_dist = front_distance()
-        distance_table['right'] = right_dist
-
-        print("sens.pan_ck_dist   > Watch me return to center and stop.")
-    ##Define pin mapping for pan control
-    ##Take front distance
-    ##Set gpio to board mode
-        gpio.setmode(gpio.BOARD)
-    ##Set pan control gpio pin as output
-        gpio.setup(pan_control, gpio.OUT)
-    ##Set frequency for servo to 50 Hz
-        pwm=gpio.PWM(pan_control, 50)
-    ##Set starting position for servo to center
-        pwm.start(7.5)
-        ##Cleanup
-        time.sleep(0.2)
-        gpio.cleanup()
-
-    except:
-
-        print("sens.pan_ck_dist   > Front - RANDOM:")
-        front_dist = front_distance()
-        distance_table['front'] = front_dist
-
-    ##Take left distance
-        print("sens.pan_ck_dist   > Left - RANDOM:")
-        left_dist = front_distance()
-        distance_table['left'] = left_dist
-
-    ##Take right distance
-        print("sens.pan_ck_dist   > Right - RANDOM:")
-        right_dist = front_distance()
-        distance_table['right'] = right_dist
-
-    return distance_table
-
-##Define function to pan the servo motor
-def front_pan():
-    print("sensors.front_pan  > Watch me position center, then left, then right, and back to center.")
-##Define pin mapping for pan control
-    pan_control = 12
-##Set gpio to board mode
-    gpio.setmode(gpio.BOARD)
-##Set pan control gpio pin as output
-    gpio.setup(pan_control, gpio.OUT)
-##Set frequency for servo to 50 Hz
-    pwm=gpio.PWM(pan_control, 50)
-##Set starting position for servo to center
-    pwm.start(7.5)
-##Pivot to the left
-    time.sleep(1)
-    pwm.ChangeDutyCycle(10)
-##Pivot to the right
-    time.sleep(1)
-    pwm.ChangeDutyCycle(5)
-##Return to center
-    time.sleep(1)
-    pwm.ChangeDutyCycle(7.5)
-##Cleanup
-    time.sleep(0.2)
-    gpio.cleanup()
-
 ##Define function to pan the servo motor left and stay
 def pan_left():
     print("sensors.pan_left   > Watch me position center, then left, and stay there.")
@@ -320,6 +204,93 @@ def pan_center():
     time.sleep(0.2)
     gpio.cleanup()
 
+##Define function to determine the optimal direction for travel
+def pan_check_distance():
+    distance_table = {}
+    try:
+        ##Take front distance
+        print("sens.pan_ck_dist   > Watch me position center, take distance.")
+
+        ##Call function to center servo
+        pan_center()
+        ##Call function to center front distance
+        print ("sens.pan_ck_dist   > Distance at front:")
+        front_dist = front_distance()
+        print (front_dist, "cm")
+        distance_table['front'] = front_dist
+
+        ##Take left distance
+        print("sens.pan_ck_dist   > Watch me position left, take distance.")
+
+        ##Call function to pan servo to left
+        pan_left()
+        ##Call function to take front distance
+        print ("sens.pan_ck_dist   > Distance at left:")
+        left_dist = front_distance()
+        print (front_dist, "cm")
+        distance_table['left'] = left_dist
+
+        ##Take right distance
+        print("sens.pan_ck_dist   > Watch me position right, take distance.")
+
+        ##Call function to pan servo to left
+        pan_right()
+        ##Call function to take front distance
+        print ("sens.pan_ck_dist   > Distance at right:")
+        right_dist = front_distance()
+        print (front_dist, "cm")
+        distance_table['right'] = right_dist
+
+        ##Return to center
+        print("sens.pan_ck_dist   > Watch me return to center and rest.")
+
+        ##Call function to center servo
+        pan_center()
+
+    except:
+
+        print("sens.pan_ck_dist   > Front - RANDOM:")
+        front_dist = front_distance()
+        distance_table['front'] = front_dist
+
+    ##Take left distance
+        print("sens.pan_ck_dist   > Left - RANDOM:")
+        left_dist = front_distance()
+        distance_table['left'] = left_dist
+
+    ##Take right distance
+        print("sens.pan_ck_dist   > Right - RANDOM:")
+        right_dist = front_distance()
+        distance_table['right'] = right_dist
+
+    return distance_table
+
+##Define function to pan the servo motor
+def front_pan():
+    print("sensors.front_pan  > Watch me position center, then left, then right, and back to center.")
+##Define pin mapping for pan control
+    pan_control = 12
+##Set gpio to board mode
+    gpio.setmode(gpio.BOARD)
+##Set pan control gpio pin as output
+    gpio.setup(pan_control, gpio.OUT)
+##Set frequency for servo to 50 Hz
+    pwm=gpio.PWM(pan_control, 50)
+##Set starting position for servo to center
+    pwm.start(7.5)
+##Pivot to the left
+    time.sleep(1)
+    pwm.ChangeDutyCycle(10)
+##Pivot to the right
+    time.sleep(1)
+    pwm.ChangeDutyCycle(5)
+##Return to center
+    time.sleep(1)
+    pwm.ChangeDutyCycle(7.5)
+##Cleanup
+    time.sleep(0.2)
+    gpio.cleanup()
+
 ##Define a function to check the optimal direction for travel
 
 ##Define function to pan the servo motor and to check the distance at each turn
@@ -357,6 +328,7 @@ def pan_check_distance_1():
     front_dist = front_distance()
     print (front_dist, "cm")
 
+##Return to center
     print("sens.pan_ck_dist_1 > Watch me return to center and rest.")
 
     ##Call function to center servo
