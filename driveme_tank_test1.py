@@ -41,13 +41,3 @@ time.sleep(ts)
 driveme_tank.turn_right_rev(tf, mode)
 print("driveme_tank_test  > sleeping")
 time.sleep(ts)
-
-#Pivot vehicle clockwise (right) for tf seconds
-driveme_tank.pivot_right(tf, mode)
-print("driveme_tank_test  > sleeping")
-time.sleep(ts)
-
-#Pivot vehicle counterclockwise (left) while moving forward for tf seconds
-driveme_tank.pivot_left(tf, mode)
-print("driveme_tank_test  > sleeping")
-time.sleep(ts)
