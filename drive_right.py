@@ -6,3 +6,5 @@ print("\n\nStarting Test: drive_right\n\n")
 
 for z in range(20):
     explore.mode_discovery(2, 0.03, 'right', 'on')
+
+print("\n\nFinished drive_right\n\nrun me again!")
