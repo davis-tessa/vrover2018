@@ -7,7 +7,8 @@ import sensors
 ##Expected result: prints:
 ##<Front Distance Measurement in Progress
 ## xx.xx cm>
-for z in range(300):
+for z in range(10):
+    time.sleep(0.3)
     print("\n\nStarting Test: sensors_test1\n\n")
     front_distance = sensors.front_distance()
 
