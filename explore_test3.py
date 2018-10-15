@@ -18,7 +18,7 @@ import time
 print("\n\nStarting Test: explore_test2\n\n")
 
 for z in range(1):
-    explore.mode_discovery(1, 0.03, 'left', 'on')
+    explore.mode_discovery(1, 0.3, 'left', 'on')
 
 for z in range(1):
-    explore.mode_discovery(1, 0.03, 'right', 'on')
+    explore.mode_discovery(1, 0.3, 'right', 'on')
