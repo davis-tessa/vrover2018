@@ -38,6 +38,8 @@ def evade_rev_2(drive_time, drive_burst, mode):
     opt_dir = optimal_direction.optimal_direction()
 
     if opt_dir == 'left':
+        print("evade.evade_fwd_1  > Pivoting to the left")
+        driveme_tank.pivot_left(drive_time, mode)
         print("evade.evade_rev_2  > I will proceed forward and left with caution")
         ##Repeat the steps below drive_iterate times
         for y in range(drive_iterate):
@@ -47,6 +49,8 @@ def evade_rev_2(drive_time, drive_burst, mode):
             driveme_tank.turn_left_fwd(drive_burst, mode)
     ##If the optimal direction is right, drive forward and right
     elif opt_dir == 'right':
+        print("evade.evade_fwd_1  > Pivoting to the right")
+        driveme_tank.pivot_right(drive_time, mode)
         print("evade.evade_rev2  > I will proceed forward and right with caution")
         ##Repeat the steps below drive_iterate times
         for y in range(drive_iterate):
@@ -75,6 +79,8 @@ def evade_rev_1(drive_time, drive_burst, mode):
     ##Check the front distance
     front_dist = sensors.front_distance()
     if front_dist > 15 and opt_dir == 'left':
+        print("evade.evade_fwd_1  > Pivoting to the left")
+        driveme_tank.pivot_left(drive_time, mode)
         print("evade.evade_rev_1  > I will proceed forward and left with caution")
         ##Repeat the steps below drive_iterate times
         for y in range(drive_iterate):
@@ -84,6 +90,8 @@ def evade_rev_1(drive_time, drive_burst, mode):
             driveme_tank.turn_left_fwd(drive_burst, mode)
 
     elif front_dist > 15 and opt_dir == 'right':
+        print("evade.evade_fwd_1  > Pivoting to the right")
+        driveme_tank.pivot_right(drive_time, mode)
         print("evade.evade_rev_1  > I will proceed forward and right with caution")
         ##Repeat the steps below drive_iterate times
         for y in range(drive_iterate):
@@ -129,6 +137,8 @@ def evade_fwd_3(drive_time, drive_burst, mode):
         driveme_tank.reverse(drive_burst, mode)
     ##If the optimal direction is left, drive forward and left
     if opt_dir == 'left':
+        print("evade.evade_fwd_1  > Pivoting to the left")
+        driveme_tank.pivot_left(drive_time, mode)
         print("evade.evade_fwd_3  > I will proceed forward and left with caution")
         ##Repeat the steps below drive_iterate times
         for y in range(drive_iterate):
@@ -138,6 +148,8 @@ def evade_fwd_3(drive_time, drive_burst, mode):
             driveme_tank.turn_left_fwd(drive_burst, mode)
     ##If the optimal direction is right, drive forward and right
     elif opt_dir == 'right':
+        print("evade.evade_fwd_1  > Pivoting to the right")
+        driveme_tank.pivot_right(drive_time, mode)
         print("evade.evade_fwd_3  > I will proceed forward and right with caution")
         ##Repeat the steps below drive_iterate times
         for y in range(drive_iterate):
@@ -189,6 +201,8 @@ def evade_fwd_2(drive_time, drive_burst, mode):
         driveme_tank.reverse(drive_burst, mode)
     ##If the optimal direction is left, drive forward and left
     if opt_dir == 'left':
+        print("evade.evade_fwd_1  > Pivoting to the left")
+        driveme_tank.pivot_left(drive_time, mode)
         print("evade.evade_fwd_2  > I will proceed forward and left with caution")
         ##Repeat the steps below drive_iterate times
         for y in range(drive_iterate):
@@ -198,6 +212,8 @@ def evade_fwd_2(drive_time, drive_burst, mode):
             driveme_tank.turn_left_fwd(drive_burst, mode)
     ##If the optimal direction is right, drive forward and right
     elif opt_dir == 'right':
+        print("evade.evade_fwd_1  > Pivoting to the right")
+        driveme_tank.pivot_right(drive_time, mode)
         print("evade.evade_fwd_2  > I will proceed forward and right with caution")
         ##Repeat the steps below drive_iterate times
         for y in range(drive_iterate):
@@ -251,6 +267,8 @@ def evade_fwd_1(drive_time, drive_burst, mode):
         driveme_tank.reverse(drive_burst, mode)
     ##If the optimal direction is left, drive forward and left
     if opt_dir == 'left':
+        print("evade.evade_fwd_1  > Pivoting to the left")
+        driveme_tank.pivot_left(drive_time, mode)
         print("evade.evade_fwd_1  > I will proceed forward and left with caution")
         ##Repeat the steps below drive_iterate times
         for y in range(drive_iterate):
@@ -262,11 +280,11 @@ def evade_fwd_1(drive_time, drive_burst, mode):
             driveme_tank.turn_left_fwd(drive_burst, mode)
     ##If the optimal direction is right, drive forward and right
     elif opt_dir == 'right':
+        print("evade.evade_fwd_1  > Pivoting to the right")
+        driveme_tank.pivot_right(drive_time, mode)
         print("evade.evade_fwd_1  > I will proceed forward and right with caution")
         ##Repeat the steps below drive_iterate times
         for y in range(drive_iterate):
-            print("evade.evade_fwd_1  > Pivoting to the right")
-            driveme_tank.pivot_right(drive_time, mode)
             ##Run the function collision_avoidance() to check the distance from the front sensor to the closest object
             check_fr_2(drive_time, drive_burst, mode)
             ##Drive right and forward for drive_burst seconds
