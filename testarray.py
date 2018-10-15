@@ -20,7 +20,7 @@ print("Testing right hand mode")
 gpio.output(mode_right, True)
 gpio.output(mode_left, False)
 time.sleep(tf)
-print("Testing party mode"):
+print("Testing party mode")
 gpio.output(mode_right, True)
 gpio.output(mode_left, True)
 time.sleep(tf)
