@@ -67,7 +67,7 @@ def mode_discovery(drive_time, drive_burst, mode, check):
     print("\n\nexplore            > Exploring with a bias towards direction:", mode, "\n\n")
 ##When drive forward is chosen, continue for twice as long as the time spent driving to the left or right.
     drive_iterate = int(round(drive_time / drive_burst))
-    drive_iterate_f = 2 * drive_iterate
+    drive_iterate_f = 1 * drive_iterate
     ##Desired result is to drive forward drive_burst seconds before checking (e.g. 0.03)
     ##Drive for drive_drive seconds
     ##Drive_iterations = drive_time

@@ -263,6 +263,7 @@ def evade_fwd_1(drive_time, drive_burst, mode):
         print("evade.evade_fwd_1  > I will proceed forward and right with caution")
         ##Repeat the steps below drive_iterate times
         for y in range(drive_iterate):
+            driveme_tank.pivot_right(drive_time, mode)
             ##Run the function collision_avoidance() to check the distance from the front sensor to the closest object
             check_fr_2(drive_time, drive_burst, mode)
             ##Drive right and forward for drive_burst seconds
@@ -271,6 +272,7 @@ def evade_fwd_1(drive_time, drive_burst, mode):
     elif opt_dir == 'reverse':
         ##Repeat the steps below drive_iterate times
         for y in range(drive_iterate):
+            driveme_tank.pivot_left(drive_time, mode)
             ##Run the function collision_avoidance() to check the distance from the front sensor to the closest object
             check_bk_1(drive_time, drive_burst, mode)
             ##Drive left and forward for drive_burst seconds
