@@ -41,3 +41,13 @@ time.sleep(ts)
 driveme_tank.turn_right_rev(tf, mode)
 print("driveme_tank_test  > sleeping")
 time.sleep(ts)
+
+#turn vehicle left while reversing for tf seconds
+driveme_tank.pivot_left(tf, mode)
+print("driveme_tank_test  > sleeping")
+time.sleep(ts)
+
+#turn vehicle right while reversing for tf seconds
+driveme_tank.pivot_right(tf, mode)
+print("driveme_tank_test  > sleeping")
+time.sleep(ts)
