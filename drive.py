@@ -2,7 +2,7 @@
 ##Import local library explore: see explore.py
 import explore
 
-print("\n\nStarting Test: drive_party\n\n")
+print("\n\nStarting Test: drive_left\n\n")
 
 for z in range(20):
-    explore.mode_discovery(2, 0.03, 'party', 'on')
+    explore.mode_discovery(1, 0.03, 'left', 'on')
