@@ -8,8 +8,8 @@ import sensors
 ##<Front Distance Measurement in Progress
 ## xx.xx cm>
 for z in range(300):
-print("\n\nStarting Test: sensors_test1\n\n")
-front_distance = sensors.front_distance()
+    print("\n\nStarting Test: sensors_test1\n\n")
+    front_distance = sensors.front_distance()
 
 ##Troubleshooting:
 
