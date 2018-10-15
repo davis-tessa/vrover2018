@@ -28,7 +28,7 @@ def front_distance():
     try:
 
         ##Define the GPIO pin number connected to trig
-        front_sensor_trig = 7
+        front_sensor_trig = 32
     ##Define the GPIO pin number connected to echo
         front_sensor_echo = 29
 
