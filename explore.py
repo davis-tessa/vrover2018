@@ -135,7 +135,7 @@ def mode_discovery(drive_time, drive_burst, mode, check):
             driveme_tank.turn_right_fwd(drive_burst, mode)
 
     elif x == 4:
-        print("explore            > Mars walk to the left!!!")
+        print("explore            > Party to the left!!!")
         ##Repeat the steps below drive_iterate times
         for y in range(drive_iterate):
             ##Run the function collision_avoidance() to check the distance from the front sensor to the closest object
@@ -144,7 +144,7 @@ def mode_discovery(drive_time, drive_burst, mode, check):
             driveme_tank.turn_left_rev(drive_burst, mode)
 
     elif x == 5:
-        print("explore            > Mars walk to the right!!!")
+        print("explore            > Party to the right!!!")
         ##Repeat the steps below drive_iterate times
         for y in range(drive_iterate):
             ##Run the function collision_avoidance() to check the distance from the front sensor to the closest object
