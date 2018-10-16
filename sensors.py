@@ -62,7 +62,9 @@ def front_distance():
         pulse_duration = pulse_end - pulse_start
         ##The speed of sound in air at sea level = 343m/s or 34 300cm/s
         ##s = d/t : d = s*t. The sound travels to the object and back so d = (s*t)/2
-        front_distance = 17150 * pulse_duration
+        #front_distance = 17150 * pulse_duration
+        front_distance = 20000 * pulse_duration
+
         ##Return an answer to 2 decimal places
         front_distance = round(front_distance, 2)
 
