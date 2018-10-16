@@ -1,4 +1,4 @@
-
+#modified by KD for GIT Purposes ##
 ##Import local library explore: see explore.py
 import gpio_cleanup
 import explore
