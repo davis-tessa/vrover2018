@@ -4,7 +4,7 @@ import gpio_cleanup
 import explore
 
 
-import gpio_cleanup.cleanup()
+gpio_cleanup.cleanup()
 
 print("\n\ndrive_left         > Starting: drive_left\n\n")
 
