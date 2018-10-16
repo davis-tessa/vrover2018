@@ -36,7 +36,7 @@ mode_right = 38
 mode_left = 36
 
 def init():
-    print("driveme_tank       > Initialising GPIO Pins")
+    print("gpio_cleanup       > Initialising GPIO Pins")
     gpio.setmode(gpio.BOARD)
     gpio.setup(mode_right, gpio.OUT)
     gpio.setup(mode_left, gpio.OUT)
@@ -64,7 +64,7 @@ def cleanup():
     gpio.output(mode_right, False)
     gpio.output(mode_left, False)
 
-    print("Updating the configuration...")
+    print("gpio_cleanup       > Hello Martians\n\ngpio_cleanup       > Configuring Autonomous Drive...")
     for z in range(50):
         gpio.output(mode_right, True)
         gpio.output(mode_left, True)
@@ -74,8 +74,8 @@ def cleanup():
         time.sleep(0.01)
 
     time.sleep(0.1)
-    print("Cleaning up pins")
+    print("gpio_cleanup       > Cleaning up pins")
     gpio.cleanup()
 
 cleanup()
-print("Configuration Updated!")
+print("gpio_cleanup       > Configuration Updated!")
