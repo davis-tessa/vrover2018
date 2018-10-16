@@ -11,7 +11,7 @@ import driveme_tank
 import random
 ##Import local library optimal_direction: see optimal_direction.py
 import optimal_direction
-
+#changed all f_dist from 20 to 30 - KD 17th Oct for Luna Park
 
 def abort_drive(why):
     print(why, "\n\nevade.abort_drive  > EXITING... \nevade.abort_drive  > I suggest you work out RC Override!\n")
@@ -26,7 +26,8 @@ def check_bk_3(drive_time, drive_burst, mode):
     ##Define the variable r_dist as the distance from the rear sensor to the nearest object
     f_dist = sensors.front_distance()
     ##Instruct action: if an object is closer than 20 cm away, check for the optimal direction and take evasive action
-    if f_dist < 20:
+    #if f_dist < 20:
+    if f_dist < 30:
         stuck_help("evade.check_bk_3  > Ooops!\nevade.check_bk_2  > I don\'t know how to solve this problem")
     else:
         print("evade.check_bk_3   > All clear in front!")
@@ -66,7 +67,8 @@ def check_bk_2(drive_time, drive_burst, mode):
     ##Define the variable r_dist as the distance from the rear sensor to the nearest object
     f_dist = sensors.front_distance()
     ##Instruct action: if an object is closer than 20 cm away, check for the optimal direction and take evasive action
-    if f_dist < 20:
+    #if f_dist < 20:
+    if f_dist < 30:
         evade_rev_2(drive_time, drive_burst, mode)
     else:
         print("evade.check_bk_2   > All clear in front!")
@@ -78,7 +80,7 @@ def evade_rev_1(drive_time, drive_burst, mode):
     opt_dir = optimal_direction.optimal_direction()
     ##Check the front distance
     front_dist = sensors.front_distance()
-    if front_dist > 20 and opt_dir == 'left':
+    if front_dist > 30 and opt_dir == 'left':
         print("evade.evade_fwd_1  > Pivoting to the left")
         driveme_tank.pivot_left(drive_time, mode)
         print("evade.evade_rev_1  > I will proceed forward and left with caution")
@@ -89,7 +91,7 @@ def evade_rev_1(drive_time, drive_burst, mode):
             ##Drive left and forward for drive_burst seconds
             driveme_tank.turn_left_fwd(drive_burst, mode)
 
-    elif front_dist > 20 and opt_dir == 'right':
+    elif front_dist > 30 and opt_dir == 'right':
         print("evade.evade_fwd_1  > Pivoting to the right")
         driveme_tank.pivot_right(drive_time, mode)
         print("evade.evade_rev_1  > I will proceed forward and right with caution")
@@ -118,7 +120,7 @@ def check_fr_4(drive_time, drive_burst, mode):
     ##Define the variable f_dist as the distance from the front sensor to the nearest object
     f_dist = sensors.front_distance()
     ##Instruct action: if an object is closer than 20 cm away, check for the optimal direction and take evasive action
-    if f_dist < 20:
+    if f_dist < 30:
         stuck_help('evade.check_fr_4   > Still too close at front on 4th check')
     else:
         print("evade.check_fr_4   > All clear in front!")
@@ -182,7 +184,7 @@ def check_fr_3(drive_time, drive_burst, mode):
     ##Define the variable f_dist as the distance from the front sensor to the nearest object
     f_dist = sensors.front_distance()
         ##Instruct action: if an object is closer than 20 cm away, check for the optimal direction and take evasive action
-    if f_dist < 20:
+    if f_dist < 30:
         evade_fwd_3(drive_time, drive_burst, mode)
     else:
         print("evade.check_fr_3   > All clear in front!")
@@ -245,7 +247,7 @@ def check_fr_2(drive_time, drive_burst, mode):
     print("evade.check_fr_2   >Second check of the front sensor:\n")
     f_dist = sensors.front_distance()
     ##Instruct action: if an object is closer than 20 cm away, check for the optimal direction and take evasive action
-    if f_dist < 20:
+    if f_dist < 30:
         evade_fwd_2(drive_time, drive_burst, mode)
     else:
         print("evade.check_fr_2   > All clear in front!")
@@ -312,7 +314,7 @@ def check_fr_1(drive_time, drive_burst, mode):
     ##Define the variable f_dist as the distance from the front sensor to the nearest object
     f_dist = sensors.front_distance()
     ##Instruct action: if an object is closer than 20 cm away, check for the optimal direction and take evasive action
-    if f_dist < 20:
+    if f_dist < 30:
         evade_fwd_1(drive_time, drive_burst, mode)
     else:
         print("evade.check_fr_1   > All clear in front!")
