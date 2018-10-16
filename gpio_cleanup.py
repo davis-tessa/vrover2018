@@ -64,7 +64,7 @@ def cleanup():
     gpio.output(mode_right, False)
     gpio.output(mode_left, False)
 
-    print("Flashing LEDs")
+    print("Updating the configuration...")
     for z in range(50):
         gpio.output(mode_right, True)
         gpio.output(mode_left, True)
