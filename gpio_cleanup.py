@@ -68,3 +68,11 @@ def cleanup():
     gpio.cleanup()
 
 cleanup()
+print("Having a 3 second nap before running again!")
+print("\n\n3\n\n")
+time.sleep(1)
+print("\n\n2\n\n")
+time.sleep(1)
+print("\n\n1\n\n")
+time.sleep(1)
+print("\n\n...\n\n")
