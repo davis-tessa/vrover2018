@@ -64,15 +64,18 @@ def cleanup():
     gpio.output(lft_rev, False)
     gpio.output(mode_right, False)
     gpio.output(mode_left, False)
+
+    print("Flashing LEDs")
+    for z in range(50):
+        gpio.output(mode_right, True)
+        gpio.output(mode_left, True)
+        time.sleep(0.1)
+        gpio.output(mode_right, False)
+        gpio.output(mode_left, False)
+        time.sleep(0.01)
+
     time.sleep(0.1)
     gpio.cleanup()
 
 cleanup()
-print("Having a 3 second nap before running again!")
-print("\n\n3\n\n")
-time.sleep(1)
-print("\n\n2\n\n")
-time.sleep(1)
-print("\n\n1\n\n")
-time.sleep(1)
-print("\n\n...\n\n")
+print("Configuration Updated!")
