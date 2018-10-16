@@ -54,8 +54,8 @@ def init():
 
 ##Define a function that will drive the vechicle forward for an amount of time (tf)
 def cleanup():
-    print("Cleaning up pins")
     init()
+    print("Cleaning up pins"
     gpio.output(rt_ena, False)
     gpio.output(rt_fwd, False)
     gpio.output(rt_rev, False)
