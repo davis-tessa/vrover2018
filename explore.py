@@ -75,8 +75,8 @@ def mode_discovery(drive_time, drive_burst, mode, check):
     ##1 represents forward, 2 represents forward and left, 3 represents forward and right
     ## Original settings - KD Modified: LHB_options = [1, 1, 2, 2, 2, 2, 2, 2, 3, 3]
     ## Original settings - KD Modified: RHB_options = [1, 1, 2, 2, 3, 3, 3, 3, 3, 3]
-    LHB_options = [1, 1, 1, 1, 2, 2, 2, 2, 3, 3]
-    RHB_options = [1, 1, 1, 1, 3, 3, 3, 3, 2, 2]
+    LHB_options = [1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 3, 3]
+    RHB_options = [1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 3, 3, 3, 2, 2]
 
     party_options = [1, 2, 3, 4, 5]
     ##Set the bias right or left or party based on input chosen when calling mode_discovery(tf, mode)
