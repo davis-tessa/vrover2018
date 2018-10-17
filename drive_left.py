@@ -1,10 +1,7 @@
 
 ##Import local library explore: see explore.py
-import gpio_cleanup
+
 import explore
-
-
-gpio_cleanup.cleanup()
 
 print("\n\ndrive_left         > Starting: drive_left\n\n")
 

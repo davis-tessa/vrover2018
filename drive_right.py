@@ -1,9 +1,8 @@
 
 ##Import local library explore: see explore.py
-import gpio_cleanup
+
 import explore
 
-gpio_cleanup.cleanup()
 print("\n\nStarting Test: drive_right\n\n")
 
 for z in range(20):

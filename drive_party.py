@@ -3,8 +3,6 @@
 import gpio_cleanup
 import explore
 
-gpio_cleanup.cleanup()
-print("\n\nStarting Test: drive_party\n\n")
 
 for z in range(20):
     explore.mode_discovery(2, 2.00, 'party', 'on')
