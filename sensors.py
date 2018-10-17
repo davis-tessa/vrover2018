@@ -87,8 +87,8 @@ def front_distance():
 
 ##Instruct the function to return 'distance'
     print("sensors.front_dist >", front_distance, "cm\n")
-    oscommandtestdist = “echo ‘mars.rover.distance ‘“+str(variable)+”  | nc -q0 192.168.11.200 2003"
-    os.system(front_distance)    
+    oscommandtestdist = “echo ‘mars.rover.distance ‘“+str(front_dist)+”  | nc -q0 192.168.11.200 2003"
+    os.system(oscommandtestdist)
 
     return front_distance
 
@@ -151,8 +151,8 @@ def rear_distance():
 
 ##Instruct the function to return 'distance'
     print("sensors            >", rear_distance, "cm\n")
-    oscommandtestdist = “echo ‘mars.rover.distance ‘“+str(variable)+”  | nc -q0 192.168.11.200 2003"
-    os.system(rear_distance)
+    oscommandtestdist = “echo ‘mars.rover.distance ‘“+str(front_dist)+”  | nc -q0 192.168.11.200 2003"
+    os.system(oscommandtestdist)
     return rear_distance
 
 ##Define function to pan the servo motor left and stay
