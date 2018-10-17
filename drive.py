@@ -3,7 +3,6 @@
 import gpio_cleanup
 import explore
 
-gpio_cleanup.cleanup()
 print("\n\nStarting Test: drive_party\n\n")
 
 for z in range(20):
