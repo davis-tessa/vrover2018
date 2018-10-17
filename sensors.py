@@ -6,6 +6,7 @@ import RPi.GPIO as gpio
 import time
 import sys
 import random
+import os
 
 #Goal: Drive vechicle using Remote Control including:
 ##front_sensor_trig is the GPIO pin number that triggers the sensor (GPIO pin configured as output)
@@ -86,6 +87,9 @@ def front_distance():
 
 ##Instruct the function to return 'distance'
     print("sensors.front_dist >", front_distance, "cm\n")
+    oscommandtestdist = “echo ‘mars.rover.distance ‘“+str(variable)+”  | nc -q0 192.168.11.200 2003"
+    os.system(front_distance)    
+
     return front_distance
 
 ##Define the distance function (to be imported into drive script)
@@ -147,6 +151,8 @@ def rear_distance():
 
 ##Instruct the function to return 'distance'
     print("sensors            >", rear_distance, "cm\n")
+    oscommandtestdist = “echo ‘mars.rover.distance ‘“+str(variable)+”  | nc -q0 192.168.11.200 2003"
+    os.system(rear_distance)
     return rear_distance
 
 ##Define function to pan the servo motor left and stay
