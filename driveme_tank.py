@@ -28,7 +28,7 @@ import sys
 
 rt_fwd = 18
 rt_rev = 22
-rt_ena = 16
+rt_ena = 10
 lft_fwd = 15
 lft_rev = 13
 lft_ena = 11
