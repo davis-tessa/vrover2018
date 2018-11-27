@@ -23,6 +23,9 @@ One Drive: https://onevmw-my.sharepoint.com/personal/asingleton_vmware_com/_layo
   * Are you using the same version of python as specified at the top of the script?
 
 # vrover2018
+# Application Architecture:
+ https://drive.google.com/file/d/1XY8V5_Ue94OjASC9O3hmTFC60UACYjcd/view?usp=sharing
+ 
 # driveme.py and driveme_test.py
   #driveme.py contains the functions to drive 4 wheels independently. These functions are referenced by other scripts including explore.py (i.e. use as a library)
   #drieme_test.py can be run to test GPIO pinout, H-bridge configuration and motor function when drive train is set up for 4 wheel drive
