@@ -97,7 +97,7 @@ def evade_rev_1(drive_time, drive_burst, mode):
             driveme_tank.turn_left_fwd(drive_burst, mode)
 
     #elif front_dist > 220 and opt_dir == 'right': Luna Park Settings
-        elif front_dist > 220 and opt_dir == 'right':
+    elif front_dist > 220 and opt_dir == 'right':
 
         print("evade.evade_fwd_1  > Pivoting to the right")
         driveme_tank.pivot_right(drive_time, mode)
