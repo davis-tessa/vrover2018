@@ -194,7 +194,7 @@ def check_fr_3(drive_time, drive_burst, mode):
     f_dist = sensors.front_distance()
         ##Instruct action: if an object is closer than 20 cm away, check for the optimal direction and take evasive action
     #if f_dist < 220: Luna Park Settings
-    if f_dist < 220:
+    if f_dist < 20:
 
         evade_fwd_3(drive_time, drive_burst, mode)
     else:
