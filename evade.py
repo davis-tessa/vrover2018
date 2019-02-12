@@ -117,7 +117,7 @@ def check_bk_1(drive_time, drive_burst, mode):
     ##Define the variable r_dist as the distance from the rear sensor to the nearest object
     r_dist = sensors.rear_distance()
     ##Instruct action: if an object is closer than 20 cm away, check for the optimal direction and take evasive action
-    if r_dist < 20:
+    if r_dist < 40:
         evade_rev_1(drive_time, drive_burst, mode)
     else:
         print("evade.check_bk_1   > All clear behind!")
