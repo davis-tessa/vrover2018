@@ -96,9 +96,9 @@ def mode_discovery(drive_time, drive_burst, mode, check):
             print("explore            > 'check' defined in function mode_discovery(drive_time, drive_burst, mode, check) must be 'on' or 'off'. Please try again.")
 
     ##Choose a random direction to travel in:
-    x = random.choice(bias)
+    next_dir = random.choice(bias)
     ##If 1 is chosen at random from either LHB_options or RHB_options... (depending on bias 'left' or 'right')
-    if x == 1:
+    if next_dir == 1:
         print("explore            > I will explore forward with caution")
         ##Repeat the steps below drive_iterate_f times
         for y in range(drive_iterate_f):
@@ -108,7 +108,7 @@ def mode_discovery(drive_time, drive_burst, mode, check):
             driveme_tank.forward(drive_burst, mode)
 
     ##If 2 is chosen at random from either LHB_options or RHB_options... (depending on bias 'left' or 'right')
-    elif x == 2:
+    elif next_dir == 2:
         print("explore            > I will explore forward and left with caution")
         ##Repeat the steps below drive_iterate times
         for y in range(drive_iterate):
@@ -117,7 +117,7 @@ def mode_discovery(drive_time, drive_burst, mode, check):
             ##Drive left and forward for drive_burst seconds
             driveme_tank.turn_left_fwd(drive_burst, mode)
     ##If 3 is chosen at random from either LHB_options or RHB_options... (depending on bias 'left' or 'right')
-    elif x == 3:
+    elif next_dir == 3:
         print("explore            > I will explore forward and right with caution")
         ##Repeat the steps below drive_iterate times
         for y in range(drive_iterate):
@@ -126,7 +126,7 @@ def mode_discovery(drive_time, drive_burst, mode, check):
             ##Drive right and forward for drive_burst seconds
             driveme_tank.turn_right_fwd(drive_burst, mode)
 
-    elif x == 4:
+    elif next_dir == 4:
         print("explore            > Spin around left!!!")
         ##Repeat the steps below drive_iterate times
         for y in range(drive_iterate):
@@ -135,7 +135,7 @@ def mode_discovery(drive_time, drive_burst, mode, check):
             ##Drive right and forward for drive_burst seconds
             driveme_tank.pivot_left(drive_burst, mode)
 
-    elif x == 5:
+    elif next_dir == 5:
         print("explore            > Spin around right!!!")
         ##Repeat the steps below drive_iterate times
         for y in range(drive_iterate):
