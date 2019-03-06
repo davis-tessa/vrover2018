@@ -29,7 +29,7 @@ def check_bk_3(drive_time, drive_burst, mode):
     ##Instruct action: if an object is closer than 20 cm away, check for the optimal direction and take evasive action
     #if f_dist < 20:
     ##if f_dist < 220: Luna Park settings
-    if f_dist < 20:
+    if f_dist < 45:
 
         stuck_help("evade.check_bk_3  > Ooops!\nevade.check_bk_2  > I don\'t know how to solve this problem")
     else:
@@ -70,7 +70,7 @@ def check_bk_2(drive_time, drive_burst, mode):
     ##Define the variable r_dist as the distance from the rear sensor to the nearest object
     f_dist = sensors.front_distance()
     ##Instruct action: if an object is closer than 20 cm away, check for the optimal direction and take evasive action
-    if f_dist < 20:
+    if f_dist < 45:
     #if f_dist < 220: Luna Park Settings
         evade_rev_2(drive_time, drive_burst, mode)
     else:
@@ -84,7 +84,7 @@ def evade_rev_1(drive_time, drive_burst, mode):
     ##Check the front distance
     front_dist = sensors.front_distance()
     #if front_dist > 220 and opt_dir == 'left': Luna Park Settings
-    if front_dist > 20 and opt_dir == 'left':
+    if front_dist > 45 and opt_dir == 'left':
 
         print("evade.evade_fwd_1  > Pivoting to the left")
         driveme_tank.pivot_left(drive_time, mode)
@@ -97,7 +97,7 @@ def evade_rev_1(drive_time, drive_burst, mode):
             driveme_tank.turn_left_fwd(drive_burst, mode)
 
     #elif front_dist > 220 and opt_dir == 'right': Luna Park Settings
-    elif front_dist > 20 and opt_dir == 'right':
+elif front_dist > 45 and opt_dir == 'right':
 
         print("evade.evade_fwd_1  > Pivoting to the right")
         driveme_tank.pivot_right(drive_time, mode)
@@ -117,7 +117,7 @@ def check_bk_1(drive_time, drive_burst, mode):
     ##Define the variable r_dist as the distance from the rear sensor to the nearest object
     r_dist = sensors.rear_distance()
     ##Instruct action: if an object is closer than 20 cm away, check for the optimal direction and take evasive action
-    if r_dist < 40:
+    if r_dist < 45:
         evade_rev_1(drive_time, drive_burst, mode)
     else:
         print("evade.check_bk_1   > All clear behind!")
@@ -128,7 +128,7 @@ def check_fr_4(drive_time, drive_burst, mode):
     f_dist = sensors.front_distance()
     ##Instruct action: if an object is closer than 20 cm away, check for the optimal direction and take evasive action
     #if f_dist < 220: Luna Park Settings
-    if f_dist < 20:
+    if f_dist < 45:
 
         stuck_help('evade.check_fr_4   > Still too close at front on 4th check')
     else:
@@ -194,7 +194,7 @@ def check_fr_3(drive_time, drive_burst, mode):
     f_dist = sensors.front_distance()
         ##Instruct action: if an object is closer than 20 cm away, check for the optimal direction and take evasive action
     #if f_dist < 220: Luna Park Settings
-    if f_dist < 20:
+    if f_dist < 45:
 
         evade_fwd_3(drive_time, drive_burst, mode)
     else:
@@ -259,7 +259,7 @@ def check_fr_2(drive_time, drive_burst, mode):
     f_dist = sensors.front_distance()
     ##Instruct action: if an object is closer than 20 cm away, check for the optimal direction and take evasive action
     #if f_dist < 220: Luna Park Settings
-    if f_dist < 20:
+    if f_dist < 45:
 
         evade_fwd_2(drive_time, drive_burst, mode)
     else:
@@ -328,7 +328,7 @@ def check_fr_1(drive_time, drive_burst, mode):
     f_dist = sensors.front_distance()
     ##Instruct action: if an object is closer than 20 cm away, check for the optimal direction and take evasive action
     #if f_dist < 220: Luna Park Settings
-    if f_dist < 20:
+    if f_dist < 45:
 
         evade_fwd_1(drive_time, drive_burst, mode)
     else:
