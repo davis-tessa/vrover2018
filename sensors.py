@@ -159,7 +159,7 @@ def rear_distance():
 def pan_left():
     print("sensors.pan_left   > Watch me position center, then left, and stay there.")
     ##Define pin mapping for pan control
-    pan_control = 12
+    pan_control = 8
     ##Set gpio to board mode
     gpio.setmode(gpio.BOARD)
     ##Set pan control gpio pin as output
@@ -179,7 +179,7 @@ def pan_left():
 def pan_right():
     print("sensors.pan_right  > Watch me position center, then right, and stay there.")
     ##Define pin mapping for pan control
-    pan_control = 12
+    pan_control = 8
     ##Set gpio to board mode
     gpio.setmode(gpio.BOARD)
     ##Set pan control gpio pin as output
@@ -199,7 +199,7 @@ def pan_right():
 def pan_center():
     print("sensors.pan_center > Watch me position center.")
     ##Define pin mapping for pan control
-    pan_control = 12
+    pan_control = 8
     ##Set gpio to board mode
     gpio.setmode(gpio.BOARD)
     ##Set pan control gpio pin as output
@@ -277,7 +277,7 @@ def pan_check_distance():
 def front_pan():
     print("sensors.front_pan  > Watch me position center, then left, then right, and back to center.")
 ##Define pin mapping for pan control
-    pan_control = 12
+    pan_control = 8
 ##Set gpio to board mode
     gpio.setmode(gpio.BOARD)
 ##Set pan control gpio pin as output
