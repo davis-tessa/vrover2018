@@ -3,9 +3,9 @@
 
 import explore
 
-print("\n\nStarting Test: drive_right\n\n")
+print("\n\ndrive_left         > Starting: drive_left\n\n")
 
 for z in range(20):
-    explore.mode_discovery(2, 0.3, 'right', 'on')
+    explore.mode_discovery(1, 0.3, 'left', 'on')
 
-print("\n\nFinished drive_right\n\nrun me again!")
+print("\n\ndrive_left         > Finished drive_left\n\nrun me again!")
