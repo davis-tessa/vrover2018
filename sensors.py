@@ -8,20 +8,6 @@ import sys
 import random
 import os
 
-#Goal: Drive vechicle using Remote Control including:
-##front_sensor_trig is the GPIO pin number that triggers the sensor (GPIO pin configured as output)
-##front_sensor_echo is the GPIO pin number that ingests the echo from the sensor
-
-##front_sensor_trig = 7
-##front_sensor_echo = 11
-##back_sensor_trig = 31
-##back_sensor_echo = 33
-##pan_control = 12
-
-##Look at using a dictionary to return front, left and right
-####Consider sending the output of front_distance to memory and initialize in the right space.. (might be too cumbersome to write to a file)
-##Pass by "threadsafe"
-##THis is about re-writing this to be multi-threaded
 
 ##Define the distance function (to be imported into drive script)
 def front_distance():
@@ -29,9 +15,9 @@ def front_distance():
     try:
 
         ##Define the GPIO pin number connected to trig
-        front_sensor_trig = 32
+        front_sensor_trig = 29
     ##Define the GPIO pin number connected to echo
-        front_sensor_echo = 29
+        front_sensor_echo = 31
 
         ##Set the gpio mode to "board" as opposed to BCM to use the physical pin numbers
         gpio.setmode(gpio.BOARD)
@@ -97,9 +83,9 @@ def rear_distance():
     try:
         print("sensors.rear_dista > Rear Distance Measurement in Progress")
     ##Define the GPIO pin number connected to trig
-        rear_sensor_trig = 31
+        rear_sensor_trig = 36
     ##Define the GPIO pin number connected to echo
-        rear_sensor_echo = 33
+        rear_sensor_echo = 38
 
     ##Set the gpio mode to "board" as opposed to BCM to use the physical pin numbers
         gpio.setmode(gpio.BOARD)
