@@ -6,9 +6,9 @@ import driveme_tank
 ##driveme_tank.py Test Code:
 
 ##Define the time to drive for (tf)
-tf = 7
+tf = 3
 ##Define the time to sleep for (ts)
-ts = 3
+ts = 1
 
 mode = 'left'
 
