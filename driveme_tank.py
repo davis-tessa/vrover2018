@@ -28,26 +28,27 @@ import sys
 
 rt_fwd = 18
 rt_rev = 22
-rt_ena = 10
+##rt_ena = 10
 lft_fwd = 15
 lft_rev = 13
-lft_ena = 11
-mode_right = 38
-mode_left = 36
+##lft_ena = 11
+
+##mode_right = 38
+##mode_left = 36
 
 ##Set up GPIO pins as output
 def init():
     try:
         print("driveme_tank       > Initialising GPIO Pins")
         gpio.setmode(gpio.BOARD)
-        gpio.setup(mode_right, gpio.OUT)
-        gpio.setup(mode_left, gpio.OUT)
+##        gpio.setup(mode_right, gpio.OUT)
+##        gpio.setup(mode_left, gpio.OUT)
         gpio.setup(rt_fwd, gpio.OUT)
         gpio.setup(rt_rev, gpio.OUT)
-        gpio.setup(rt_ena, gpio.OUT)
+##        gpio.setup(rt_ena, gpio.OUT)
         gpio.setup(lft_fwd, gpio.OUT)
         gpio.setup(lft_rev, gpio.OUT)
-        gpio.setup(lft_ena, gpio.OUT)
+##        gpio.setup(lft_ena, gpio.OUT)
     except:
         print("driveme_tank       > Your GPIO pins are not set up\n")
 
@@ -61,21 +62,12 @@ def forward(tf, mode):
     try:
         print("driveme_tank       > Driving forward")
         init()
-        gpio.output(rt_ena, True)
+##        gpio.output(rt_ena, True)
         gpio.output(rt_fwd, True)
         gpio.output(rt_rev, False)
-        gpio.output(lft_ena, True)
+##        gpio.output(lft_ena, True)
         gpio.output(lft_fwd, True)
         gpio.output(lft_rev, False)
-        if mode == 'left':
-            gpio.output(mode_right, False)
-            gpio.output(mode_left, True)
-        elif mode == 'right':
-            gpio.output(mode_right, True)
-            gpio.output(mode_left, False)
-        else:
-            gpio.output(mode_right, True)
-            gpio.output(mode_left, True)
         time.sleep(tf)
         gpio.cleanup()
 
@@ -88,13 +80,13 @@ def reverse(tf, mode):
     try:
         print("driveme_tank       > Driving in reverse")
         init()
-        gpio.output(rt_ena, True)
+##        gpio.output(rt_ena, True)
         gpio.output(rt_fwd, False)
         gpio.output(rt_rev, True)
-        gpio.output(lft_ena, True)
+##        gpio.output(lft_ena, True)
         gpio.output(lft_fwd, False)
         gpio.output(lft_rev, True)
-        if mode == 'left':
+'''        if mode == 'left':
             gpio.output(mode_right, False)
             gpio.output(mode_left, True)
         elif mode == 'right':
@@ -103,6 +95,7 @@ def reverse(tf, mode):
         else:
             gpio.output(mode_right, True)
             gpio.output(mode_left, True)
+'''
         time.sleep(tf)
         gpio.cleanup()
 
@@ -114,13 +107,13 @@ def turn_left_fwd(tf, mode):
     try:
         print("driveme_tank       > Driving left and forward")
         init()
-        gpio.output(rt_ena, True)
+##        gpio.output(rt_ena, True)
         gpio.output(rt_fwd, True)
         gpio.output(rt_rev, False)
-        gpio.output(lft_ena, False)
+##        gpio.output(lft_ena, False)
         gpio.output(lft_fwd, False)
         gpio.output(lft_rev, False)
-        if mode == 'left':
+'''        if mode == 'left':
             gpio.output(mode_right, False)
             gpio.output(mode_left, True)
         elif mode == 'right':
@@ -129,6 +122,7 @@ def turn_left_fwd(tf, mode):
         else:
             gpio.output(mode_right, True)
             gpio.output(mode_left, True)
+'''
         time.sleep(tf)
         gpio.cleanup()
     except:
@@ -140,13 +134,13 @@ def turn_right_fwd(tf, mode):
     try:
         print("driveme_tank       > Driving right and forward")
         init()
-        gpio.output(rt_ena, False)
+##        gpio.output(rt_ena, False)
         gpio.output(rt_fwd, False)
         gpio.output(rt_rev, False)
-        gpio.output(lft_ena, True)
+##        gpio.output(lft_ena, True)
         gpio.output(lft_fwd, True)
         gpio.output(lft_rev, False)
-        if mode == 'left':
+'''        if mode == 'left':
             gpio.output(mode_right, False)
             gpio.output(mode_left, True)
         elif mode == 'right':
@@ -155,6 +149,7 @@ def turn_right_fwd(tf, mode):
         else:
             gpio.output(mode_right, True)
             gpio.output(mode_left, True)
+'''
         time.sleep(tf)
         gpio.cleanup()
     except:
@@ -166,13 +161,13 @@ def turn_left_rev(tf, mode):
     try:
         print("driveme_tank       > Driving left in reverse")
         init()
-        gpio.output(rt_ena, True)
+##        gpio.output(rt_ena, True)
         gpio.output(rt_fwd, False)
         gpio.output(rt_rev, True)
-        gpio.output(lft_ena, False)
+##        gpio.output(lft_ena, False)
         gpio.output(lft_fwd, False)
         gpio.output(lft_rev, False)
-        if mode == 'left':
+'''        if mode == 'left':
             gpio.output(mode_right, False)
             gpio.output(mode_left, True)
         elif mode == 'right':
@@ -181,6 +176,7 @@ def turn_left_rev(tf, mode):
         else:
             gpio.output(mode_right, True)
             gpio.output(mode_left, True)
+'''
         time.sleep(tf)
         gpio.cleanup()
     except:
@@ -192,13 +188,13 @@ def turn_right_rev(tf, mode):
     try:
         print("driveme_tank       > Driving right in reverse")
         init()
-        gpio.output(rt_ena, False)
+##        gpio.output(rt_ena, False)
         gpio.output(rt_fwd, False)
         gpio.output(rt_rev, False)
-        gpio.output(lft_ena, True)
+##        gpio.output(lft_ena, True)
         gpio.output(lft_fwd, False)
         gpio.output(lft_rev, True)
-        if mode == 'left':
+'''        if mode == 'left':
             gpio.output(mode_right, False)
             gpio.output(mode_left, True)
         elif mode == 'right':
@@ -207,6 +203,7 @@ def turn_right_rev(tf, mode):
         else:
             gpio.output(mode_right, True)
             gpio.output(mode_left, True)
+'''
         time.sleep(tf)
         gpio.cleanup()
     except:
@@ -218,13 +215,13 @@ def pivot_right(tf, mode):
     try:
         print("driveme_tank       > Pivoting right")
         init()
-        gpio.output(rt_ena, True)
+##        gpio.output(rt_ena, True)
         gpio.output(rt_fwd, False)
         gpio.output(rt_rev, True)
-        gpio.output(lft_ena, True)
+##        gpio.output(lft_ena, True)
         gpio.output(lft_fwd, True)
         gpio.output(lft_rev, False)
-        if mode == 'left':
+'''        if mode == 'left':
             gpio.output(mode_right, False)
             gpio.output(mode_left, True)
         elif mode == 'right':
@@ -233,7 +230,8 @@ def pivot_right(tf, mode):
         else:
             gpio.output(mode_right, True)
             gpio.output(mode_left, True)
-        time.sleep(tf)
+''' 
+       time.sleep(tf)
         gpio.cleanup()
     except:
         print("driveme_tank       > Pivot right virtual: couldn't find wheels to drive\n")
@@ -244,13 +242,13 @@ def pivot_left(tf, mode):
     try:
         print("driveme_tank       > Pivoting left")
         init()
-        gpio.output(rt_ena, True)
+##        gpio.output(rt_ena, True)
         gpio.output(rt_fwd, True)
         gpio.output(rt_rev, False)
-        gpio.output(lft_ena, True)
+##        gpio.output(lft_ena, True)
         gpio.output(lft_fwd, False)
         gpio.output(lft_rev, True)
-        if mode == 'left':
+'''        if mode == 'left':
             gpio.output(mode_right, False)
             gpio.output(mode_left, True)
         elif mode == 'right':
@@ -259,6 +257,7 @@ def pivot_left(tf, mode):
         else:
             gpio.output(mode_right, True)
             gpio.output(mode_left, True)
+'''   
         time.sleep(tf)
         gpio.cleanup()
     except:
