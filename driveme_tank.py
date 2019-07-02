@@ -28,12 +28,12 @@ import sys
 
 rt_fwd = 18
 rt_rev = 22
-rt_ena = 16
+rt_ena = 10
 lft_fwd = 15
 lft_rev = 13
 lft_ena = 11
-mode_right = 36
-mode_left = 38
+mode_right = 38
+mode_left = 36
 
 ##Set up GPIO pins as output
 def init():

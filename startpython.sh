@@ -1,3 +1,3 @@
 #!/usr/bin/env python
-python drive.py
+python3 drive.py
 exit 1

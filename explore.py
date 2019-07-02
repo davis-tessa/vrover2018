@@ -67,14 +67,17 @@ def mode_discovery(drive_time, drive_burst, mode, check):
     print("\n\nexplore            > Exploring with a bias towards direction:", mode, "\n\n")
 ##When drive forward is chosen, continue for twice as long as the time spent driving to the left or right.
     drive_iterate = int(round(drive_time / drive_burst))
-    drive_iterate_f = 2 * drive_iterate
+    drive_iterate_f = 1 * drive_iterate
     ##Desired result is to drive forward drive_burst seconds before checking (e.g. 0.03)
     ##Drive for drive_drive seconds
     ##Drive_iterations = drive_time
 
     ##1 represents forward, 2 represents forward and left, 3 represents forward and right
-    LHB_options = [1, 1, 1, 1, 1, 1, 2, 2, 2, 3]
-    RHB_options = [1, 1, 1, 1, 1, 1, 2, 3, 3, 3]
+    ## Original settings - KD Modified: LHB_options = [1, 1, 2, 2, 2, 2, 2, 2, 3, 3]
+    ## Original settings - KD Modified: RHB_options = [1, 1, 2, 2, 3, 3, 3, 3, 3, 3]
+    LHB_options = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3]
+    RHB_options = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 3, 3, 3, 2, 2, 2, 3, 3, 3]
+
     party_options = [1, 2, 3, 4, 5]
     ##Set the bias right or left or party based on input chosen when calling mode_discovery(tf, mode)
     if mode == 'left':
@@ -135,7 +138,7 @@ def mode_discovery(drive_time, drive_burst, mode, check):
             driveme_tank.turn_right_fwd(drive_burst, mode)
 
     elif x == 4:
-        print("explore            > Mars walk to the left!!!")
+        print("explore            > Party to the left!!!")
         ##Repeat the steps below drive_iterate times
         for y in range(drive_iterate):
             ##Run the function collision_avoidance() to check the distance from the front sensor to the closest object
@@ -144,7 +147,7 @@ def mode_discovery(drive_time, drive_burst, mode, check):
             driveme_tank.turn_left_rev(drive_burst, mode)
 
     elif x == 5:
-        print("explore            > Mars walk to the right!!!")
+        print("explore            > Party to the right!!!")
         ##Repeat the steps below drive_iterate times
         for y in range(drive_iterate):
             ##Run the function collision_avoidance() to check the distance from the front sensor to the closest object

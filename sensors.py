@@ -1,4 +1,4 @@
-##Using Python 3.6.5
+pan_control = 24##Using Python 3.6.5
 
 ##Import the GPIO library
 import RPi.GPIO as gpio
@@ -6,6 +6,7 @@ import RPi.GPIO as gpio
 import time
 import sys
 import random
+import os
 
 #Goal: Drive vechicle using Remote Control including:
 ##front_sensor_trig is the GPIO pin number that triggers the sensor (GPIO pin configured as output)
@@ -28,7 +29,7 @@ def front_distance():
     try:
 
         ##Define the GPIO pin number connected to trig
-        front_sensor_trig = 7
+        front_sensor_trig = 32
     ##Define the GPIO pin number connected to echo
         front_sensor_echo = 29
 
@@ -62,7 +63,9 @@ def front_distance():
         pulse_duration = pulse_end - pulse_start
         ##The speed of sound in air at sea level = 343m/s or 34 300cm/s
         ##s = d/t : d = s*t. The sound travels to the object and back so d = (s*t)/2
+        #front_distance = 17150 * pulse_duration
         front_distance = 17150 * pulse_duration
+
         ##Return an answer to 2 decimal places
         front_distance = round(front_distance, 2)
 
@@ -84,6 +87,9 @@ def front_distance():
 
 ##Instruct the function to return 'distance'
     print("sensors.front_dist >", front_distance, "cm\n")
+#    oscommandtestdist = “echo ‘mars.rover.distance ‘“+str(front_dist)+”  | nc -q0 192.168.11.200 2003"
+#    os.system(oscommandtestdist)
+
     return front_distance
 
 ##Define the distance function (to be imported into drive script)
@@ -145,13 +151,15 @@ def rear_distance():
 
 ##Instruct the function to return 'distance'
     print("sensors            >", rear_distance, "cm\n")
+#    oscommandtestdist = “echo ‘mars.rover.distance ‘“+str(front_dist)+”  | nc -q0 192.168.11.200 2003"
+#    os.system(oscommandtestdist)
     return rear_distance
 
 ##Define function to pan the servo motor left and stay
 def pan_left():
     print("sensors.pan_left   > Watch me position center, then left, and stay there.")
     ##Define pin mapping for pan control
-    pan_control = 12
+    pan_control = 24
     ##Set gpio to board mode
     gpio.setmode(gpio.BOARD)
     ##Set pan control gpio pin as output
@@ -171,7 +179,7 @@ def pan_left():
 def pan_right():
     print("sensors.pan_right  > Watch me position center, then right, and stay there.")
     ##Define pin mapping for pan control
-    pan_control = 12
+    pan_control = 24
     ##Set gpio to board mode
     gpio.setmode(gpio.BOARD)
     ##Set pan control gpio pin as output
@@ -191,7 +199,7 @@ def pan_right():
 def pan_center():
     print("sensors.pan_center > Watch me position center.")
     ##Define pin mapping for pan control
-    pan_control = 12
+    pan_control = 24
     ##Set gpio to board mode
     gpio.setmode(gpio.BOARD)
     ##Set pan control gpio pin as output
@@ -269,7 +277,7 @@ def pan_check_distance():
 def front_pan():
     print("sensors.front_pan  > Watch me position center, then left, then right, and back to center.")
 ##Define pin mapping for pan control
-    pan_control = 12
+    pan_control = 24
 ##Set gpio to board mode
     gpio.setmode(gpio.BOARD)
 ##Set pan control gpio pin as output
